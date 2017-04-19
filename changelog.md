@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.0.2-alpha
+
+### Added
+
+* Grid
+
 ## v0.0.1-alpha
 
 ### Added

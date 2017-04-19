@@ -1,0 +1,108 @@
+/*
+ *
+ * Layouts - Grid
+ *
+ */
+
+$sizes: ('full': 100%, '4-5': 80%, '3-4': 75%, '2-3': 66.66666667%, '3-5': 60%, '1-2': 50%, 'half': 50%, '2-5': 40%, '1-3': 33.33333333%, '1-4': 25%, '1-5': 20%)
+
+.grid
+  display: flex
+  flex-wrap: wrap
+  box-sizing: border-box
+  padding: 0
+  margin-top: -$gap
+  margin-left: -$gap
+  margin-right: -$gap
+  &:last-child
+    margin-bottom: -$gap
+  &:not(:last-child)
+    margin-bottom: $gap
+  flex-direction: row
+  &.reverse
+    flex-direction: row-reverse
+  &.vertical
+    flex-direction: column
+    &.reverse
+      flex-direction: column-reverse
+  +mobile
+    display: block
+    margin-left: 0
+    margin-right: 0
+
+.tile
+  flex: 1
+  display: flex
+  max-width: 100%
+  margin: 0
+  padding: $gap
+  vertical-align: top
+  align-items: stretch
+  min-height: min-content
+
+  @each $name, $percent in $sizes
+    &.width-#{$name}
+      flex: none
+      width: $percent
+    &.offset-#{$name}
+      margin-left: $percent
+      +mobile
+        flex: none
+        margin-left: 0
+
+  +mobile
+    padding: $gap 0
+    @each $name, $percent in $sizes
+      &.width-#{$name}
+        flex: none
+        width: 100%
+        padding: $gap 0
+    &.width-tight-mobile
+      flex: none
+    @each $name, $percent in $sizes
+      &.width-#{$name}-mobile
+        flex: none
+        width: $percent
+      &.offset-#{$name}-mobile
+        margin-left: $percent
+
+  +tablet
+    &.width-tight,
+    &.width-tight-tablet
+      flex: none
+    +tablet
+      display: flex
+      @each $name, $percent in $sizes
+        .grid.mobile > &.width-#{$name}
+          flex: none
+          width: $percent
+        .grid.mobile > &.offset-#{$name}
+          margin-left: $percent
+    @each $name, $percent in $sizes
+      &.width-#{$name},
+      &.width-#{$name}-tablet
+        flex: none
+        width: $percent
+      &.offset-#{$name},
+      &.offset-#{$name}-tablet
+        margin-left: $percent
+
+  +desktop
+    &.width-tight-desktop
+      flex: none
+    @each $name, $percent in $sizes
+      &.width-#{$name}-desktop
+        flex: none
+        width: $percent
+      &.offset-#{$name}-desktop
+        margin-left: $percent
+
+  +widescreen
+    &.width-tight-widescreen
+      flex: none
+    @each $name, $percent in $sizes
+      &.width-#{$name}-widescreen
+        flex: none
+        width: $percent
+      &.offset-#{$name}-widescreen
+        margin-left: $percent
