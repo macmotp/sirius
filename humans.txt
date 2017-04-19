@@ -1,0 +1,9 @@
+# OWNER
+
+    Marco Gava -- Larastars -- @larastars
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    SASS - http://sass-lang.com
+    VueJs - https://vuejs.org
