@@ -1,5 +1,16 @@
 # Sirius UI Changelog
 
+## v0.0.3-alpha
+
+### Added
+
+* Header
+* Nav
+
+### Updated
+
+* Typography
+
 ## v0.0.2-alpha
 
 ### Added
