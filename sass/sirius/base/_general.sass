@@ -1,0 +1,32 @@
+/*
+ *
+ * Base - General
+ *
+ */
+
+html
+  background-color: $background
+  font-size: $font-base
+  min-width: 300px
+
+.container
+  position: relative
+  margin: 0 $gap
+  max-width: none
+  +desktop
+    margin: 0 auto
+    max-width: $desktop
+  +widescreen
+    margin: 0 auto
+    max-width: $widescreen
+
+.section, section
+  background-color: transparent
+  padding: $gap*2 0 $gap
+  +mobile
+    padding: $gap 0
+  +desktop
+    &.medium
+      padding: $gap*2 0
+    &.large
+      padding: $gap*3 0

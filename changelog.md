@@ -1,5 +1,16 @@
 # Sirius UI Changelog
 
+## v0.0.1-alpha
+
+### Added
+
+* readme.md
+* CSS Reset
+* Variables (for Colors, Socials, Rendering and Typography)
+* Mixins
+* Helpers
+* General
+
 ## v0.0.0-alpha
 
 * Initial Scaffolding

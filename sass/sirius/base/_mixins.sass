@@ -1,0 +1,50 @@
+/*
+ *
+ * Mixins
+ *
+ */
+
+// Placeholder
+=placeholder
+  $prefixes: ':-moz' ':-webkit-input' '-moz' '-ms-input'
+  @each $prefix in $prefixes
+    &:#{$prefix}-placeholder
+      @content
+
+// Transition
+=transition($type)
+  transition: $type $transition linear 0s
+
+// Responsive Breakpoints
+=from($device)
+  @media screen and (min-width: $device)
+    @content
+=until($device)
+  @media screen and (max-width: $device - 1px)
+    @content
+=mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
+=tablet
+  @media screen and (min-width: $tablet)
+    @content
+=tablet-only
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+    @content
+=touch
+  @media screen and (max-width: $desktop - 1px)
+    @content
+=desktop
+  @media screen and (min-width: $desktop)
+    @content
+=desktop-only
+  @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px)
+    @content
+=widescreen
+  @media screen and (min-width: $widescreen)
+    @content
+
+// Shadow
+=shadow
+  @if $shadow != none
+    box-shadow: 0 2px 3px rgba($shadow, 0.1)
