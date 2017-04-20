@@ -1,5 +1,20 @@
 # Sirius UI Changelog
 
+## v0.0.4-alpha
+
+### Added
+
+* VueJs
+* Laravel Mix
+
+### Updated
+
+* Raleway Font
+
+### Removed
+
+* Gulp
+
 ## v0.0.3-alpha
 
 ### Added
