@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.0.6-alpha
+
+### Removed
+
+* Fonts
+
 ## v0.0.5-alpha
 
 ### Updated

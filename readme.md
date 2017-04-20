@@ -11,13 +11,16 @@ Build your beautiful website with Sirius. Fully responsive elements and layouts.
 
 In current version:
 * SASS
-    ** General and Reset
-    ** Variables
-    ** Layouts
-        *** Grid
-        *** Header
 
-[#areyousirius](https://twitter.com/larastarsgalaxy)
+..* General and Reset
+..* Variables
+..* Layouts
+
+....* Grid
+....* Header
+....* Nav
+
+# [#areyousirius](https://twitter.com/larastarsgalaxy)
 
 ## Quick install
 
@@ -89,6 +92,6 @@ Support only through Github. Please don't send emails about issues, make a Githu
 
 ## Copyright and License
 
-Code copyright 2017 Larastars owned by [Marco Gava](https://www.linkedin.com/in/gavamarco).
+Copyright 2017 - [Larastars](https://larastars.com) owned by [Marco Gava](https://www.linkedin.com/in/gavamarco).
 Code released under [LGPL license](https://github.com/macmotp/sirius/license.md).
 You are free to use it in personal and commercial projects. The code can be forked and modified, but the original copyright author should always be included!
