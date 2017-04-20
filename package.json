@@ -1,4 +1,27 @@
 {
+  "name": "sirius-ui",
+  "version": "v0.0.5-alpha",
+  "homepage": "https://larastars.com/sirius/demo",
+  "author": "Marco Gava <info@larastars.com> (https://www.linkedin.com/in/gavamarco)",
+  "description": "Flexible CSS Framework built with Flexbox and Vue",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macmotp/sirius.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework",
+    "vue",
+    "laravel"
+  ],
+  "bugs": {
+    "url": "https://github.com/macmotp/sirius/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",

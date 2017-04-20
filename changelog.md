@@ -1,5 +1,13 @@
 # Sirius UI Changelog
 
+## v0.0.5-alpha
+
+### Updated
+
+* readme.md
+* package.json
+* license
+
 ## v0.0.4-alpha
 
 ### Added
