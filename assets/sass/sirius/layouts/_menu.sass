@@ -1,0 +1,245 @@
+.close
+  user-select: none
+  -moz-appearance: none
+  -webkit-appearance: none
+  background-color: transparent
+  border: none
+  cursor: pointer
+  display: inline-block
+  height: 30px
+  width: 30px
+  outline: none
+  position: relative
+  vertical-align: top
+  +transition(background-color)
+  &:before,
+  &:after
+    background-color: $light
+    content: ""
+    display: block
+    height: 2px
+    left: 50%
+    margin-left: -25%
+    margin-top: -1px
+    position: absolute
+    top: 50%
+    width: 50%
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)
+  &:hover
+    background-color: rgba($dark, 0.2)
+
+menu, .menu, menu.left, .menu.left
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 1000
+  display: block
+  width: 0px
+  height: 0px
+  text-align: left
+  overflow: visible
+  .overlay
+    position: fixed
+    top: 0
+    left: 0
+    height: 100vh
+    width: 100vw
+    pointer-events: none
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      opacity: 0
+      background-color: rgba($dark,0.3)
+      transition: transform 0.6s ease-out
+  .content
+    position: fixed
+    top: 0
+    left: 0
+    overflow: scroll
+    height: 100vh
+    max-width: 100vw
+    width: $menu-width
+    pointer-events: none
+    padding-top: 10px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      width: 100%
+      height: 100%
+      border-right: $border-size solid darken($default,10%)
+      background: $default
+      box-shadow: 0 2px 3px rgba($default, 0.1), 0 0 0 1px rgba($default, 0.1)
+      transform: translate3d(-100%, 0, 0) translate3d(0, 0, 0)
+      transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1)
+    .container
+      position: relative
+      opacity: 0
+      transform: translate3d(-$menu-width,0,0)
+      transition: transform 0.4s
+      transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+      .title
+        margin-top: 0
+      .logo
+        max-height: 50px
+      .list-slider
+        position: absolute
+        width: 100%
+      .list
+        a
+          color: $light
+        li
+          padding: 10px 0
+          color: $light
+          cursor: pointer
+          +transition(color)
+          &:hover
+            color: lighten($default,10%)
+          i
+            float: right
+      .breadcrumb
+        span
+          text-transform: uppercase
+          font-weight: bold
+          font-size: $font-extra-small
+          color: $default
+          cursor: pointer
+          +transition(color)
+          &:hover
+            color: lighten($default,10%)
+          & > i
+            color: grayscale($default)
+            position: relative
+            font-size: 10px
+            float: none
+
+    .close
+      opacity: 0
+      position: absolute
+      right: 0px
+      top: 5px
+  &.right
+    .content
+      left: auto
+      right: 0
+      &::before
+        border-left: $border-size solid darken($default,10%)
+        border-right: none
+        transform: translate3d(100%, 0, 0) translate3d(0, 0, 0)
+      .container
+        transform: translate3d($menu-width,0,0)
+  &.active
+    .overlay
+      pointer-events: auto
+      &::before
+        opacity: 1
+        transition: opacity 0.3s ease-in
+        transition-delay: 0s
+    .content
+      pointer-events: auto
+      &::before
+        transform: translate3d(0, 0, 0)
+        transition-delay: 0s
+      .container
+        opacity: 1
+        transition: opacity 0.6s cubic-bezier(0.2, 1, 0.3, 1)
+        transform: translate3d(0,0,0)
+        transition: transform 0.8s
+        transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+        overflow-y: scroll
+        height: 100%
+        margin: 0 10px
+      .close
+        opacity: 1
+        transition: opacity 0.6s cubic-bezier(0.2, 1, 0.3, 1)
+
+  @each $key, $values in $colors
+    $color: nth($values, 1)
+    $inverse: nth($values, 2)
+    &.bg-#{$key}
+      .content::before
+        border-right: $border-size solid darken($color,10%)
+        background: $color
+        color: $inverse !important
+        box-shadow: 0 2px 3px rgba($color, 0.1), 0 0 0 1px rgba($color, 0.1)
+        h1, h2, h3, h4, h5, h6
+          color: $inverse !important
+      &.right
+        .content::before
+          border-left: $border-size solid darken($color,10%)
+          border-right: none
+
+/* enter animation */
+.slide-fade-left-enter-active
+  animation: inFromLeft 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+.slide-fade-left-leave-active
+  animation: outToLeft 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+.slide-fade-right-enter-active
+  animation: inFromRight 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+.slide-fade-right-leave-active
+  animation: outToRight 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+
+@-webkit-keyframes outToLeft
+  to
+    opacity: 0
+    transform: translate3d(-100%, 0, 0)
+@keyframes outToRight
+  to
+    opacity: 0
+    transform: translate3d(-100%, 0, 0)
+
+@-webkit-keyframes outToRight
+  to
+    opacity: 0
+    transform: translate3d(100%, 0, 0)
+@keyframes outToRight
+  to
+    opacity: 0
+    transform: translate3d(100%, 0, 0)
+
+@-webkit-keyframes inFromLeft
+  from
+    opacity: 0
+    -webkit-transform: translate3d(-100%, 0, 0)
+    transform: translate3d(-100%, 0, 0)
+  to
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@keyframes inFromLeft
+  from
+    opacity: 0
+    -webkit-transform: translate3d(-100%, 0, 0)
+    transform: translate3d(-100%, 0, 0)
+  to
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@-webkit-keyframes inFromRight
+  from
+    opacity: 0
+    -webkit-transform: translate3d(100%, 0, 0)
+    transform: translate3d(100%, 0, 0)
+  to
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@keyframes inFromRight
+  from
+    opacity: 0
+    -webkit-transform: translate3d(100%, 0, 0)
+    transform: translate3d(100%, 0, 0)
+  to
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)

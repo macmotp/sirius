@@ -1,6 +1,6 @@
 {
   "name": "sirius-ui",
-  "version": "v0.0.6-alpha",
+  "version": "v0.0.7-alpha",
   "homepage": "https://larastars.com/sirius/demo",
   "author": "Marco Gava <info@larastars.com> (https://www.linkedin.com/in/gavamarco)",
   "description": "Flexible CSS Framework built with Flexbox and Vue",
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/macmotp/sirius/issues"
   },
-  "license": "MIT",
+  "license": "LGPL",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",

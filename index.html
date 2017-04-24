@@ -18,61 +18,80 @@
         <link rel="shortcut icon" href="/resources/favicon/favicon.ico">
         <meta name="msapplication-config" content="/resources/favicon/browserconfig.xml">
         <meta name="theme-color" content="#fcfcfc">
-
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" type="text/css" rel="stylesheet">
-
-        <link href="/dist/css/sirius.min.css" type="text/css" rel="stylesheet">
+        <link href="/dist/css/sirius.css" type="text/css" rel="stylesheet">
     </head>
     <body>
 
-        <header class="header bg-highlight full gradient">
-            <div class="head">
-                <div class="container">
-                    <nav class="nav">
-                        <div class="left">
-                            <a class="item brand" href="/">
-                                <img class="logo" src="/resources/images/larastars.png" alt="Sirius UI">
-                                <div class="name"> Sirius UI </div>
-                            </a>
-                        </div>
-                        <div class="center">
-                            <a class="item" target="_blank" href="https://www.facebook.com/larastarsgalaxy">
-                                <span class="icon">
-                                    <i class="fa fa-facebook"></i>
+        <div class="vue-wrapper" id="sirius">
+            <header class="header bg-highlight full gradient">
+                <div class="head">
+                    <div class="container">
+                        <nav class="nav">
+                            <div class="left">
+                                <a class="item brand" href="/">
+                                    <img class="logo" src="/resources/images/larastars.png" alt="Sirius UI">
+                                </a>
+                            </div>
+                            <div class="center">
+                                <a class="item" target="_blank" href="https://www.facebook.com/larastarsgalaxy">
+                                    <span class="icon">
+                                        <i class="fa fa-facebook"></i>
+                                    </span>
+                                </a>
+                                <a class="item" target="_blank" href="https://twitter.com/larastarsgalaxy">
+                                    <span class="icon">
+                                        <i class="fa fa-twitter"></i>
+                                    </span>
+                                </a>
+                                <a class="item" target="_blank" href="https://github.com/macmotp/sirius">
+                                    <span class="icon">
+                                        <i class="fa fa-github"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="right">
+                                <span class="toggle visible" @click="$refs.sidebarMenu.toggle()">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
                                 </span>
-                            </a>
-                            <a class="item" target="_blank" href="https://twitter.com/larastarsgalaxy">
-                                <span class="icon">
-                                    <i class="fa fa-twitter"></i>
-                                </span>
-                            </a>
-                            <a class="item" target="_blank" href="https://github.com/macmotp/sirius">
-                                <span class="icon">
-                                    <i class="fa fa-github"></i>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="right">
-                            <span class="toggle visible">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                        </div>
+                                <sirius-menu ref="sidebarMenu" class="bg-dark right" :show-close-button="true" :close-on-external-click="true">
+                                    <div class="head">
+                                        <a href="/">
+                                            <img class="logo" src="/resources/images/larastars_grey.png" alt="Sirius UI">
+                                        </a>
+                                    </div>
+                                    <sirius-multi-list>
 
-
-                    </nav>
+                                    </sirius-multi-list>
+                                </sirius-menu>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
-            </div>
-            <div class="body" id="sirius">
-                <div class="container">
-                    <h1 class="title"> Sirius UI </h1>
-                    <h3 class="subtitle"> Flexible CSS Framework built with Flexbox and Vue</h3>
-                </div>
-            </div>
-        </header>
+                <div class="body">
+                    <div class="container">
+                        <div class="grid">
+                            <div class="tile width-3-5">
+                                <h1 class="title">Sirius UI</h1>
+                                <h3 class="subtitle">CSS Framework built with Flexbox and Vue</h3>
+                            </div>
+                            <div class="tile">
+                                <h2 class="title">
+                                    <code>npm install sirius-ui</code>
+                                </h2>
+                                <p>
+                                    <a class="text-light" href="https://github.com/macmotp/sirius/archive/master.zip">v0.0.7-alpha</a>
+                                </p>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+            </header>
+        </div>
 
         <script src="/dist/js/sirius.js"></script>
 

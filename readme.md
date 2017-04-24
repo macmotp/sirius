@@ -7,24 +7,25 @@ Sirius UI - Flexible CSS Framework based on [Flexbox](https://developer.mozilla.
 
 [![Sirius UI - Flexible CSS Framework](https://raw.githubusercontent.com/macmotp/sirius/master/resources/images/larastars_alt.png)](https://larastars.com/sirius/demo)
 
-Build your beautiful website with Sirius. Fully responsive elements and layouts. Easily integration for Laravel 5.
+Build your beautiful website with Sirius. Fully responsive elements and layouts. Easy integration for Laravel 5.
 
 In current version:
 * SASS
+  * General and Helpers
+  * Variables
+  * Elements
+    * Typography
+  * Layouts
+    * Grid
+    * Header
+    * Nav
+    * Menu
 
-..* General and Reset
-..* Variables
-..* Layouts
+## [#areyousirius?](https://twitter.com/larastarsgalaxy)
 
-....* Grid
-....* Header
-....* Nav
+## Installation
 
-# [#areyousirius](https://twitter.com/larastarsgalaxy)
-
-## Quick install
-
-Be aware Sirius UI is still in alpha development!
+Be aware: Sirius UI is still in alpha development!
 
 ### NPM
 
@@ -32,9 +33,7 @@ Be aware Sirius UI is still in alpha development!
 npm install sirius-ui
 ```
 
-### Latest Release
-
-[Download](https://github.com/macmotp/sirius/archive/master.zip)
+### or download the [Latest Release](https://github.com/macmotp/sirius/archive/master.zip)
 
 ## Basic Usage
 
@@ -59,14 +58,20 @@ You can copy and inject the latest release directly into your HTML:
 Sirius uses the wonderful [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) to built its assets. If you want to change SASS variables or add your own Vue components, install node dependencies:
 
 ```sh
+# browse to project
 cd sirius-ui
+# install dependencies
 npm install
 ```
 
 For [Laravel 5](https://laravel.com) integration, copy the [assets](https://github.com/macmotp/sirius/master/assets/) folder into your resources project. If you are familiar with Laravel Mix, you know you can simply run
 
 ```sh
+# compile assets in development
 npm run dev
+
+# compile and minify assets for production
+npm run production
 ```
 
 in order to compile SASS and Vue
