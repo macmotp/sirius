@@ -18,6 +18,7 @@
                 visible: false
             }
         },
+
         props: {
             color: {
                 type: String,

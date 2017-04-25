@@ -20,6 +20,9 @@ In current version:
     * Header
     * Nav
     * Menu
+* Vue
+  * Menu
+  * List
 
 ## [#areyousirius?](https://twitter.com/larastarsgalaxy)
 
@@ -64,7 +67,7 @@ cd sirius-ui
 npm install
 ```
 
-For [Laravel 5](https://laravel.com) integration, copy the [assets](https://github.com/macmotp/sirius/master/assets/) folder into your resources project. If you are familiar with Laravel Mix, you know you can simply run
+For [Laravel 5](https://laravel.com) integration, copy the [assets](https://github.com/macmotp/sirius/tree/master/assets) folder into your resources project. If you are familiar with Laravel Mix, you know you can simply run
 
 ```sh
 # compile assets in development
@@ -98,5 +101,5 @@ Support only through Github. Please don't send emails about issues, make a Githu
 ## Copyright and License
 
 Copyright 2017 - [Larastars](https://larastars.com) owned by [Marco Gava](https://www.linkedin.com/in/gavamarco).
-Code released under [LGPL license](https://github.com/macmotp/sirius/license.md).
+Code released under [LGPL license](https://github.com/macmotp/sirius/blob/master/license.md).
 You are free to use it in personal and commercial projects. The code can be forked and modified, but the original copyright author should always be included!

@@ -1,5 +1,15 @@
 # Sirius UI Changelog
 
+## v0.0.8-alpha
+
+### Added
+
+* Animations
+
+### Updated
+
+* Menu
+
 ## v0.0.7-alpha
 
 ### Added

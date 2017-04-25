@@ -1,6 +1,6 @@
 {
   "name": "sirius-ui",
-  "version": "v0.0.7-alpha",
+  "version": "v0.0.8-alpha",
   "homepage": "https://larastars.com/sirius/demo",
   "author": "Marco Gava <info@larastars.com> (https://www.linkedin.com/in/gavamarco)",
   "description": "Flexible CSS Framework built with Flexbox and Vue",
@@ -25,13 +25,10 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
-    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "devDependencies": {
-    "laravel-mix": "^0.10.0"
-  },
-  "dependencies": {
+    "laravel-mix": "^0.10.0",
     "vue": "^2.2.6"
   }
 }

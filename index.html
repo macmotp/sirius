@@ -10,17 +10,17 @@
         <meta name="author" content="Larastars">
         <meta name="robots" content="index, follow">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" href="/resources/favicon/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/resources/favicon/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/resources/favicon/manifest.json">
-        <link rel="mask-icon" href="/resources/favicon/safari-pinned-tab.svg" color="#3a98a1">
-        <link rel="shortcut icon" href="/resources/favicon/favicon.ico">
-        <meta name="msapplication-config" content="/resources/favicon/browserconfig.xml">
+        <link rel="apple-touch-icon" sizes="180x180" href="../resources/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="../resources/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="../resources/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="../resources/favicon/manifest.json">
+        <link rel="mask-icon" href="../resources/favicon/safari-pinned-tab.svg" color="#3a98a1">
+        <link rel="shortcut icon" href="../resources/favicon/favicon.ico">
+        <meta name="msapplication-config" content="../resources/favicon/browserconfig.xml">
         <meta name="theme-color" content="#fcfcfc">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" type="text/css" rel="stylesheet">
-        <link href="/dist/css/sirius.css" type="text/css" rel="stylesheet">
+        <link href="../dist/css/sirius.css" type="text/css" rel="stylesheet">
     </head>
     <body>
 
@@ -31,7 +31,7 @@
                         <nav class="nav">
                             <div class="left">
                                 <a class="item brand" href="/">
-                                    <img class="logo" src="/resources/images/larastars.png" alt="Sirius UI">
+                                    <img class="logo" src="../resources/images/larastars.png" alt="Sirius UI">
                                 </a>
                             </div>
                             <div class="center">
@@ -60,12 +60,30 @@
                                 <sirius-menu ref="sidebarMenu" class="bg-dark right" :show-close-button="true" :close-on-external-click="true">
                                     <div class="head">
                                         <a href="/">
-                                            <img class="logo" src="/resources/images/larastars_grey.png" alt="Sirius UI">
+                                            <img class="logo" src="../resources/images/larastars_grey.png" alt="Sirius UI">
                                         </a>
                                     </div>
-                                    <sirius-multi-list>
-
-                                    </sirius-multi-list>
+                                    <sirius-list ref="main" :is-parent="true" list-name="documentation">
+                                        <a href="../docs/get-started.html"><li>Get Started</li></a>
+                                        <a href="../docs/philosophy.html"><li>Philosophy</li></a>
+                                        <li @click="$refs.elements.slideIn($refs.main)">
+                                            <span>Elements</span>
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </li>
+                                        <li @click="$refs.layouts.slideIn($refs.main)">
+                                            <span>Layouts</span>
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </li>
+                                    </sirius-list>
+                                    <sirius-list ref="elements" list-name="elements">
+                                        <a href="../docs/elements/typography.html"><li>Typography</li></a>
+                                    </sirius-list>
+                                    <sirius-list ref="layouts" list-name="layouts">
+                                        <a href="../docs/layouts/grid.html"><li>Grid</li></a>
+                                        <a href="../docs/layouts/header.html"><li>Header</li></a>
+                                        <a href="../docs/layouts/nav.html"><li>Nav</li></a>
+                                        <a href="../docs/layouts/menu.html"><li>Menu</li></a>
+                                    </sirius-list>
                                 </sirius-menu>
                             </div>
                         </nav>
@@ -83,17 +101,19 @@
                                     <code>npm install sirius-ui</code>
                                 </h2>
                                 <p>
-                                    <a class="text-light" href="https://github.com/macmotp/sirius/archive/master.zip">v0.0.7-alpha</a>
+                                    <a class="text-light" href="https://github.com/macmotp/sirius/archive/master.zip">
+                                        v0.0.8-alpha
+                                    </a>
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
+                <div class="foot"></div>
             </header>
         </div>
 
-        <script src="/dist/js/sirius.js"></script>
+        <script src="../dist/js/sirius.js"></script>
 
     </body>
 </html>

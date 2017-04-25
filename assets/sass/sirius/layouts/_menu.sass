@@ -1,3 +1,9 @@
+/*
+ *
+ * Layouts - Menu
+ *
+ */
+
 .close
   user-select: none
   -moz-appearance: none
@@ -104,7 +110,9 @@ menu, .menu, menu.left, .menu.left
             color: lighten($default,10%)
           i
             float: right
+            margin-right: 10px
       .breadcrumb
+        padding: 10px 0
         span
           text-transform: uppercase
           font-weight: bold
@@ -176,7 +184,6 @@ menu, .menu, menu.left, .menu.left
           border-left: $border-size solid darken($color,10%)
           border-right: none
 
-/* enter animation */
 .slide-fade-left-enter-active
   animation: inFromLeft 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
 .slide-fade-left-leave-active
@@ -185,61 +192,3 @@ menu, .menu, menu.left, .menu.left
   animation: inFromRight 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
 .slide-fade-right-leave-active
   animation: outToRight 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
-
-@-webkit-keyframes outToLeft
-  to
-    opacity: 0
-    transform: translate3d(-100%, 0, 0)
-@keyframes outToRight
-  to
-    opacity: 0
-    transform: translate3d(-100%, 0, 0)
-
-@-webkit-keyframes outToRight
-  to
-    opacity: 0
-    transform: translate3d(100%, 0, 0)
-@keyframes outToRight
-  to
-    opacity: 0
-    transform: translate3d(100%, 0, 0)
-
-@-webkit-keyframes inFromLeft
-  from
-    opacity: 0
-    -webkit-transform: translate3d(-100%, 0, 0)
-    transform: translate3d(-100%, 0, 0)
-  to
-    opacity: 1
-    -webkit-transform: translate3d(0, 0, 0)
-    transform: translate3d(0, 0, 0)
-
-@keyframes inFromLeft
-  from
-    opacity: 0
-    -webkit-transform: translate3d(-100%, 0, 0)
-    transform: translate3d(-100%, 0, 0)
-  to
-    opacity: 1
-    -webkit-transform: translate3d(0, 0, 0)
-    transform: translate3d(0, 0, 0)
-
-@-webkit-keyframes inFromRight
-  from
-    opacity: 0
-    -webkit-transform: translate3d(100%, 0, 0)
-    transform: translate3d(100%, 0, 0)
-  to
-    opacity: 1
-    -webkit-transform: translate3d(0, 0, 0)
-    transform: translate3d(0, 0, 0)
-
-@keyframes inFromRight
-  from
-    opacity: 0
-    -webkit-transform: translate3d(100%, 0, 0)
-    transform: translate3d(100%, 0, 0)
-  to
-    opacity: 1
-    -webkit-transform: translate3d(0, 0, 0)
-    transform: translate3d(0, 0, 0)
