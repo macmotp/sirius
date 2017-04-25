@@ -21,11 +21,15 @@ html
 
 .section, section
   background-color: transparent
-  padding: $gap*2 0 $gap
+  padding: $gap
   +mobile
+    padding: $gap 0
+    & > .container
+      margin: 0
+  +touch
     padding: $gap 0
   +desktop
     &.medium
-      padding: $gap*2 0
+      padding: $gap*2 $gap
     &.large
-      padding: $gap*3 0
+      padding: $gap*3 $gap

@@ -27,8 +27,6 @@ a, a:focus, a:hover, a:active
   cursor: pointer
 
 a
-  cursor: pointer
-  text-decoration: none
   color: $link
   +transition(color)
   &:hover, &:focus, &:active
@@ -91,11 +89,11 @@ pre
   color: $highlight
   word-wrap: normal
   code
-    background-color: $background
+    background-color: $grey-light
     color: $highlight
     display: block
     overflow-x: auto
-    padding: 10px
+    padding: 20px 10px
 
 blockquote
   font-style: italic
@@ -140,7 +138,7 @@ hr
   background-image: linear-gradient(to left, rgba($default, 0.1), rgba($default, 0.3))
   border: 0 none
   height: 1px
-  margin: 22px 0
+  margin: 10px 0 0
   width: 100%
   @each $key, $values in $colors
     $color: nth($values, 1)
@@ -180,6 +178,7 @@ hr
 .subtitle
   &:not(:last-child)
     margin-bottom: 20px
+    margin-top: 10px
   font-weight: 300
   word-break: break-word
   em,
@@ -224,3 +223,12 @@ hr
     margin-bottom: 15px !important
   &.large
     margin-bottom: 20px !important
+
+.content
+  &:not(:last-child)
+    margin-bottom: 20px
+  p
+    text-align: justify
+    margin-bottom: 5px
+    & > code
+      padding: 0 10px

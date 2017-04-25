@@ -25,7 +25,7 @@
         color: $light
       &:hover
         .name
-          color: lighten($default,10%)
+          color: lighten($default,30%)
     .button + .button
       margin-left: 10px
     .tag
@@ -36,6 +36,9 @@
     .icon > i
       font-size: $font-base
       color: $light
+      +transition(color)
+      &:hover
+        color: lighten($default,30%)
     +mobile
       justify-content: flex-start
 
@@ -155,10 +158,10 @@
       margin-top: 5px
   &:hover
     span
-      background-color: lighten($default,10%)
+      background-color: lighten($default,30%)
   &.active
     span
-      background-color: lighten($default,10%)
+      background-color: lighten($default,30%)
       &:nth-child(1)
         margin-left: -5px
         transform: rotate(45deg)

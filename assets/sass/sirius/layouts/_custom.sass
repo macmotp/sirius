@@ -1,0 +1,91 @@
+/*
+ *
+ * Layouts - Custom
+ *
+ * Add here any custom css you want to override
+ *
+ */
+
+.highlight
+  &:not(:last-child)
+    margin-bottom: 20px
+  font-size: 12px
+  font-weight: normal
+  max-width: 100%
+  overflow: hidden
+  padding: 0
+  display: flex
+  border: $border-size solid darken($default,10%)
+  border-radius: $border-radius
+  pre
+    overflow: auto
+    max-width: 100%
+    white-space: pre-wrap
+    flex: 1
+    code
+      color: darken($default,10%)
+      margin-bottom: 0
+  .doctype, .comment
+    font-size: $font-extra-small
+  .tag
+    align-items: flex-start
+    height: auto
+    padding: 0px
+    font-size: $font-extra-small
+    background-color: $grey-light
+    border-radius: 0px
+  .token.comment,.token.prolog,.token.doctype,.token.cdata
+    color: $default
+  .token.punctuation
+    color: $default
+  .namespace
+    opacity: .7
+
+  .token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted
+    color: darken($default,10%)
+
+  .token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.url,.token.inserted
+    color: $highlight
+
+  .token.entity
+    color: $default
+    background: $white
+
+  .token.atrule,.token.attr-value,.token.keyword
+    color: lighten($default,10%)
+
+  .token.function
+    color: $alert
+
+  .token.regex,.token.important,.token.variable
+    color: $error
+
+  .token.important,.token.bold
+    font-weight: bold
+
+  .token.italic
+    font-style: italic
+
+  .token.entity
+    cursor: help
+
+  .copy
+    background: $white
+    border: solid darken($default,10%)
+    border-width: 0 0 $border-size $border-size
+    border-bottom-left-radius: $border-radius
+    border-top-right-radius: if($border-radius == 0, $border-radius, $border-radius - 1)
+    color: $default
+    outline: none
+    width: 60px
+    cursor: pointer
+    font-weight: 300
+    margin-top: -2px
+    margin-left: -60px
+    text-align: center
+    align-self: flex-start
+    display: none
+
+.highlight:hover
+  .copy
+    display: block

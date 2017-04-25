@@ -1,7 +1,7 @@
 <template>
     <menu class="menu" v-bind:class="{ active: visible }">
         <div class="overlay" @click="clickedOutside"></div>
-        <div class="content">
+        <div class="sidebar">
             <div class="container">
                 <button v-if="showCloseButton" class="close" @click="toggle"></button>
                 <slot></slot>

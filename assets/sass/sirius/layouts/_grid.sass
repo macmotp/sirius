@@ -29,6 +29,8 @@ $sizes: ('full': 100%, '4-5': 80%, '3-4': 75%, '2-3': 66.66666667%, '3-5': 60%, 
     display: block
     margin-left: 0
     margin-right: 0
+  .container > &:first-child
+    margin-top: 10px
 
 .tile
   flex: 1
@@ -36,7 +38,7 @@ $sizes: ('full': 100%, '4-5': 80%, '3-4': 75%, '2-3': 66.66666667%, '3-5': 60%, 
   flex-direction: column
   max-width: 100%
   margin: 0
-  padding: $gap
+  padding: 0
   vertical-align: top
   align-items: stretch
   min-height: min-content

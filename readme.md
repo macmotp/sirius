@@ -15,6 +15,7 @@ In current version:
   * Variables
   * Elements
     * Typography
+    * Button
   * Layouts
     * Grid
     * Header

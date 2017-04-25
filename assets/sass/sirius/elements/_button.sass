@@ -1,0 +1,182 @@
+/*
+ *
+ * Elements - Button
+ *
+ */
+
+.button
+  -moz-appearance: none
+  -webkit-appearance: none
+  display: inline-flex
+  background-color: $default
+  border: $border-size solid darken($default,10%)
+  border-radius: $border-radius
+  color: $light
+  font-size: $font-base
+  padding: 7px 18px
+  text-decoration: none
+  white-space: nowrap
+  justify-content: center
+  text-align: center
+  @extend .no-selection
+  +transition(background-color)
+  &.transparent
+    background-color: transparent
+    color: $default
+  &.with-icon
+    padding: 7px 12px
+    i
+      min-width: 16px
+    span
+      margin-left: 10px
+  &:hover,
+  &:active,
+  &:focus,
+  &.active
+    background-color: lighten($default,10%)
+    color: $light
+    outline: none
+  &[disabled],
+  &.disabled
+    background-color: $background
+    color: lighten($default,20%)
+    cursor: not-allowed
+    opacity: 0.5
+
+  @each $key, $values in $colors
+    $color: nth($values, 1)
+    $inverse: nth($values, 2)
+    &.#{$key}
+      background-color: $color
+      border-color: darken($color,10%)
+      color: $inverse
+      &.transparent
+        background-color: transparent
+        color: $color
+      &:hover,
+      &:active,
+      &:focus,
+      &.active
+        background-color: lighten($color,10%)
+        &.transparent
+          color: $inverse
+
+  @each $name, $color in $socials
+    &.#{$name}
+      background-color: $color
+      border-color: darken($color,10%)
+      color: $light
+      &.transparent
+        background-color: transparent
+        color: $color
+      &:hover,
+      &:active,
+      &:focus,
+      &.active
+        background-color: lighten($color,10%)
+        &.transparent
+          color: $color
+  &.instagram
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%)
+    &:hover,
+    &:active,
+    &:focus,
+    &.active
+      background: radial-gradient(circle farthest-corner at 32% 106%, lighten(rgb(255, 225, 125), 10%) 0%, lighten(rgb(255, 205, 105), 10%) 10%, lighten(rgb(250, 145, 55), 10%) 28%, lighten(rgb(235, 65, 65), 10%) 42%, transparent 82%), linear-gradient(135deg, lighten(rgb(35, 75, 215), 10%) 12%, lighten(rgb(195, 60, 190), 10%) 58%)
+
+  &.small
+    font-size: $font-small
+    line-height: $font-small
+    padding: 5px 8px
+  &.large
+    font-size: $font-large
+    line-height: $font-large
+    padding: 10px 20px
+    &.with-icon
+      padding: 13px 18px
+  &.extra-large
+    font-size: $font-extra-large
+    line-height: $font-extra-large
+    padding: 12px 28px
+    &.with-icon
+      padding: 18px 24px
+  &.block
+    width: 100%
+
+  &.rotate
+    i
+      transition: all 0.5s cubic-bezier(0.34, 1.61, 0.7, 1)
+    &:hover,&:focus
+      i
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+        transform: rotate(53deg)
+  &.magnify
+    i
+      transition: all 0.5s cubic-bezier(0.34, 1.61, 0.7, 1)
+    &:hover,&:focus
+      i
+        transform: scale(1.22)
+  &.move-left
+    i
+      transition: all 0.5s cubic-bezier(0.34, 1.61, 0.7, 1)
+    &:hover,&:focus
+      i
+        transform: translateX(-5px)
+  &.move-right
+    i
+      transition: all 0.5s cubic-bezier(0.34, 1.61, 0.7, 1)
+    span
+      margin-left: 0
+      margin-right: 10px
+    &:hover,&:focus
+      i
+        transform: translateX(5px)
+
+.button-group > .button:first-child
+  margin-left: 0
+.button-group > .button:first-child:not(:last-child)
+  border-bottom-right-radius: 0
+  border-top-right-radius: 0
+.button-group > .button:not(:first-child):not(:last-child)
+  border-radius: 0px
+.button-group > .button:last-child:not(:first-child)
+  border-bottom-left-radius: 0
+  border-top-left-radius: 0
+.button-group .button + .button,
+.button-group .button + .button-group,
+.button-group .button-group + .button,
+.button-group .button-group + .button-group
+  margin-left: -6px
+
+.close
+  user-select: none
+  -moz-appearance: none
+  -webkit-appearance: none
+  background-color: transparent
+  border: none
+  cursor: pointer
+  display: inline-block
+  height: 30px
+  width: 30px
+  outline: none
+  position: relative
+  vertical-align: top
+  +transition(background-color)
+  &:before,
+  &:after
+    background-color: $light
+    content: ""
+    display: block
+    height: 2px
+    left: 50%
+    margin-left: -25%
+    margin-top: -1px
+    position: absolute
+    top: 50%
+    width: 50%
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)
+  &:hover
+    background-color: rgba($dark, 0.2)

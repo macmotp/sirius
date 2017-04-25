@@ -4,39 +4,6 @@
  *
  */
 
-.close
-  user-select: none
-  -moz-appearance: none
-  -webkit-appearance: none
-  background-color: transparent
-  border: none
-  cursor: pointer
-  display: inline-block
-  height: 30px
-  width: 30px
-  outline: none
-  position: relative
-  vertical-align: top
-  +transition(background-color)
-  &:before,
-  &:after
-    background-color: $light
-    content: ""
-    display: block
-    height: 2px
-    left: 50%
-    margin-left: -25%
-    margin-top: -1px
-    position: absolute
-    top: 50%
-    width: 50%
-  &:before
-    transform: rotate(45deg)
-  &:after
-    transform: rotate(-45deg)
-  &:hover
-    background-color: rgba($dark, 0.2)
-
 menu, .menu, menu.left, .menu.left
   position: fixed
   top: 0
@@ -64,7 +31,7 @@ menu, .menu, menu.left, .menu.left
       opacity: 0
       background-color: rgba($dark,0.3)
       transition: transform 0.6s ease-out
-  .content
+  .sidebar
     position: fixed
     top: 0
     left: 0
@@ -134,7 +101,7 @@ menu, .menu, menu.left, .menu.left
       right: 0px
       top: 5px
   &.right
-    .content
+    .sidebar
       left: auto
       right: 0
       &::before
@@ -150,7 +117,7 @@ menu, .menu, menu.left, .menu.left
         opacity: 1
         transition: opacity 0.3s ease-in
         transition-delay: 0s
-    .content
+    .sidebar
       pointer-events: auto
       &::before
         transform: translate3d(0, 0, 0)
@@ -172,7 +139,7 @@ menu, .menu, menu.left, .menu.left
     $color: nth($values, 1)
     $inverse: nth($values, 2)
     &.bg-#{$key}
-      .content::before
+      .sidebar::before
         border-right: $border-size solid darken($color,10%)
         background: $color
         color: $inverse !important
@@ -180,7 +147,7 @@ menu, .menu, menu.left, .menu.left
         h1, h2, h3, h4, h5, h6
           color: $inverse !important
       &.right
-        .content::before
+        .sidebar::before
           border-left: $border-size solid darken($color,10%)
           border-right: none
 

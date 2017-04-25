@@ -25,14 +25,14 @@
 <body>
 
 <div class="vue-wrapper" id="sirius">
-    <header class="header bg-default gradient">
+    <header class="header bg-highlight gradient">
         <div class="head">
             <div class="container">
                 <nav class="nav">
                     <div class="left">
-                        <a class="item brand" href="/">
+                        <a class="item brand" href="../">
                             <img class="logo" src="../resources/images/larastars.png" alt="Sirius UI">
-                            Sirius UI
+                            <div class="name">Sirius UI</div>
                         </a>
                     </div>
                     <div class="center">
@@ -60,7 +60,7 @@
                         </span>
                         <sirius-menu ref="sidebarMenu" class="bg-dark right" :show-close-button="true" :close-on-external-click="true">
                             <div class="head">
-                                <a href="/">
+                                <a href="../">
                                     <img class="logo" src="../resources/images/larastars_grey.png" alt="Sirius UI">
                                 </a>
                             </div>
@@ -93,13 +93,94 @@
         <div class="body">
             <div class="container">
                 <h1 class="title">Get Started</h1>
-                <h3 class="subtitle">Installation and workflow</h3>
+                <h3 class="subtitle">It's easy, but not magic</h3>
             </div>
         </div>
     </header>
+    <div class="container">
+        <div class="grid">
+            <div class="tile width-2-3">
+                <section class="section">
+                    <div class="container">
+                        <h2 class="title">Installation</h2>
+                        <div class="content">
+                            <p>There are two ways to install Sirius:</p>
+                            <p>1. Use <strong>NPM</strong></p>
+                            <pre><code>npm install sirius-ui</code></pre>
+                            <p>2. Download the <a href="https://github.com/macmotp/sirius/archive/master.zip">Latest Release</a> from <strong>Github</strong></p>
+                            <p><a class="button" href="https://github.com/macmotp/sirius/archive/master.zip">Download</a></p>
+                        </div>
+                    </div>
+                    <hr>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <h2 class="title">Basic Usage</h2>
+                        <div class="content">
+                            <p>You can copy and inject the latest release directly into your HTML:</p>
+                            <div class="highlight">
+                                <pre class="language-html" data-src="../docs/html/general/schema.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                            <p>And there you go! You are ready now to use it!</p>
+                        </div>
+                    </div>
+                    <hr>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <h2 class="title">Advanced Usage and Laravel Integration</h2>
+                        <div class="content">
+                            <p>Sirius uses the wonderful Laravel Mix to built its assets. If you want to change SASS variables or add your own Vue components, install node dependencies:</p>
+                            <p>
+                            <pre><code>
+# browse to project
+cd sirius-ui
+# install dependencies
+npm install
+                            </code></pre>
+                            </p>
+
+                            <p>For Laravel 5 integration, copy the assets folder into your resources project. If you are familiar with Laravel Mix, you know you can simply run</p>
+                            <p>
+                            <pre><code>
+# compile assets in development
+npm run dev
+
+# compile and minify assets for production
+npm run production
+                            </code></pre>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <h2 class="title">Make it prettier (if you can)</h2>
+                        <div class="content">
+                            <p>Don't you like the default theme? Sirius is built in order to easily change colors and rendering. Every variable is linked into the same scheme through all the SASS files, so you do not need to worry about changing every element of the UI.</p>
+                            <p>For example, into <code>/sass/sirius/variables/_colors.sass</code> you will find that the <strong>default</strong> color is matching every element and layout with a <code>.bg-default</code> class.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 <script src="../dist/js/sirius.js"></script>
+<script src="../resources/js/prism.min.js"></script>
+<script src="../resources/js/clipboard.min.js"></script>
+<script>
+    new Clipboard('.copy', {
+        target: function(trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+</script>
 
 </body>
 </html>
