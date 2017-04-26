@@ -84,16 +84,16 @@ in order to compile SASS and Vue
 
 Sirius is compatible with:
 
+* Safari
 * Chrome
-* Edge
 * Firefox
 * Internet Explorer (10+)
 * Opera
-* Safari
+
 
 ## Documentation
 
-Documentation is under development
+Browse the application for documentation. Support online will be released in the first beta.
 
 ## Support
 

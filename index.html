@@ -25,7 +25,7 @@
     <body>
 
         <div class="vue-wrapper" id="sirius">
-            <header class="header bg-highlight full gradient">
+            <header class="header bg-secondary full gradient">
                 <div class="head">
                     <div class="container">
                         <nav class="nav">
@@ -65,7 +65,7 @@
                                     </div>
                                     <sirius-list ref="main" :is-parent="true" list-name="documentation">
                                         <a href="./docs/get-started.html"><li>Get Started</li></a>
-                                        <a href="./docs/philosophy.html"><li>Philosophy</li></a>
+                                        <a href="./docs/why-sirius.html"><li>Why Sirius?</li></a>
                                         <li @click="$refs.elements.slideIn($refs.main)">
                                             <span>Elements</span>
                                             <i class="fa fa-ellipsis-h"></i>
@@ -76,6 +76,7 @@
                                         </li>
                                     </sirius-list>
                                     <sirius-list ref="elements" list-name="elements">
+                                        <a href="./docs/elements/button.html"><li>Button</li></a>
                                         <a href="./docs/elements/typography.html"><li>Typography</li></a>
                                     </sirius-list>
                                     <sirius-list ref="layouts" list-name="layouts">
@@ -105,7 +106,7 @@
                                     </h2>
                                     <p>
                                         <a class="text-light" href="https://github.com/macmotp/sirius/archive/master.zip">
-                                            v0.0.9-alpha
+                                            v0.1.0-alpha
                                         </a>
                                     </p>
                                 </section>

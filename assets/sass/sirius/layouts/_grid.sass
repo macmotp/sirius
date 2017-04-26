@@ -25,12 +25,27 @@ $sizes: ('full': 100%, '4-5': 80%, '3-4': 75%, '2-3': 66.66666667%, '3-5': 60%, 
     flex-direction: column
     &.reverse
       flex-direction: column-reverse
+  &.for-mobile
+    display: flex
+  &.stacked, & .grid
+    flex-wrap: wrap
+    &:not(:last-child)
+      margin-bottom: $gap
+    & > .tile
+      &.vertical
+        display: flex
+        padding: $gap*2 $gap
+        & > *
+          flex: 1
+  +desktop
+    &.for-desktop
+      display: flex
   +mobile
     display: block
     margin-left: 0
     margin-right: 0
   .container > &:first-child
-    margin-top: 10px
+    margin-top: $gap
 
 .tile
   flex: 1
@@ -42,6 +57,9 @@ $sizes: ('full': 100%, '4-5': 80%, '3-4': 75%, '2-3': 66.66666667%, '3-5': 60%, 
   vertical-align: top
   align-items: stretch
   min-height: min-content
+
+  .grid.for-mobile > &.width-tight
+    flex: none
 
   @each $name, $percent in $sizes
     &.width-#{$name}

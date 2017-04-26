@@ -4,7 +4,7 @@
  *
  */
 
-.button
+button, .button
   -moz-appearance: none
   -webkit-appearance: none
   display: inline-flex
@@ -13,20 +13,26 @@
   border-radius: $border-radius
   color: $light
   font-size: $font-base
+  font-weight: 300
   padding: 7px 18px
   text-decoration: none
   white-space: nowrap
   justify-content: center
   text-align: center
+  cursor: pointer
+  vertical-align: middle
   @extend .no-selection
   +transition(background-color)
   &.transparent
     background-color: transparent
     color: $default
   &.with-icon
-    padding: 7px 12px
+    padding: 7px 11px
     i
       min-width: 16px
+      margin-top: 2px
+      line-height: 18px
+      font-size: $font-small
     span
       margin-left: 10px
   &:hover,
@@ -132,21 +138,25 @@
       i
         transform: translateX(5px)
 
-.button-group > .button:first-child
+.button-group > button:first-child, .button:first-child
   margin-left: 0
-.button-group > .button:first-child:not(:last-child)
+.button-group > button:first-child:not(:last-child), .button:first-child:not(:last-child)
   border-bottom-right-radius: 0
   border-top-right-radius: 0
-.button-group > .button:not(:first-child):not(:last-child)
+.button-group > button:not(:first-child):not(:last-child), .button:not(:first-child):not(:last-child)
   border-radius: 0px
-.button-group > .button:last-child:not(:first-child)
+.button-group > button:last-child:not(:first-child), .button:last-child:not(:first-child)
   border-bottom-left-radius: 0
   border-top-left-radius: 0
+.button-group button + button,
+.button-group button + .button-group,
+.button-group .button-group + button,
+.button-group .button-group + .button-group,
 .button-group .button + .button,
 .button-group .button + .button-group,
 .button-group .button-group + .button,
 .button-group .button-group + .button-group
-  margin-left: -6px
+  margin-left: -9px + $border-size
 
 .close
   user-select: none

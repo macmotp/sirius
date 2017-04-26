@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
-    <title>Get Started - Documentation - Sirius UI</title>
-    <meta name="description" content="Get Started with Sirius UI - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
+    <title>Why Sirius? - Documentation - Sirius UI</title>
+    <meta name="description" content="Why Sirius UI? - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="revisit-after" content="30 days">
     <meta name="author" content="Larastars">
@@ -93,8 +93,8 @@
         </div>
         <div class="body">
             <div class="container">
-                <h1 class="title">Get Started</h1>
-                <h3 class="subtitle">It's easy, but not magic</h3>
+                <h1 class="title">Why Sirius?</h1>
+                <h3 class="subtitle">Save hours of unneccessary work</h3>
             </div>
         </div>
     </header>
@@ -103,55 +103,46 @@
             <div class="tile width-2-3">
                 <section class="section">
                     <div class="container">
-                        <h2 class="title">Installation</h2>
+                        <h2 class="title">Philosophy</h2>
                         <div class="content">
-                            <p>There are two ways to install Sirius:</p>
-                            <p>1. Use <strong>NPM</strong></p>
-                            <pre><code>npm install sirius-ui</code></pre>
-                            <p>2. Download the <a href="https://github.com/macmotp/sirius/archive/master.zip">Latest Release</a> from <strong>Github</strong></p>
-                            <p><a class="button" href="https://github.com/macmotp/sirius/archive/master.zip">Download</a></p>
+                            <p>Most of CSS frameworks are great for simple web applications. But none are looking good in the way modern sites are demanding.</p>
+                            <p>Sirius has a new concept of <strong>Layout First</strong>, which means that every element is built thinking about what it looks like in a structured layout.</p>
+                            <p>Of course, taste is personal but why so many websites have the same functionalies?</p>
                         </div>
                     </div>
                 </section>
                 <hr>
                 <section class="section">
                     <div class="container">
-                        <h2 class="title">Basic Usage</h2>
+                        <h2 class="title">Make it prettier (if you can)</h2>
                         <div class="content">
-                            <p>You can copy and inject the latest release directly into your HTML:</p>
+                            <p>Don't you like the default theme? Sirius is built in order to easily change colors and rendering. Every variable is linked into the same scheme through all the SASS files, so you do not need to worry about changing every element of the UI.</p>
+                            <p>For example, into <code>/sass/sirius/variables/_colors.sass</code> you will find that the <strong>default</strong> color is matching every element and layout with a <code>.bg-default</code> class.</p>
+                            <p>Same is for other variables that you will find into <code>/sass/sirius/variables/_rendering.sass</code>. Here you can define border-radius matching all the website, border-size, width and height of your principal layout elements like header and nav.</p>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <h2 class="title">Semantic Flex</h2>
+                        <div class="content">
+                            <p>No more <code>class="col-sm-6"</code> or <code>class="name-of-framework-class-1"</code>. Of course, people are used to the same classes without even know what are the styles associated. But are they easy to manage? What if you need to edit a particular segment? Do you override it and maybe it will break somewhere else?</p>
+                            <p>Sirius follows a <strong>semantic convention</strong>. Compare it with a traditional css for a button centered into a half width section in a grid:</p>
                             <div class="highlight">
-                                <pre class="language-html" data-src="../docs/html/general/schema.html"></pre>
+                                <pre class="language-html" data-src="../docs/html/general/semantic.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
-                            <p>And there you go! You are ready now to use it!</p>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="section">
-                    <div class="container">
-                        <h2 class="title">Advanced Usage and Laravel Integration</h2>
-                        <div class="content">
-                            <p>Sirius uses the wonderful Laravel Mix to built its assets. If you want to change SASS variables or add your own Vue components, install node dependencies:</p>
-                            <p>
-                            <pre><code>
-# browse to project
-cd sirius-ui
-# install dependencies
-npm install
-                            </code></pre>
-                            </p>
-
-                            <p>For Laravel 5 integration, copy the assets folder into your resources project. If you are familiar with Laravel Mix, you know you can simply run</p>
-                            <p>
-                            <pre><code>
-# compile assets in development
-npm run dev
-
-# compile and minify assets for production
-npm run production
-                            </code></pre>
-                            </p>
+                            <p>As you can see, it handles HTML5 tags in a proper way. Of course there is also a <code>.button</code> class so you can use it in a anchor link as well.</p>
+                            <p>What about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank">Flexbox</a>? Altough many developers think that it is not largely supported, current browsers are perfectly matching with Sirius requirements.</p>
+                            <p>Sirius is compatible with:</p>
+                            <ul>
+                                <li>- Safari</li>
+                                <li>- Chrome</li>
+                                <li>- Firefox</li>
+                                <li>- Internet Explorer (10+)</li>
+                                <li>- Opera</li>
+                            </ul>
                         </div>
                     </div>
                 </section>

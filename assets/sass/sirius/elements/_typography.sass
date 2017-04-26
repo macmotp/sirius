@@ -32,7 +32,7 @@ a
   &:hover, &:focus, &:active
     color: lighten($link, 10%)
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
   font-weight: 300
   margin: 20px 0 10px
   color: $text
@@ -63,7 +63,8 @@ h6, .h6
 
 p
   font-size: $font-base
-  line-height: $font-base
+  line-height: $font-base*1.2
+  font-family: "Helvetica Neue", "Helvetica", Arial
 
 code,
 pre
@@ -74,7 +75,7 @@ pre
 
 code
   background-color: $background
-  color: $highlight
+  color: $brown
   font-size: 14px
   font-weight: normal
   padding: 10px
@@ -86,11 +87,11 @@ span
 
 pre
   background-color: $background
-  color: $highlight
+  color: $brown
   word-wrap: normal
   code
     background-color: $grey-light
-    color: $highlight
+    color: $brown
     display: block
     overflow-x: auto
     padding: 20px 10px
@@ -231,4 +232,13 @@ hr
     text-align: justify
     margin-bottom: 5px
     & > code
-      padding: 0 10px
+      padding: 0
+      font-size: $font-small
+  li
+    font-family: "Helvetica Neue", "Helvetica", Arial
+    color: $text
+    padding: 5px 0
+    & > code
+      padding: 0
+      font-size: $font-small
+

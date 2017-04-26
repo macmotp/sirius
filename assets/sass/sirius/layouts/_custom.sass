@@ -6,6 +6,7 @@
  *
  */
 
+// Style for the code examples of the documentation
 .highlight
   &:not(:last-child)
     margin-bottom: 20px
@@ -45,14 +46,14 @@
     color: darken($default,10%)
 
   .token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.url,.token.inserted
-    color: $highlight
+    color: $secondary
 
   .token.entity
     color: $default
     background: $white
 
   .token.atrule,.token.attr-value,.token.keyword
-    color: lighten($default,10%)
+    color: $brown
 
   .token.function
     color: $alert
@@ -76,9 +77,11 @@
     border-bottom-left-radius: $border-radius
     border-top-right-radius: if($border-radius == 0, $border-radius, $border-radius - 1)
     color: $default
+    padding: 5px 0
     outline: none
     width: 60px
     cursor: pointer
+    font-size: $font-extra-small
     font-weight: 300
     margin-top: -2px
     margin-left: -60px
@@ -89,3 +92,10 @@
 .highlight:hover
   .copy
     display: block
+
+// Style for the cells in the grid documentation
+.cell
+  margin: $gap
+  padding: $gap
+  +mobile
+    margin: $gap 0

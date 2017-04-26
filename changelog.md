@@ -1,5 +1,14 @@
 # Sirius UI Changelog
 
+## v0.1.0-alpha
+
+### Updated
+
+* Documentation
+* Grid
+* Button
+* Typography
+
 ## v0.0.9-alpha
 
 ### Added

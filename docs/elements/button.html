@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <title>Button - Elements - Documentation - Sirius UI</title>
+    <meta name="description" content="Button - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="revisit-after" content="30 days">
+    <meta name="author" content="Larastars">
+    <meta name="robots" content="index, follow">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../../resources/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../resources/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../../resources/favicon/manifest.json">
+    <link rel="mask-icon" href="../../resources/favicon/safari-pinned-tab.svg" color="#3a98a1">
+    <link rel="shortcut icon" href="../../resources/favicon/favicon.ico">
+    <meta name="msapplication-config" content="../../resources/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#fcfcfc">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" type="text/css" rel="stylesheet">
+    <link href="../../dist/css/sirius.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="vue-wrapper" id="sirius">
+    <header class="header bg-secondary gradient">
+        <div class="head">
+            <div class="container">
+                <nav class="nav">
+                    <div class="left">
+                        <a class="item brand" href="../../">
+                            <img class="logo" src="../../resources/images/larastars.png" alt="Sirius UI">
+                            <div class="name">Sirius UI</div>
+                        </a>
+                    </div>
+                    <div class="center">
+                        <a class="item" target="_blank" href="https://www.facebook.com/larastarsgalaxy">
+                            <span class="icon">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                        <a class="item" target="_blank" href="https://twitter.com/larastarsgalaxy">
+                            <span class="icon">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                        <a class="item" target="_blank" href="https://github.com/macmotp/sirius">
+                            <span class="icon">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <span class="toggle visible" @click="$refs.sidebarMenu.toggle()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <sirius-menu ref="sidebarMenu" class="bg-dark right" :show-close-button="true" :close-on-external-click="true">
+                            <div class="head">
+                                <a href="../../">
+                                    <img class="logo" src="../../resources/images/larastars_grey.png" alt="Sirius UI">
+                                </a>
+                            </div>
+                            <sirius-list ref="main" :is-parent="true" list-name="documentation">
+                                <a href="../get-started.html"><li>Get Started</li></a>
+                                <a href="../why-sirius.html"><li>Why Sirius?</li></a>
+                                <li @click="$refs.elements.slideIn($refs.main)">
+                                    <span>Elements</span>
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </li>
+                                <li @click="$refs.layouts.slideIn($refs.main)">
+                                    <span>Layouts</span>
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </li>
+                            </sirius-list>
+                            <sirius-list ref="elements" list-name="elements">
+                                <a href="./button.html"><li>Button</li></a>
+                                <a href="./typography.html"><li>Typography</li></a>
+                            </sirius-list>
+                            <sirius-list ref="layouts" list-name="layouts">
+                                <a href="../layouts/grid.html"><li>Grid</li></a>
+                                <a href="../layouts/header.html"><li>Header</li></a>
+                                <a href="../layouts/nav.html"><li>Nav</li></a>
+                                <a href="../layouts/menu.html"><li>Menu</li></a>
+                            </sirius-list>
+                        </sirius-menu>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="body">
+            <div class="container">
+                <h1 class="title">Button</h1>
+                <h3 class="subtitle">Click here, gently</h3>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="grid">
+            <div class="tile width-full">
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Colors</h2>
+                            <p>Different <strong>colors</strong> for different <strong>backgrounds</strong>:</p>
+                            <button>Default</button>
+                            <button class="primary">Primary</button>
+                            <button class="secondary">Secondary</button>
+                            <button class="success">Success</button>
+                            <button class="alert">Alert</button>
+                            <button class="error">Error</button>
+                            <button class="light">Light</button>
+                            <button class="dark">Dark</button>
+                            <p>If you want <strong>transparent</strong> background, add the class <code>.transparent</code>:</p>
+                            <button class="transparent">Default</button>
+                            <button class="transparent primary">Primary</button>
+                            <button class="transparent secondary">Secondary</button>
+                            <button class="transparent success">Success</button>
+                            <button class="transparent alert">Alert</button>
+                            <button class="transparent error">Error</button>
+                            <button class="transparent light">Light</button>
+                            <button class="transparent dark">Dark</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/elements/button/colors.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Sizes</h2>
+                            <p>Different <strong>sizes</strong>:</p>
+                            <button class="extra-large">Extra Large</button>
+                            <button class="large">Large</button>
+                            <button>Normal</button>
+                            <button class="small">Small</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/elements/button/sizes.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">With Icons</h2>
+                            <p>You can use buttons with an <strong>icon</strong> by itself or next to a text:</p>
+                            <button class="with-icon"><i class="fa fa-user"></i></button>
+                            <button class="primary with-icon"><i class="fa fa-user"></i></button>
+                            <button class="secondary with-icon"><i class="fa fa-user"></i></button>
+                            <button class="success with-icon"><i class="fa fa-user"></i></button>
+                            <button class="alert with-icon"><i class="fa fa-user"></i></button>
+                            <button class="error with-icon"><i class="fa fa-user"></i></button>
+                            <button class="light with-icon"><i class="fa fa-user"></i></button>
+                            <button class="dark with-icon"><i class="fa fa-user"></i></button>
+                        </div>
+                        <div class="content">
+                            <button class="with-icon"><i class="fa fa-cog"></i><span>Settings</span></button>
+                            <button class="primary transparent with-icon"><i class="fa fa-user"></i><span>Profile</span></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/elements/button/icons.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Animations</h2>
+                            <p>Icons inside a button can perform <strong>animations</strong>. Add one of the following classes, point over a button and watch:</p>
+                            <ul>
+                                <li><code>.spin</code></li>
+                                <li><code>.rotate</code></li>
+                                <li><code>.magnify</code></li>
+                                <li><code>.move-left</code></li>
+                                <li><code>.move-right</code></li>
+                            </ul>
+                            <button class="spin with-icon"><i class="fa fa-circle-o-notch fa-spin"></i><span>Loading</span></button>
+                            <button class="rotate with-icon"><i class="fa fa-cog"></i><span>Action</span></button>
+                            <button class="magnify with-icon"><i class="fa fa-search"></i><span>Search</span></button>
+                            <button class="move-left with-icon"><i class="fa fa-chevron-left"></i><span>Back</span></button>
+                            <button class="move-right with-icon"><span>Next</span><i class="fa fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/elements/button/animations.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Socials</h2>
+                            <p>If you need a share button, there are several <strong>socials</strong> with their specific colors:</p>
+                            <button class="with-icon twitter"><i class="fa fa-twitter"></i></button>
+                            <button class="with-icon facebook"><i class="fa fa-facebook"></i></button>
+                            <button class="with-icon google"><i class="fa fa-google"></i></button>
+                            <button class="with-icon youtube"><i class="fa fa-youtube-play"></i></button>
+                            <button class="with-icon linkedin"><i class="fa fa-linkedin"></i></button>
+                            <button class="with-icon github"><i class="fa fa-github"></i></button>
+                            <button class="with-icon pinterest"><i class="fa fa-pinterest"></i></button>
+                            <button class="with-icon dribbble"><i class="fa fa-dribbble"></i></button>
+                            <button class="with-icon instagram"><i class="fa fa-instagram"></i></button>
+                            <button class="with-icon snapchat"><i class="fa fa-snapchat"></i></button>
+                            <button class="with-icon reddit"><i class="fa fa-reddit"></i></button>
+                            <button class="with-icon tumblr"><i class="fa fa-tumblr"></i></button>
+                            <button class="with-icon vimeo"><i class="fa fa-vimeo"></i></button>
+                            <button class="with-icon flickr"><i class="fa fa-flickr"></i></button>
+                            <button class="with-icon skype"><i class="fa fa-skype"></i></button>
+                            <button class="with-icon rss"><i class="fa fa-rss"></i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/elements/button/socials.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Group</h2>
+                            <p>You can <strong>group</strong> multiple buttons together by wrapping them in a <code>.button-group</code>:</p>
+                            <div class="button-group">
+                                <button class="secondary">1</button>
+                                <button class="secondary">2</button>
+                                <button class="secondary">3</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/elements/button/group.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../../dist/js/sirius.js"></script>
+<script src="../../resources/js/prism.min.js"></script>
+<script src="../../resources/js/clipboard.min.js"></script>
+<script>
+    new Clipboard('.copy', {
+        target: function(trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+</script>
+
+</body>
+</html>
