@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <title>Header - Layouts - Documentation - Sirius UI</title>
+    <meta name="description" content="Header - Layouts - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="revisit-after" content="30 days">
+    <meta name="author" content="Larastars">
+    <meta name="robots" content="index, follow">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../../resources/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../resources/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../../resources/favicon/manifest.json">
+    <link rel="mask-icon" href="../../resources/favicon/safari-pinned-tab.svg" color="#3a98a1">
+    <link rel="shortcut icon" href="../../resources/favicon/favicon.ico">
+    <meta name="msapplication-config" content="../../resources/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#fcfcfc">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" type="text/css" rel="stylesheet">
+    <link href="../../dist/css/sirius.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="vue-wrapper" id="sirius">
+    <header class="header bg-secondary gradient">
+        <div class="head">
+            <div class="container">
+                <nav class="nav">
+                    <div class="left">
+                        <a class="item brand" href="../../">
+                            <img class="logo" src="../../resources/images/larastars.png" alt="Sirius UI">
+                            <div class="name">Sirius UI</div>
+                        </a>
+                    </div>
+                    <div class="center">
+                        <a class="item" target="_blank" href="https://www.facebook.com/larastarsgalaxy">
+                            <span class="icon">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                        <a class="item" target="_blank" href="https://twitter.com/larastarsgalaxy">
+                            <span class="icon">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                        <a class="item" target="_blank" href="https://github.com/macmotp/sirius">
+                            <span class="icon">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <span class="toggle visible" @click="$refs.sidebarMenu.toggle()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <sirius-menu ref="sidebarMenu" class="bg-dark right" :show-close-button="true" :close-on-external-click="true">
+                            <div class="head">
+                                <a href="../../">
+                                    <img class="logo" src="../../resources/images/larastars_grey.png" alt="Sirius UI">
+                                </a>
+                            </div>
+                            <sirius-list ref="main" :is-parent="true" list-name="documentation">
+                                <a href="../get-started.html"><li>Get Started</li></a>
+                                <a href="../why-sirius.html"><li>Why Sirius?</li></a>
+                                <li @click="$refs.elements.slideIn($refs.main)">
+                                    <span>Elements</span>
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </li>
+                                <li @click="$refs.layouts.slideIn($refs.main)">
+                                    <span>Layouts</span>
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </li>
+                            </sirius-list>
+                            <sirius-list ref="elements" list-name="elements">
+                                <a href="../elements/button.html"><li>Button</li></a>
+                                <a href="../elements/typography.html"><li>Typography</li></a>
+                            </sirius-list>
+                            <sirius-list ref="layouts" list-name="layouts">
+                                <a href="./grid.html"><li>Grid</li></a>
+                                <a href="./header.html"><li>Header</li></a>
+                                <a href="./nav.html"><li>Nav</li></a>
+                                <a href="./menu.html"><li>Menu</li></a>
+                            </sirius-list>
+                        </sirius-menu>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="body">
+            <div class="container">
+                <h1 class="title">Header</h1>
+                <h3 class="subtitle">On top of everything</h3>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="grid">
+            <div class="tile width-full">
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Title and Subtitle</h2>
+                            <p>Simple as <strong>that</strong>: a <code>.title</code> and a <code>.subtitle</code> over a beautiful banner.</p>
+                            <header class="bg-default">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Title
+                                        </h1>
+                                        <h3 class="subtitle">
+                                            Subtitle
+                                        </h3>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/layouts/header/simple.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Colors</h2>
+                            <p>By default a header is transparent. Choose between <strong>different</strong> colors matching your variables:</p>
+                            <header class="bg-default">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Default
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-primary">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Primary
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-secondary">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Secondary
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-success">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Success
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-alert">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Alert
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-error">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Error
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-light">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Light
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-dark">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            Dark
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/layouts/header/colors.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Gradient</h2>
+                            <p>By adding the <code>.gradient</code> class, you can generate a subtle <strong>gradient</strong>:</p>
+                            <header class="bg-secondary gradient">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            With Gradient
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                            <header class="bg-dark gradient">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title">
+                                            For every color
+                                        </h1>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/layouts/header/gradient.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Sizes</h2>
+                            <p>You can have even more imposing headers by using one out of <strong>3 different sizes</strong>:</p>
+                            <header class="bg-default medium">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title"> Medium </h1>
+                                    </div>
+                                </div>
+                            </header>
+
+                            <header class="bg-secondary large">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title"> Large </h1>
+                                    </div>
+                                </div>
+                            </header>
+
+                            <header class="bg-primary full">
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title"> Full Height </h1>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/layouts/header/sizes.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Top-Center-Bottom</h2>
+                            <p>You can split the header in <strong>3 vertical parts</strong>:</p>
+                            <ul>
+                                <li><code>.head</code> (always at the top)</li>
+                                <li><code>.body</code> (always vertically centered)</li>
+                                <li><code>.foot</code> (always at the bottom)</li>
+                            </ul>
+                            <header class="bg-primary medium gradient">
+                                <div class="head">
+                                    <div class="container">
+                                        <h3 class="title"> Always at the Top </h3>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <div class="container">
+                                        <h1 class="title"> Always Vertically Centered </h1>
+                                    </div>
+                                </div>
+                                <div class="foot">
+                                    <div class="container">
+                                        <h3 class="title"> Always at the Bottom </h3>
+                                    </div>
+                                </div>
+                            </header>
+                            <p>Tip: you can add the class <code>.text-center</code> in order to horizontally align items.</p>
+                            <p>Remember that you can use <code>.head</code> and <code>.foot</code> with components and elements!</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../html/layouts/header/tcb.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../../dist/js/sirius.js"></script>
+<script src="../../resources/js/prism.min.js"></script>
+<script src="../../resources/js/clipboard.min.js"></script>
+<script>
+    new Clipboard('.copy', {
+        target: function(trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+</script>
+
+</body>
+</html>

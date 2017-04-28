@@ -3,9 +3,9 @@
 [![npm](https://img.shields.io/npm/v/sirius-ui.svg)](https://www.npmjs.com/package/sirius-ui)
 [![npm](https://img.shields.io/npm/dm/sirius-ui.svg)](https://www.npmjs.com/package/sirius-ui)
 
-Sirius UI - Flexible CSS Framework based on [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) and [VueJs](https://vuejs.org).
+Sirius UI - Flexible CSS Framework based on [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) and [Vue](https://vuejs.org).
 
-[![Sirius UI - Flexible CSS Framework](https://raw.githubusercontent.com/macmotp/sirius/master/resources/images/larastars_alt.png)](https://larastars.com/sirius/demo)
+[![Sirius UI - Flexible CSS Framework](https://raw.githubusercontent.com/macmotp/sirius/master/resources/images/sirius_cover.png)](https://larastars.com/sirius/demo)
 
 Build your beautiful website with Sirius. Fully responsive elements and layouts. Easy integration for Laravel 5.
 

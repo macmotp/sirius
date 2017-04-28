@@ -4,136 +4,7 @@
  *
  */
 
-.nav
-  .item
-    align-items: center
-    display: flex
-    justify-content: center
-    padding: 10px
-    a
-      flex-grow: 1
-      flex-shrink: 0
-    img
-      max-height: $nav-height - 20px
-    &.brand
-      .name
-        +transition(color)
-        font-size: 24px
-        line-height: 24px
-        margin: 0
-        margin-left: 10px
-        color: $light
-      &:hover
-        .name
-          color: lighten($default,30%)
-    .button + .button
-      margin-left: 10px
-    .tag
-      &:first-child
-        margin-right: 5px
-      &:last-child
-        margin-left: 5px
-    .icon > i
-      font-size: $font-base
-      color: $light
-      +transition(color)
-      &:hover
-        color: lighten($default,30%)
-    +mobile
-      justify-content: flex-start
-
-  .item a,
-  a.item
-    color: $text
-    &:hover
-      color: lighten($text,10%)
-    &.active
-      color: lighten($text,10%)
-    &.tab
-      border-bottom: 1px solid transparent
-      border-top: 1px solid transparent
-      padding-left: 12px
-      padding-right: 12px
-      &:hover
-        border-bottom: 3px solid $link
-        border-top: 3px solid transparent
-      &.active
-        border-bottom: 3px solid $link
-        border-top: 3px solid transparent
-        color: $link
-
-  .left
-    align-items: stretch
-    display: flex
-    flex-basis: 0
-    flex-grow: 1
-    flex-shrink: 0
-    flex: 1
-    justify-content: flex-start
-    overflow: hidden
-    overflow-x: auto
-    white-space: nowrap
-
-  .center
-    +mobile
-      display: none
-    +tablet
-      align-items: stretch
-      display: flex
-      flex: 1
-      justify-content: center
-      margin-left: auto
-      margin-right: auto
-
-  .right
-    +tablet
-      align-items: stretch
-      display: flex
-      flex-basis: 0
-      flex-grow: 1
-      flex-shrink: 0
-      flex: 1
-      justify-content: flex-end
-
-  align-items: stretch
-  background-color: transparent
-  display: flex
-  min-height: $nav-height
-  position: relative
-  text-align: center
-  z-index: 2
-  padding: 0px
-  & > .container
-    align-items: stretch
-    display: flex
-    min-height: $nav-height
-    width: 100%
-    & > .left
-      & > .item:first-child:not(.tab)
-        padding-left: 0
-    & > .right
-      & > .item:last-child:not(.tab)
-        padding-right: 0
-  .container > &
-    & > .left
-      & > .item:first-child:not(.tab)
-        padding-left: 0
-    & > .right
-      & > .item:last-child:not(.tab)
-        padding-right: 0
-  &.has-shadow
-    box-shadow: 0 2px 3px rgba($black, 0.1)
-  +touch
-    padding: 0
-    margin-left: -$gap
-    margin-right: -$gap
-    & > .container,
-    .container > &
-      & > .left
-        & > .item.brand:first-child
-          padding-left: $gap
-
-.hamburger
+.toggle
   cursor: pointer
   display: block
   height: $nav-height
@@ -172,10 +43,156 @@
         margin-left: -5px
         transform: rotate(-45deg)
         transform-origin: left bottom
-
-.toggle
-  @extend .hamburger
   +tablet
     &:not(&.visible)
       display: none
+
+nav, .nav
+  align-items: stretch
+  background-color: transparent
+  display: flex
+  min-height: $nav-height
+  position: relative
+  text-align: center
+  padding: 0px
+  .item
+    align-items: center
+    display: flex
+    justify-content: center
+    padding: 10px
+    color: $light
+    a
+      flex-grow: 1
+      flex-shrink: 0
+    img
+      max-height: $nav-height - 20px
+    &.brand
+      .name
+        +transition(color)
+        font-size: 24px
+        line-height: 24px
+        margin: 0
+        margin-left: 10px
+        color: $light
+      &:hover
+        .name
+          color: lighten($primary,30%)
+    .button + .button
+      margin-left: 10px
+    .tag
+      &:first-child
+        margin-right: 5px
+      &:last-child
+        margin-left: 5px
+    .icon > i
+      font-size: $font-base
+      color: $light
+      +transition(color)
+      &:hover
+        color: lighten($primary,30%)
+    +mobile
+      justify-content: flex-start
+  .item a:not(.button),
+  a.item:not(.button)
+    color: $light
+    &:hover
+      color: lighten($primary,30%)
+    &.active
+      color: lighten($primary,30%)
+
+  .left
+    align-items: stretch
+    display: flex
+    flex-basis: 0
+    flex-grow: 1
+    flex-shrink: 0
+    flex: 1
+    justify-content: flex-start
+    overflow: hidden
+    overflow-x: auto
+    white-space: nowrap
+
+  .center
+    +mobile
+      display: none
+    +tablet
+      align-items: stretch
+      display: flex
+      flex: 1
+      justify-content: center
+      margin-left: auto
+      margin-right: auto
+
+  .right
+    +tablet
+      align-items: stretch
+      display: flex
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 0
+      flex: 1
+      justify-content: flex-end
+    & > .item
+      +mobile
+        display: none
+
+  & > .container
+    align-items: stretch
+    display: flex
+    min-height: $nav-height
+    width: 100%
+    & > .left
+      & > .item:first-child:not(.tab)
+        padding-left: 0
+    & > .right
+      & > .item:last-child:not(.tab)
+        padding-right: 0
+  .container > &
+    & > .left
+      & > .item:first-child:not(.tab)
+        padding-left: 0
+    & > .right
+      & > .item:last-child:not(.tab)
+        padding-right: 0
+  &.has-shadow
+    box-shadow: 0 2px 3px rgba($black, 0.1)
+
+  @each $key, $values in $colors
+    $color: nth($values, 1)
+    $inverse: nth($values, 2)
+    &.bg-#{$key}
+      background-color: $color
+      @if($key == 'light')
+        color: $inverse
+        .item
+          color: $inverse
+          &.brand
+            .name
+              color: $inverse
+            &:hover
+              .name
+                color: lighten($inverse,10%)
+          .icon > i
+            color: $inverse
+            &:hover
+              color: lighten($inverse,10%)
+        .item a:not(.button),
+        a.item:not(.button)
+          color: $inverse
+          &:hover
+            color: lighten($inverse,10%)
+          &.active
+            color: lighten($inverse,10%)
+        .toggle span
+          background-color: $dark
+  +touch
+    padding: 0
+    margin-left: -$gap
+    margin-right: -$gap
+    & > .container,
+    .container > &
+      & > .left
+        & > .item.brand:first-child
+          padding-left: $gap
+
 

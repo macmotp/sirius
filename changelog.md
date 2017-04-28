@@ -1,5 +1,15 @@
 # Sirius UI Changelog
 
+## v0.1.1-alpha
+
+### Added
+
+* Cover for Readme
+
+### Updated
+
+* Documentation
+
 ## v0.1.0-alpha
 
 ### Updated

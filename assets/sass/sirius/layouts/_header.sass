@@ -4,7 +4,7 @@
  *
  */
 
-.header
+header, .header
   align-items: stretch
   background-color: transparent
   color: $default
@@ -43,11 +43,12 @@
   .head,
   .foot
     flex-shrink: 0
-    padding: $gap 0
+    padding: $gap
+    min-height: $nav-height
   .body
     flex-grow: 1
     flex-shrink: 0
-    padding: $gap 0
+    padding: $gap
   @each $key, $values in $colors
     $color: nth($values, 1)
     $inverse: nth($values, 2)

@@ -115,7 +115,7 @@ menu, .menu, menu.left, .menu.left
       pointer-events: auto
       &::before
         opacity: 1
-        transition: opacity 0.3s ease-in
+        transition: opacity 0.6s ease-in
         transition-delay: 0s
     .sidebar
       pointer-events: auto
@@ -124,9 +124,9 @@ menu, .menu, menu.left, .menu.left
         transition-delay: 0s
       .container
         opacity: 1
-        transition: opacity 0.6s cubic-bezier(0.2, 1, 0.3, 1)
+        transition: opacity 0.4s cubic-bezier(0.2, 1, 0.3, 1)
         transform: translate3d(0,0,0)
-        transition: transform 0.8s
+        transition: transform 0.5s
         transition-timing-function: cubic-bezier(0.7,0,0.3,1)
         overflow-y: scroll
         height: 100%
@@ -152,10 +152,10 @@ menu, .menu, menu.left, .menu.left
           border-right: none
 
 .slide-fade-left-enter-active
-  animation: inFromLeft 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+  animation: inFromLeft 0.4s both cubic-bezier(0.7, 0, 0.3, 1)
 .slide-fade-left-leave-active
-  animation: outToLeft 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+  animation: outToLeft 0.4s both cubic-bezier(0.7, 0, 0.3, 1)
 .slide-fade-right-enter-active
-  animation: inFromRight 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+  animation: inFromRight 0.4s both cubic-bezier(0.7, 0, 0.3, 1)
 .slide-fade-right-leave-active
-  animation: outToRight 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+  animation: outToRight 0.4s both cubic-bezier(0.7, 0, 0.3, 1)
