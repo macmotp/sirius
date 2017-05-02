@@ -146,10 +146,27 @@ menu, .menu, menu.left, .menu.left
         box-shadow: 0 2px 3px rgba($color, 0.1), 0 0 0 1px rgba($color, 0.1)
         h1, h2, h3, h4, h5, h6
           color: $inverse !important
+      .sidebar
+        .container
+          .list
+            a
+              color: $inverse
+            li
+              color: $inverse
+          .breadcrumb
+            padding: 10px 0
+            span
+              color: $inverse
+              &:hover
+                color: lighten($color,10%)
+              & > i
+                color: grayscale($inverse)
       &.right
         .sidebar::before
           border-left: $border-size solid darken($color,10%)
           border-right: none
+      .close:before, .close:after
+        background-color: $inverse
 
 .slide-fade-left-enter-active
   animation: inFromLeft 0.4s both cubic-bezier(0.7, 0, 0.3, 1)

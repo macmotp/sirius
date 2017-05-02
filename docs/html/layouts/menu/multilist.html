@@ -1,0 +1,25 @@
+<sirius-menu ref="sidebarMulti" class="bg-default left">
+    <sirius-list ref="list1" :is-parent="true" list-name="List 1">
+        <li @click="$refs.list2.slideIn($refs.list1)">
+            <span>List 2</span>
+            <i class="fa fa-ellipsis-h"></i>
+        </li>
+        <li @click="$refs.list3.slideIn($refs.list1)">
+            <span>List 3</span>
+            <i class="fa fa-ellipsis-h"></i>
+        </li>
+    </sirius-list>
+    <sirius-list ref="list2" list-name="List 2">
+        <li>Child of List 2</li>
+    </sirius-list>
+    <sirius-list ref="list3" list-name="List 3">
+        <li>Child of List 3</li>
+        <li @click="$refs.list4.slideIn($refs.list3)">
+            <span>Child of List 3 with other children</span>
+            <i class="fa fa-ellipsis-h"></i>
+        </li>
+    </sirius-list>
+    <sirius-list ref="list4" list-name="List 4">
+        <li>Child of List 4</li>
+    </sirius-list>
+</sirius-menu>

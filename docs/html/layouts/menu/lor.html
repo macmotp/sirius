@@ -1,0 +1,27 @@
+<button class="primary" @click="$refs.sidebarMenuLeft.toggle()">From the Left</button>
+<button class="secondary" @click="$refs.sidebarMenuRight.toggle()">From the Right</button>
+
+<sirius-menu ref="sidebarMenuLeft" class="bg-primary left">
+    <div class="head">
+        <a href="#">
+            <img class="logo" src="#">
+        </a>
+    </div>
+    <ul class="list">
+        <li>From the Left</li>
+        <li>Link</li>
+        <li>Another Link</li>
+    </ul>
+</sirius-menu>
+<sirius-menu ref="sidebarMenuRight" class="bg-secondary right">
+    <div class="head">
+        <a href="#">
+            <img class="logo" src="#">
+        </a>
+    </div>
+    <ul class="list">
+        <li>From the Right</li>
+        <li>Link</li>
+        <li>Another Link</li>
+    </ul>
+</sirius-menu>
