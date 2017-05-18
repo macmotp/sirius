@@ -1,0 +1,57 @@
+/*
+ *
+ * Elements - Select
+ *
+ */
+
+
+.select
+  display: inline-block
+  height: 32px
+  position: relative
+  vertical-align: top
+  select
+    align-items: center
+    background-color: darken($light,3%)
+    border: $border-size solid darken($primary,10%)
+    border-radius: $border-radius
+    color: $primary
+    font-size: $font-base
+    height: 40px
+    width: 100%
+    padding: 7px 36px 7px 10px
+    justify-content: flex-start
+    position: relative
+    vertical-align: top
+    cursor: pointer
+    display: block
+    outline: none
+    text-transform: none
+    -webkit-appearance: none
+    &:active,
+    &:focus,
+    &.active
+      border-color: lighten($primary,10%)
+      outline: none
+    &[disabled],
+    &.disabled
+      background-color: $background
+      border-color: $default
+      color: rgba($default, 0.3)
+      cursor: not-allowed
+    &::ms-expand
+      display: none
+  &:after
+    border: 2px solid darken($primary,10%)
+    border-right: 0
+    border-top: 0
+    content: " "
+    display: block
+    height: 8px
+    width: 8px
+    margin-top: -2px
+    right: 16px
+    top: 50%
+    pointer-events: none
+    position: absolute
+    transform: rotate(-45deg)

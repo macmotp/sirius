@@ -1,0 +1,192 @@
+/*
+ *
+ * Elements - Input
+ *
+ */
+
+$input-height: 20px
+$input-height-small: 15px
+$input-height-large: 30px
+
+form, .form
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  & > .column
+    display: inline-flex
+    flex-direction: column
+    margin: 0 $gap
+    flex: 1 auto
+    &:first-child
+      margin-left: 0px
+    &:last-child
+      margin-right: 0px
+    & > input, & > .input, & > .input-group
+      margin-bottom: 10px
+      display: inline-flex
+
+
+input[type="text"], .input
+  display: flex
+  vertical-align: top
+  align-items: stretch
+  justify-content: flex-start
+  position: relative
+  vertical-align: top
+  background-color: darken($light,2%)
+  border: $border-size solid darken($primary,10%)
+  border-radius: $border-radius
+  color: $dark
+  font-size: $font-small
+  font-weight: 300
+  height: $input-height
+  padding: 7px 10px
+  width: 100%
+  form > &:not(:last-child), .form > &:not(:last-child), form > &:only-child, .form > &:only-child
+      margin-bottom: 10px
+  +transition(border-color)
+  &:active,
+  &:focus,
+  &.active
+    border-color: lighten($primary,10%)
+    background-color: $light
+    outline: none
+  &[disabled],
+  &.disabled
+    background-color: lighten($default, 30%)
+    border-color: $default
+    cursor: not-allowed
+    +placeholder
+      color: rgba($default, 0.3)
+  & + i
+    display: inline-block
+    font-size: $font-base
+    height: $input-height
+    line-height: $input-height
+    text-align: center
+    width: $input-height
+    color: $default
+    pointer-events: none
+    position: absolute
+    z-index: 4
+    right: 10px
+    top: 8px
+  @each $key, $values in $colors
+    $color: nth($values, 1)
+    &.has-#{$key}
+      border-color: darken($color,10%)
+      & + i
+        color: $color
+  &.small
+    font-size: $font-small
+    height: $input-height-small
+    padding: 5px 15px
+    & + i
+      font-size: $font-small
+      height: $input-height-small
+      line-height: $input-height-small
+      width: $input-height-small
+  &.large
+    font-size: $font-large
+    height: $input-height-large
+    padding: 9px 21px
+    & + i
+      font-size: $font-large
+      height: $input-height-large
+      line-height: $input-height-large
+      width: $input-height-large
+
+
+.has-left-icon, .has-left-button
+  display: inline-flex
+  max-width: 100%
+  width: 100%
+  .input-icon
+    @extend .button
+    @extend .button.with-icon
+    text-align: center
+    height: $input-height
+    cursor: default
+  .input-button button, .input-button .button
+    padding: 6.5px 18px
+  .input-button i
+    display: inline
+  .input-icon, .input-button button, .input-button .button
+    border-top-right-radius: 0px
+    border-bottom-right-radius: 0px
+    margin: 0
+  .input, input
+    border-top-left-radius: 0px
+    border-bottom-left-radius: 0px
+    border-left: 0px
+
+.has-right-icon, .has-right-button
+  display: inline-flex
+  max-width: 100%
+  width: 100%
+  .input-icon
+    @extend .button
+    @extend .button.with-icon
+    text-align: center
+    height: $input-height
+    cursor: default
+  .input-button button, .input-button .button
+    padding: 6.5px 18px
+  .input-button i
+    display: inline
+  .input-icon, .input-button button, .input-button .button
+    border-top-left-radius: 0px
+    border-bottom-left-radius: 0px
+    margin: 0
+  .input, input
+    border-top-right-radius: 0px
+    border-bottom-right-radius: 0px
+    border-right: 0px
+
+.has-left-button.has-right-button
+  .input-icon:first-child, .input-button:first-child button
+    border-top-left-radius: $border-radius
+    border-bottom-left-radius: $border-radius
+  .input-icon:last-child, .input-button:last-child button
+    border-top-right-radius: $border-radius
+    border-bottom-right-radius: $border-radius
+
+
+.input-label
+  font-weight: bold
+  margin-bottom: 5px
+
+.input-group
+  position: relative
+  text-align: left
+  &:not(:last-child)
+    margin-bottom: 10px
+  & > .input, input
+    margin-bottom: 0
+  .input-label
+    margin-right: 20px
+    padding-top: 10px
+    text-align: right
+    min-width: 100px
+  &.input-group-small
+    .button
+      height: $input-height-small
+      font-size: $font-small
+      line-height: $font-small
+  &.input-group-large
+    .button
+      height: $input-height-large
+      font-size: $font-large
+      line-height: $font-large
+
+textarea, .textarea
+  @extend .input
+  height: auto
+  max-width: 100%
+  resize: none
+
+.help
+  display: block
+  font-size: $font-small
+  margin-top: 5px
+

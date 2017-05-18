@@ -16,11 +16,13 @@ In current version:
   * Elements
     * Typography
     * Button
+    * Form inputs: text, checkbox, radio, switch, select
   * Layouts
     * Grid
     * Header
     * Nav
     * Menu
+    * Footer
 * Vue
   * Menu
   * List

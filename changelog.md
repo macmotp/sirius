@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.1.3-alpha
+
+### Added
+
+* Form: Text inputs, checkbox, radio, switch, select
+
 ## v0.1.2-alpha
 
 ### Added
