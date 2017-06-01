@@ -1,0 +1,53 @@
+/*
+ *
+ * Elements - Notification
+ *
+ */
+
+.with-ribbon
+  position: relative
+
+  .ribbon-wrapper
+    position: absolute
+    overflow: hidden
+    width: 85px
+    height: 88px
+    top: -2px
+    right: -2px
+
+  .ribbon
+    position: relative
+    display: block
+    text-align: center
+    font-size: $font-small
+    color: $light
+    transform: rotate(45deg)
+    padding: 7px 0
+    left: -5px
+    top: 15px
+    width: 120px
+    line-height: 20px
+    background-color: $default
+    box-shadow: 0 0 3px rgba($dark,0.3)
+    &:before, &:after
+      position: absolute
+      content: " "
+      line-height: 0
+      border-top: 2px solid $default
+      border-left: 2px solid transparent
+      border-right: 2px solid transparent
+      bottom: -2px
+    &:before
+      left: 0
+      bottom: -1px
+    &:after
+      right: 0
+
+  @each $key, $values in $colors
+    $color: nth($values, 1)
+    $inverse: nth($values, 2)
+    &.#{$key} .ribbon
+      background-color: $color
+      color: $inverse
+    &.#{$key} .ribbon:before, &.#{$key} .ribbon:after
+      border-top: $border-size solid darken($color,10%)

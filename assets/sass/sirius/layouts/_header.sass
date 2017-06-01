@@ -45,10 +45,14 @@ header, .header
     flex-shrink: 0
     padding: $gap
     min-height: $nav-height
+    +mobile
+      padding: $gap 0
   .body
     flex-grow: 1
     flex-shrink: 0
     padding: $gap
+    +mobile
+      padding: $gap 0
   @each $key, $values in $colors
     $color: nth($values, 1)
     $inverse: nth($values, 2)

@@ -1,0 +1,28 @@
+/*
+ *
+ * Elements - Badge
+ *
+ */
+
+.badge
+  display: inline-block
+  vertical-align: middle
+  white-space: nowrap
+  text-align: center
+  padding: 8px
+  border-radius: 50%
+  min-width: 10px
+  width: 20px
+  height: 20px
+  font-size: $font-small
+  font-weight: 300
+  line-height: 1.2
+  background-color: $default
+  color: $light
+  box-shadow: 0px 1px 2px $default
+  @each $key, $values in $colors
+    $color: nth($values, 1)
+    $inverse: nth($values, 2)
+    &.#{$key}
+      background-color: $color
+      color: $inverse

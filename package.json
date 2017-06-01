@@ -1,6 +1,6 @@
 {
   "name": "sirius-ui",
-  "version": "v0.1.3-alpha",
+  "version": "v0.1.4-alpha",
   "homepage": "https://larastars.com/sirius/demo",
   "author": "Marco Gava <info@larastars.com> (https://www.linkedin.com/in/gavamarco)",
   "description": "Flexible CSS Framework built with Flexbox and Vue",

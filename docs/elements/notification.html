@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
-    <title>Button - Elements - Documentation - Sirius UI</title>
-    <meta name="description" content="Button - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
+    <title>Notification - Elements - Documentation - Sirius UI</title>
+    <meta name="description" content="Notification - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="revisit-after" content="30 days">
     <meta name="author" content="Larastars">
@@ -96,36 +96,54 @@
         </div>
         <div class="body">
             <div class="container">
-                <h1 class="title">Button</h1>
-                <h3 class="subtitle">Click here, gently</h3>
+                <h1 class="title">Notification</h1>
+                <h3 class="subtitle">Uh oh. Something happened.</h3>
             </div>
         </div>
     </header>
     <div class="container">
         <div class="grid">
-            <div class="tile width-full">
+            <div class="tile width-2-3">
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Basic</h2>
+                            <p>A custom template containing a message. Tag is <code>sirius-notification</code>.</p>
+                            <sirius-notification v-for="(notification, index) in basicNotifications"
+                                                 v-bind:key="notification"
+                                                 v-on:remove="basicNotifications.splice(index, 1)"
+                                                 :show-remove-button="notification.showRemoveButton">
+                                {{notification.message}}
+                            </sirius-notification>
+                            <button class="primary" @click="addBasicNotification()" v-show="basicNotifications.length < 4">Add Notification</button>
+                            <p>This is a Vue template, you can set <code>:show-remove-button</code> as property (default is true).</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/elements/notification/basic.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
                 <section class="section">
                     <div class="container">
                         <div class="content">
                             <h2 class="title">Colors</h2>
-                            <p>Different <strong>colors</strong> for different <strong>backgrounds</strong>:</p>
-                            <button>Default</button>
-                            <button class="primary">Primary</button>
-                            <button class="secondary">Secondary</button>
-                            <button class="success">Success</button>
-                            <button class="alert">Alert</button>
-                            <button class="error">Error</button>
-                            <button class="light">Light</button>
-                            <button class="dark">Dark</button>
-                            <p>If you want <strong>transparent</strong> background, add the class <code>.transparent</code>:</p>
-                            <button class="transparent">Default</button>
-                            <button class="transparent primary">Primary</button>
-                            <button class="transparent secondary">Secondary</button>
-                            <button class="transparent success">Success</button>
-                            <button class="transparent alert">Alert</button>
-                            <button class="transparent error">Error</button>
-                            <button class="transparent light">Light</button>
-                            <button class="transparent dark">Dark</button>
+                            <p>Different <strong>colors</strong>:</p>
+                            <sirius-notification>Default</sirius-notification>
+                            <sirius-notification class="bg-primary">Primary</sirius-notification>
+                            <sirius-notification class="bg-secondary">Secondary</sirius-notification>
+                            <sirius-notification class="bg-success">Success</sirius-notification>
+                            <sirius-notification class="bg-alert">Alert</sirius-notification>
+                            <sirius-notification class="bg-error">Error</sirius-notification>
+                            <sirius-notification class="bg-light">Light</sirius-notification>
+                            <sirius-notification class="bg-dark">Dark</sirius-notification>
                         </div>
                     </div>
                 </section>
@@ -133,7 +151,7 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/button/colors.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/notification/colors.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>
@@ -143,12 +161,16 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Sizes</h2>
-                            <p>Different <strong>sizes</strong>:</p>
-                            <button class="extra-large">Extra Large</button>
-                            <button class="large">Large</button>
-                            <button>Normal</button>
-                            <button class="small">Small</button>
+                            <h2 class="title">Badges</h2>
+                            <p>If you need a label with just one <strong>icon</strong> or a <strong>number</strong>, use the <code>.badge</code>:</p>
+                            <div class="badge"><i class="fa fa-cog"></i></div>
+                            <div class="badge primary"><i class="fa fa-user"></i></div>
+                            <div class="badge secondary"><i class="fa fa-info"></i></div>
+                            <div class="badge success"><i class="fa fa-check"></i></div>
+                            <div class="badge alert"><i class="fa fa-bell"></i></div>
+                            <div class="badge error"><i class="fa fa-heart"></i></div>
+                            <div class="badge light">10</div>
+                            <div class="badge dark">0</div>
                         </div>
                     </div>
                 </section>
@@ -156,7 +178,7 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/button/sizes.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/notification/badges.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>
@@ -166,20 +188,16 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">With Icons</h2>
-                            <p>You can use buttons with an <strong>icon</strong> by itself or next to a text:</p>
-                            <button class="with-icon"><i class="fa fa-user"></i></button>
-                            <button class="primary with-icon"><i class="fa fa-user"></i></button>
-                            <button class="secondary with-icon"><i class="fa fa-user"></i></button>
-                            <button class="success with-icon"><i class="fa fa-user"></i></button>
-                            <button class="alert with-icon"><i class="fa fa-user"></i></button>
-                            <button class="error with-icon"><i class="fa fa-user"></i></button>
-                            <button class="light with-icon"><i class="fa fa-user"></i></button>
-                            <button class="dark with-icon"><i class="fa fa-user"></i></button>
-                        </div>
-                        <div class="content">
-                            <button class="with-icon"><i class="fa fa-cog"></i><span>Settings</span></button>
-                            <button class="primary transparent with-icon"><i class="fa fa-user"></i><span>Profile</span></button>
+                            <h2 class="title">Tags</h2>
+                            <p>For simple labeling, use <strong>tags</strong>:</p>
+                            <div class="tag">Default</div>
+                            <div class="tag primary">Primary</div>
+                            <div class="tag secondary">Secondary</div>
+                            <div class="tag success">Success</div>
+                            <div class="tag alert">Alert</div>
+                            <div class="tag error">Error</div>
+                            <div class="tag light">Light</div>
+                            <div class="tag dark">Dark</div>
                         </div>
                     </div>
                 </section>
@@ -187,7 +205,7 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/button/icons.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/notification/tags.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>
@@ -197,20 +215,83 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Animations</h2>
-                            <p>Icons inside a button can perform <strong>animations</strong>. Add one of the following classes, point over a button and watch:</p>
-                            <ul>
-                                <li><code>.spin</code></li>
-                                <li><code>.rotate</code></li>
-                                <li><code>.magnify</code></li>
-                                <li><code>.move-left</code></li>
-                                <li><code>.move-right</code></li>
-                            </ul>
-                            <button class="spin with-icon"><i class="fa fa-circle-o-notch fa-spin"></i><span>Loading</span></button>
-                            <button class="rotate with-icon"><i class="fa fa-cog"></i><span>Action</span></button>
-                            <button class="magnify with-icon"><i class="fa fa-search"></i><span>Search</span></button>
-                            <button class="move-left with-icon"><i class="fa fa-chevron-left"></i><span>Back</span></button>
-                            <button class="move-right with-icon"><span>Next</span><i class="fa fa-chevron-right"></i></button>
+                            <h2 class="title">Ribbons</h2>
+                            <p>If you need to notify your user with a <code>.ribbon</code>, it will be on the top right corner of your parent container:</p>
+                            <div class="grid">
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Default
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon primary">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Primary
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon secondary">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Secondary
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon success">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Success
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon alert">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Alert
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon error">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Error
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon light">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Light
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-4">
+                                    <div class="cell bg-default height-100 with-ribbon dark">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                Dark
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Important: remember to specify the <code>.with-ribbon</code> class into the parent container!</p>
                         </div>
                     </div>
                 </section>
@@ -218,66 +299,7 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/button/animations.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Socials</h2>
-                            <p>If you need a share button, there are several <strong>socials</strong> with their specific colors:</p>
-                            <button class="with-icon twitter"><i class="fa fa-twitter"></i></button>
-                            <button class="with-icon facebook"><i class="fa fa-facebook"></i></button>
-                            <button class="with-icon google"><i class="fa fa-google"></i></button>
-                            <button class="with-icon youtube"><i class="fa fa-youtube-play"></i></button>
-                            <button class="with-icon linkedin"><i class="fa fa-linkedin"></i></button>
-                            <button class="with-icon github"><i class="fa fa-github"></i></button>
-                            <button class="with-icon pinterest"><i class="fa fa-pinterest"></i></button>
-                            <button class="with-icon dribbble"><i class="fa fa-dribbble"></i></button>
-                            <button class="with-icon instagram"><i class="fa fa-instagram"></i></button>
-                            <button class="with-icon snapchat"><i class="fa fa-snapchat"></i></button>
-                            <button class="with-icon reddit"><i class="fa fa-reddit"></i></button>
-                            <button class="with-icon tumblr"><i class="fa fa-tumblr"></i></button>
-                            <button class="with-icon vimeo"><i class="fa fa-vimeo"></i></button>
-                            <button class="with-icon flickr"><i class="fa fa-flickr"></i></button>
-                            <button class="with-icon skype"><i class="fa fa-skype"></i></button>
-                            <button class="with-icon rss"><i class="fa fa-rss"></i></button>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/button/socials.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Group</h2>
-                            <p>You can <strong>group</strong> multiple buttons together by wrapping them in a <code>.button-group</code>:</p>
-                            <div class="button-group">
-                                <button class="secondary">1</button>
-                                <button class="secondary">2</button>
-                                <button class="secondary">3</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/button/group.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/notification/ribbons.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>

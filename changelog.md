@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.1.4-alpha
+
+### Added
+
+* Notifications: basic, badges, tags, ribbons 
+
 ## v0.1.3-alpha
 
 ### Added
