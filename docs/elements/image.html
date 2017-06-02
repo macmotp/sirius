@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
-    <title>Notification - Elements - Documentation - Sirius UI</title>
-    <meta name="description" content="Notification - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
+    <title>Image - Elements - Documentation - Sirius UI</title>
+    <meta name="description" content="Image - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="revisit-after" content="30 days">
     <meta name="author" content="Larastars">
@@ -97,27 +97,42 @@
         </div>
         <div class="body">
             <div class="container">
-                <h1 class="title">Notification</h1>
-                <h3 class="subtitle">Uh oh. Something happened.</h3>
+                <h1 class="title">Image</h1>
+                <h3 class="subtitle">The right space for your pictures</h3>
             </div>
         </div>
     </header>
     <div class="container">
         <div class="grid">
-            <div class="tile width-2-3">
+            <div class="tile width-full">
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Basic</h2>
-                            <p>A custom template containing a message. Tag is <code>sirius-notification</code>.</p>
-                            <sirius-notification v-for="(notification, index) in basicNotifications"
-                                                 v-bind:key="notification"
-                                                 v-on:remove="basicNotifications.splice(index, 1)"
-                                                 :show-remove-button="notification.showRemoveButton">
-                                {{notification.message}}
-                            </sirius-notification>
-                            <button class="primary" @click="addBasicNotification()" v-show="basicNotifications.length < 4">Add Notification</button>
-                            <p>This is a Vue template, you can set <code>:show-remove-button</code> as property (default is true).</p>
+                            <h2 class="title">Dimensions</h2>
+                            <p>Wrap your <code>img</code> into a <code>.image</code> container. In this way you will set the necessary <strong>space</strong> and the layout will not break while loading.</p>
+                            <figure class="image dim-200x200">
+                                <img src="http://placehold.it/200x200" alt="image">
+                            </figure>
+                            <p>If you have a square shaped image, you can specify the right dimension:</p>
+                            <ul>
+                                <li><code>.dim-16x16</code></li>
+                                <li><code>.dim-24x24</code></li>
+                                <li><code>.dim-32x32</code></li>
+                                <li><code>.dim-48x48</code></li>
+                                <li><code>.dim-50x50</code></li>
+                                <li><code>.dim-60x60</code></li>
+                                <li><code>.dim-64x64</code></li>
+                                <li><code>.dim-70x70</code></li>
+                                <li><code>.dim-80x80</code></li>
+                                <li><code>.dim-96x96</code></li>
+                                <li><code>.dim-100x100</code></li>
+                                <li><code>.dim-128x128</code></li>
+                                <li><code>.dim-200x200</code></li>
+                                <li><code>.dim-250x250</code></li>
+                                <li><code>.dim-300x300</code></li>
+                                <li><code>.dim-400x400</code></li>
+                            </ul>
+                            <p>Important: for retina displays you should use an image twice the size of the <code>.image</code> container</p>
                         </div>
                     </div>
                 </section>
@@ -125,7 +140,7 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/notification/basic.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/image/dimensions.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>
@@ -135,164 +150,59 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Colors</h2>
-                            <p>Different <strong>colors</strong>:</p>
-                            <sirius-notification>Default</sirius-notification>
-                            <sirius-notification class="bg-primary">Primary</sirius-notification>
-                            <sirius-notification class="bg-secondary">Secondary</sirius-notification>
-                            <sirius-notification class="bg-success">Success</sirius-notification>
-                            <sirius-notification class="bg-alert">Alert</sirius-notification>
-                            <sirius-notification class="bg-error">Error</sirius-notification>
-                            <sirius-notification class="bg-light">Light</sirius-notification>
-                            <sirius-notification class="bg-dark">Dark</sirius-notification>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/notification/colors.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Badges</h2>
-                            <p>If you need a label with just one <strong>icon</strong> or a <strong>number</strong>, use the <code>.badge</code>:</p>
-                            <div class="badge"><i class="fa fa-cog"></i></div>
-                            <div class="badge primary"><i class="fa fa-user"></i></div>
-                            <div class="badge secondary"><i class="fa fa-info"></i></div>
-                            <div class="badge success"><i class="fa fa-check"></i></div>
-                            <div class="badge alert"><i class="fa fa-bell"></i></div>
-                            <div class="badge error"><i class="fa fa-heart"></i></div>
-                            <div class="badge light">10</div>
-                            <div class="badge dark">0</div>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/notification/badges.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Tags</h2>
-                            <p>For simple labeling, use <strong>tags</strong>:</p>
-                            <div class="tag">Default</div>
-                            <div class="tag primary">Primary</div>
-                            <div class="tag secondary">Secondary</div>
-                            <div class="tag success">Success</div>
-                            <div class="tag alert">Alert</div>
-                            <div class="tag error">Error</div>
-                            <div class="tag light">Light</div>
-                            <div class="tag dark">Dark</div>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/notification/tags.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Ribbons</h2>
-                            <p>If you need to notify your user with a <code>.ribbon</code>, it will be on the top right corner of your parent container:</p>
+                            <h2 class="title">Shapes</h2>
+                            <p>By default <code>.image</code> will match your <code>$border-radius</code> variable. But you can force an image to be squared or circular:</p>
+                            <ul>
+                                <li><code>.shape-square</code></li>
+                                <li><code>.shape-circle</code></li>
+                            </ul>
                             <div class="grid">
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Default
-                                            </div>
-                                        </div>
+                                <div class="tile width-1-3">
+                                    <div class="cell no-padding">
+                                        <figure class="image dim-200x200">
+                                            <img src="http://placehold.it/200x200" alt="image">
+                                        </figure>
                                     </div>
                                 </div>
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon primary">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Primary
-                                            </div>
-                                        </div>
+                                <div class="tile width-1-3">
+                                    <div class="cell no-padding">
+                                        <figure class="image dim-200x200 shape-square">
+                                            <img src="http://placehold.it/200x200" alt="image">
+                                        </figure>
                                     </div>
                                 </div>
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon secondary">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Secondary
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon success">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Success
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon alert">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Alert
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon error">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Error
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon light">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Light
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tile width-1-4">
-                                    <div class="cell bg-default height-100 with-ribbon dark">
-                                        <div class="ribbon-wrapper">
-                                            <div class="ribbon">
-                                                Dark
-                                            </div>
-                                        </div>
+                                <div class="tile width-1-3">
+                                    <div class="cell no-padding">
+                                        <figure class="image dim-200x200 shape-circle">
+                                            <img src="http://placehold.it/200x200" alt="image">
+                                        </figure>
                                     </div>
                                 </div>
                             </div>
-                            <p>Important: remember to specify the <code>.with-ribbon</code> class into the parent container!</p>
+                            <p>You can also add the <code>.with-frame</code> class:</p>
+                            <div class="grid">
+                                <div class="tile width-1-3">
+                                    <div class="cell no-padding">
+                                        <figure class="image dim-200x200 with-frame">
+                                            <img src="http://placehold.it/200x200" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-3">
+                                    <div class="cell no-padding">
+                                        <figure class="image dim-200x200 shape-square with-frame">
+                                            <img src="http://placehold.it/200x200" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile width-1-3">
+                                    <div class="cell no-padding">
+                                        <figure class="image dim-200x200 shape-circle with-frame">
+                                            <img src="http://placehold.it/200x200" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -300,7 +210,78 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/notification/ribbons.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/image/shapes.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Ratio</h2>
+                            <p>Often you do not know the size of your image. So you can specify the <strong>ratio</strong> instead:</p>
+                            <ul>
+                                <li><code>.ratio-portrait</code>, or alternatively <code>.ratio-9-16</code></li>
+                                <li><code>.ratio-square</code>, or alternatively <code>.ratio-1-1</code></li>
+                                <li><code>.ratio-4-3</code></li>
+                                <li><code>.ratio-3-2</code></li>
+                                <li><code>.ratio-landscape</code>, or alternatively <code>.ratio-16-9</code></li>
+                                <li><code>.ratio-2-1</code></li>
+                            </ul>
+                            <div class="grid">
+                                <div class="tile">
+                                    <div class="cell no-padding">
+                                        <figure class="image shape-square ratio-portrait">
+                                            <img src="http://placehold.it/180x320" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="cell no-padding">
+                                        <figure class="image shape-square ratio-square">
+                                            <img src="http://placehold.it/180x180" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="cell no-padding">
+                                        <figure class="image shape-square ratio-4-3">
+                                            <img src="http://placehold.it/180x135" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="cell no-padding">
+                                        <figure class="image shape-square ratio-3-2">
+                                            <img src="http://placehold.it/180x120" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="cell no-padding">
+                                        <figure class="image shape-square ratio-landscape">
+                                            <img src="http://placehold.it/180x102" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="cell no-padding">
+                                        <figure class="image shape-square ratio-2-1">
+                                            <img src="http://placehold.it/180x90" alt="image">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/elements/image/ratio.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>

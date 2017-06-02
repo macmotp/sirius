@@ -1,0 +1,68 @@
+/*
+ *
+ * Elements - Image
+ *
+ */
+
+$dimensions: 16 24 32 48 50 60 64 70 80 96 100 128 200 250 300 400
+
+.image
+  display: block
+  position: relative
+  img
+    display: block
+    height: auto
+    width: 100%
+    border-radius: $border-radius
+  &.shape-square
+    img
+      border-radius: 0px
+  &.shape-circle
+    img
+      border-radius: 50%
+  &.with-frame
+    padding: 10px
+    background-color: $white
+    box-shadow: 0px 1px 2px $default
+    border-radius: $border-radius
+    transition: opacity 0.5s ease 0s
+    &.shape-square
+      border-radius: 0px
+    &.shape-circle
+      border-radius: 50%
+  &.ratio-square,
+  &.ratio-1-1,
+  &.ratio-4-3,
+  &.ratio-3-2,
+  &.ratio-16-9,
+  &.ratio-landscape,
+  &.ratio-2-1,
+  &.ratio-9-16,
+  &.ratio-portrait
+    img
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      top: 0
+      //height: 100%
+      width: 100%
+  &.ratio-9-16
+    img
+      height: auto
+  &.ratio-1-1, &.ratio-square
+    padding-top: 100%
+  &.ratio-4-3
+    padding-top: 75%
+  &.ratio-3-2
+    padding-top: 66.6666%
+  &.ratio-16-9, &.ratio-landscape
+    padding-top: 56.25%
+  &.ratio-2-1
+    padding-top: 50%
+  &.ratio-9-16, &.ratio-portrait
+    padding-top: 178.25%
+  @each $dimension in $dimensions
+    &.dim-#{$dimension}x#{$dimension}
+      height: $dimension * 1px
+      width: $dimension * 1px
