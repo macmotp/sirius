@@ -152,7 +152,59 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/notification/colors.html"></pre>
+                                <pre class="language-css" data-src="../../resources/html/elements/notification/colors.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Modals</h2>
+                            <p>This is another Vue template sliding from the top of the page. Tag is <code>.sirius-modal</code>, available in <strong>three different sizes</strong> (use <code>small</code> or <code>large</code> class to change the size):</p>
+                            <button @click="$refs.defaultModal.toggle()">Open Default Modal</button>
+                            <button @click="$refs.smallModal.toggle()">Open Small Modal</button>
+                            <button @click="$refs.largeModal.toggle()">Open Large Modal</button>
+                            <sirius-modal ref="defaultModal">
+                                <div class="head">
+                                    <h2>Hello there!</h2>
+                                </div>
+                                <div class="body">
+                                    <p>Here it is an important message for you!</p>
+                                </div>
+                            </sirius-modal>
+                            <sirius-modal ref="smallModal" class="small">
+                                <div class="body">
+                                    <h3>Here it is a less important message for you!</h3>
+                                </div>
+                            </sirius-modal>
+                            <sirius-modal ref="largeModal" class="large">
+                                <div class="head">
+                                    <h2>Wow I'm big!</h2>
+                                </div>
+                                <div class="body">
+                                    <p>I also have a footer with a button!</p>
+                                </div>
+                                <div class="foot">
+                                    <button class="error" @click="$refs.largeModal.toggle()">Close Me</button>
+                                </div>
+                            </sirius-modal>
+                            <p>These are the properties you can specify directly into your HTML:</p>
+                            <ul>
+                                <li><code>:show-close-button</code>: Show the close button on the top right corner (default: <code>true</code>)</li>
+                                <li><code>:close-on-external-click</code>: Close the modal by clicking outside of it (default: <code>true</code>)</li>
+                            </ul>
+                            <p>Be aware: remember to use the colon character before!</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre class="language-css" data-src="../../resources/html/elements/notification/modals.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>

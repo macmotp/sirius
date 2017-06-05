@@ -1,6 +1,7 @@
 var Vue = require('vue');
 
 Vue.component('sirius-menu', require('./components/SiriusMenu.vue'));
+Vue.component('sirius-modal', require('./components/SiriusModal.vue'));
 Vue.component('sirius-notification', require('./components/SiriusNotification.vue'));
 Vue.component('sirius-list', require('./components/SiriusList.vue'));
 

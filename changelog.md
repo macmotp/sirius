@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.1.6-alpha
+
+### Added
+
+* Notifications: modal 
+
 ## v0.1.5-alpha
 
 ### Added
