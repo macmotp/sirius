@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
-    <title>Typography - Elements - Documentation - Sirius UI</title>
-    <meta name="description" content="Typography - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
+    <title>Table - Elements - Documentation - Sirius UI</title>
+    <meta name="description" content="Table - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="revisit-after" content="30 days">
     <meta name="author" content="Larastars">
@@ -98,8 +98,8 @@
         </div>
         <div class="body">
             <div class="container">
-                <h1 class="title">Typography</h1>
-                <h3 class="subtitle">h1 is bigger than h2</h3>
+                <h1 class="title">Table</h1>
+                <h3 class="subtitle">Keep your list in order</h3>
             </div>
         </div>
     </header>
@@ -109,14 +109,83 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Sizes</h2>
-                            <p>Different <strong>sizes</strong>:</p>
-                            <h1>Hello, I'm a h1</h1>
-                            <h2>Hello, I'm a h2</h2>
-                            <h3>Hello, I'm a h3</h3>
-                            <h4>Hello, I'm a h4</h4>
-                            <h5>Hello, I'm a h5</h5>
-                            <h6>Hello, I'm a h6</h6>
+                            <h2 class="title">Responsive</h2>
+                            <p>Auto overflow will let your tables being responsive no matter what the <strong>viewport</strong> is:</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Heading</th>
+                                        <th>Heading</th>
+                                        <th>Heading</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td colspan="2">Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th></th>
+                                        <td>Foot</td>
+                                        <td>Foot</td>
+                                        <td>Foot</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <p>You can add the <code>.striped</code> class too:</p>
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Heading</th>
+                                        <th>Heading</th>
+                                        <th>Heading</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td colspan="2">Cell</td>
+                                        <td>Cell</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th></th>
+                                        <td>Foot</td>
+                                        <td>Foot</td>
+                                        <td>Foot</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </section>
@@ -124,7 +193,7 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/typography/sizes.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/table/responsive.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>
@@ -134,17 +203,50 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Colors</h2>
-                            <p>Different <strong>colors</strong>:</p>
-                            <h1>Default</h1>
-                            <h1 class="text-primary">Primary</h1>
-                            <h1 class="text-secondary">Secondary</h1>
-                            <h1 class="text-success">Success</h1>
-                            <h1 class="text-alert">Alert</h1>
-                            <h1 class="text-error">Error</h1>
-                            <h1 class="text-light">Light</h1>
-                            <h1 class="text-dark">Dark</h1>
-                            <p>Of course you cannot see <code>.text-light</code></p>
+                            <h2 class="title">Feedback</h2>
+                            <p>You can add custom <strong>colors</strong> matching your feedback:</p>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Color</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="default">
+                                    <th>1</th>
+                                    <td>Default</td>
+                                </tr>
+                                <tr class="primary">
+                                    <th>2</th>
+                                    <td>Primary</td>
+                                </tr>
+                                <tr class="secondary">
+                                    <th>3</th>
+                                    <td>Secondary</td>
+                                </tr>
+                                <tr class="success">
+                                    <th>4</th>
+                                    <td>Success</td>
+                                </tr>
+                                <tr class="alert">
+                                    <th>5</th>
+                                    <td>Alert</td>
+                                </tr>
+                                <tr class="error">
+                                    <th>6</th>
+                                    <td>Error</td>
+                                </tr>
+                                <tr class="light">
+                                    <th>7</th>
+                                    <td>Light</td>
+                                </tr>
+                                <tr class="dark">
+                                    <th>8</th>
+                                    <td>Dark</td>
+                                </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </section>
@@ -152,34 +254,13 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/typography/colors.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/elements/table/feedback.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>
                     </div>
                 </section>
                 <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Alignment</h2>
-                            <p>From left to right</p>
-                            <h1 class="text-left">Left</h1>
-                            <h1 class="text-center">Center</h1>
-                            <h1 class="text-right">Right</h1>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/typography/alignment.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
     </div>
