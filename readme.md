@@ -16,8 +16,10 @@ In current version:
     * Typography
     * Button
     * Form input: text, checkbox, radio, switch, select
-    * Notification: basic, modal, badge, tag, ribbon
+    * Notification: basic, modal, badge, tag, tooltip, ribbon
     * Image
+    * Table
+    * Indicator: loader
   * Layouts
     * Grid
     * Header

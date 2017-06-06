@@ -1,5 +1,12 @@
 # Sirius UI Changelog
 
+## v0.1.8-alpha
+
+### Added
+
+* Indicator: loader
+* Notification: tooltip
+
 ## v0.1.7-alpha
 
 ### Added
