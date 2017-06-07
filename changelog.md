@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.1.9-alpha
+
+### Added
+
+* Indicator: pagination, progress bar
+
 ## v0.1.8-alpha
 
 ### Added

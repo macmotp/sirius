@@ -130,6 +130,80 @@
                     </div>
                 </section>
                 <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Pagination</h2>
+                            <p>The <code>sirius-pagination</code> Vue template has several properties:</p>
+                            <ul>
+                                <li><code>:list</code>: The list of objects to paginate</li>
+                                <li><code>:simple</code>: Set this to <code>true</code> if you want <strong>simple pagination</strong> (default is <code>false</code>)</li>
+                                <li><code>:per-page</code>: Set this to the number of items you want to display (default is <code>10</code>)</li>
+                                <li><code>:show-indicators</code>: Set this to <code>false</code> if you want to remove the chevron indicators (default is <code>true</code>)</li>
+                                <li><code>previous-text</code>: String to override the text of the Previous button (default is <code>Prev</code>)</li>
+                                <li><code>next-text</code>: String to override the text of the Next button (default is <code>Next</code>)</li>
+                            </ul>
+                            <div class="grid">
+                                <div class="tile">
+                                    <div class="cell">
+                                        <table class="striped" style="margin-bottom: 0">
+                                            <tbody>
+                                            <tr v-for="item in getCurrentPageData()" :key="item.index">
+                                                <td>{{item.index}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <h3 class="text-primary">Total Items: {{paginationList.total}}</h3>
+                                    <h3 class="text-secondary">Current Page: {{paginationList.current_page}}</h3>
+                                    <sirius-pagination :list="paginationList" :simple="true" previous-text="Back" next-text="Next"></sirius-pagination>
+                                    <sirius-pagination :list="paginationList" :show-indicators="false"></sirius-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/elements/indicator/pagination.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Progress Bars</h2>
+                            <p>The <code>sirius-progress-bar</code> Vue template just needs the value of the <strong>percentage</strong>:</p>
+                            <sirius-progress-bar :value="progressBarValue"></sirius-progress-bar>
+                            <p>You can also change the color and/or add the <code>.striped</code> class:</p>
+                            <sirius-progress-bar :value="65" class="primary striped"></sirius-progress-bar>
+                            <sirius-progress-bar :value="30" class="secondary striped"></sirius-progress-bar>
+                            <sirius-progress-bar :value="100" class="success striped"></sirius-progress-bar>
+                            <sirius-progress-bar :value="25" class="alert striped"></sirius-progress-bar>
+                            <sirius-progress-bar :value="10" class="error striped"></sirius-progress-bar>
+                            <sirius-progress-bar :value="80" class="light striped"></sirius-progress-bar>
+                            <sirius-progress-bar :value="50" class="dark striped"></sirius-progress-bar>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/elements/indicator/progress.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
             </div>
         </div>
     </div>

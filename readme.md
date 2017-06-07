@@ -19,7 +19,7 @@ In current version:
     * Notification: basic, modal, badge, tag, tooltip, ribbon
     * Image
     * Table
-    * Indicator: loader
+    * Indicator: loader, pagination, progress bar
   * Layouts
     * Grid
     * Header

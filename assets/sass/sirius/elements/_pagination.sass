@@ -1,0 +1,47 @@
+/*
+ *
+ * Elements - Modal
+ *
+ */
+
+.pagination
+  display: inline-flex
+  margin: 10px auto
+  width: 100%
+  & > li
+    & > button
+      background-color: $light
+      border: $border-size solid darken($primary, 10%)
+      border-radius: 0
+      color: $primary
+      margin: 0 $border-size - 1
+      min-height: 30px
+      min-width: 36px
+      padding: 5px 12px
+      & > i
+        font-size: 14px
+      & > span
+        margin-top: 3px
+      &:hover, &:focus, &:active
+        background-color: lighten($primary,10%)
+        border-color: darken($primary, 10%)
+        color: $light
+    &:first-child
+      & > button
+        border-bottom-left-radius: $border-radius
+        border-top-left-radius: $border-radius
+    &:last-child
+      & > button
+        border-bottom-right-radius: $border-radius
+        border-top-right-radius: $border-radius
+    &.active, &:active
+      & > button, & > button:hover, & > button:focus
+        background-color: $primary
+        border-color: darken($primary, 10%)
+        color: $light
+    &.disabled, &:disabled
+      & > button, & > button:hover, & > button:focus
+        color: $default
+        background-color: lighten($default, 40%)
+        cursor: not-allowed
+        border-color: darken($default, 10%)
