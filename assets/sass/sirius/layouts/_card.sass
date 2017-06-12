@@ -1,0 +1,39 @@
+/*
+ *
+ * Layouts - Card
+ *
+ */
+
+.card
+  display: flex
+  flex-direction: column
+  flex: 1
+  align-items: stretch
+  background-color: $light
+  color: $default
+  margin: 0 $gap
+  padding: $gap
+  border-radius: $border-radius
+  +shadow(3)
+  .head,
+  .foot
+    flex-shrink: 0
+    padding: $gap
+    +mobile
+      padding: $gap 0
+  .body
+    flex-grow: 1
+    flex-shrink: 0
+    padding: $gap
+    line-height: 1.3
+    //text-align: justify
+    +mobile
+      padding: $gap 0
+  .title
+    margin: 0
+  @each $key, $values in $colors
+    $color: nth($values, 1)
+    $inverse: nth($values, 2)
+    &.bg-#{$key}
+      background-color: $color
+      color: $inverse

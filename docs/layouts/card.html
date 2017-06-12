@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
-    <title>Indicator - Elements - Documentation - Sirius UI</title>
-    <meta name="description" content="Indicator - Elements - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
+    <title>Card - Layouts - Documentation - Sirius UI</title>
+    <meta name="description" content="Card - Layouts - Documentation - CSS Framework based on flexbox and Vuejs - powered by Larastars.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="revisit-after" content="30 days">
     <meta name="author" content="Larastars">
@@ -30,7 +30,7 @@
             <div class="container">
                 <nav class="nav">
                     <div class="left">
-                        <a class="item brand" href="../../">
+                        <a class="item brand" href="../../index.html">
                             <img class="logo" src="../../resources/images/larastars.png" alt="Sirius UI">
                             <div class="name">Sirius UI</div>
                         </a>
@@ -60,7 +60,7 @@
                         </span>
                         <sirius-menu ref="sidebarMenu" class="bg-dark right" :show-close-button="true" :close-on-external-click="true">
                             <div class="head">
-                                <a href="../../">
+                                <a href="../../index.html">
                                     <img class="logo" src="../../resources/images/larastars_grey.png" alt="Sirius UI">
                                 </a>
                             </div>
@@ -77,21 +77,21 @@
                                 </li>
                             </sirius-list>
                             <sirius-list ref="elements" list-name="elements">
-                                <a href="./button.html"><li>Button</li></a>
-                                <a href="./form.html"><li>Form</li></a>
-                                <a href="./image.html"><li>Image</li></a>
-                                <a href="./indicator.html"><li>Indicator</li></a>
-                                <a href="./notification.html"><li>Notification</li></a>
-                                <a href="./table.html"><li>Table</li></a>
-                                <a href="./typography.html"><li>Typography</li></a>
+                                <a href="../elements/button.html"><li>Button</li></a>
+                                <a href="../elements/form.html"><li>Form</li></a>
+                                <a href="../elements/image.html"><li>Image</li></a>
+                                <a href="../elements/indicator.html"><li>Indicator</li></a>
+                                <a href="../elements/notification.html"><li>Notification</li></a>
+                                <a href="../elements/table.html"><li>Table</li></a>
+                                <a href="../elements/typography.html"><li>Typography</li></a>
                             </sirius-list>
                             <sirius-list ref="layouts" list-name="layouts">
-                                <a href="../layouts/grid.html"><li>Grid</li></a>
-                                <a href="../layouts/header.html"><li>Header</li></a>
-                                <a href="../layouts/nav.html"><li>Nav</li></a>
-                                <a href="../layouts/menu.html"><li>Menu</li></a>
-                                <a href="../layouts/footer.html"><li>Footer</li></a>
-                                <a href="../layouts/card.html"><li>Card</li></a>
+                                <a href="./grid.html"><li>Grid</li></a>
+                                <a href="./header.html"><li>Header</li></a>
+                                <a href="./nav.html"><li>Nav</li></a>
+                                <a href="./menu.html"><li>Menu</li></a>
+                                <a href="./footer.html"><li>Footer</li></a>
+                                <a href="./card.html"><li>Card</li></a>
                             </sirius-list>
                         </sirius-menu>
                     </div>
@@ -100,69 +100,88 @@
         </div>
         <div class="body">
             <div class="container">
-                <h1 class="title">Indicator</h1>
-                <h3 class="subtitle">Wait a second...</h3>
+                <h1 class="title">Card</h1>
+                <h3 class="subtitle">Ace in the hole</h3>
             </div>
         </div>
     </header>
     <div class="container">
         <div class="grid">
-            <div class="tile width-2-3">
+            <div class="tile width-full">
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Loaders</h2>
-                            <p>Pure <strong>CSS</strong> loaders:</p>
-                            <div class="loader circle"></div>
-                            <div class="loader wheel"></div>
-                            <div class="loader square"></div>
-                            <p>Choose between <code>.circle</code>, <code>.wheel</code>, and <code>.square</code></p>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/indicator/loaders.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Pagination</h2>
-                            <p>The <code>sirius-pagination</code> Vue template has several properties:</p>
-                            <ul>
-                                <li><code>:list</code>: The list of objects to paginate</li>
-                                <li><code>:simple</code>: Set this to <code>true</code> if you want <strong>simple pagination</strong> (default is <code>false</code>)</li>
-                                <li><code>:per-page</code>: Set this to the number of items you want to display (default is <code>10</code>)</li>
-                                <li><code>:show-indicators</code>: Set this to <code>false</code> if you want to remove the chevron indicators (default is <code>true</code>)</li>
-                                <li><code>previous-text</code>: String to override the text of the Previous button (default is <code>Prev</code>)</li>
-                                <li><code>next-text</code>: String to override the text of the Next button (default is <code>Next</code>)</li>
-                            </ul>
+                            <h2 class="title">Colors</h2>
+                            <p>Cards are composed by a <code>.head</code>, a <code>.body</code>, and a <code>.foot</code>. You can set your color by adding the <code>.bg-x</code> class.</p>
                             <div class="grid">
                                 <div class="tile">
-                                    <div class="cell">
-                                        <table class="striped" style="margin-bottom: 0">
-                                            <tbody>
-                                            <tr v-for="item in getCurrentPageData()" :key="item.index">
-                                                <td>{{item.index}}</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="card bg-default">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a default card</div>
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <h3 class="text-primary">Total Items: {{paginationList.total}}</h3>
-                                    <h3 class="text-secondary">Current Page: {{paginationList.current_page}}</h3>
-                                    <sirius-pagination :list="paginationList" :simple="true" previous-text="Back" next-text="Next"></sirius-pagination>
-                                    <sirius-pagination :list="paginationList" :show-indicators="false"></sirius-pagination>
+                                    <div class="card bg-primary">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a primary card</div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="card bg-secondary">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a secondary card. And I have a very long text so you can notice that the other cards are adjusting their height according to mine.</div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="card bg-success">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a success card</div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="grid">
+                                <div class="tile">
+                                    <div class="card bg-alert">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a alert card</div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="card bg-error">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a error card</div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="card bg-light">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a light card</div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="card bg-dark">
+                                        <div class="head">
+                                            <h2 class="title">Hello!</h2>
+                                        </div>
+                                        <div class="body">I'm a dark card. And I have a very long text so you can notice that the other cards are adjusting their height according to mine.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Notice that using <strong>cards</strong> inside a <strong>grid</strong> will make their height equally fit.</p>
                         </div>
                     </div>
                 </section>
@@ -170,41 +189,14 @@
                     <div class="container">
                         <div class="content">
                             <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/indicator/pagination.html"></pre>
+                                <pre  class="language-css" data-src="../../resources/html/layouts/card/colors.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>
                     </div>
                 </section>
                 <hr>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <h2 class="title">Progress Bars</h2>
-                            <p>The <code>sirius-progress-bar</code> Vue template just needs the value of the <strong>percentage</strong>:</p>
-                            <sirius-progress-bar :value="progressBarValue"></sirius-progress-bar>
-                            <p>You can also change the color and/or add the <code>.striped</code> class:</p>
-                            <sirius-progress-bar :value="65" class="primary striped"></sirius-progress-bar>
-                            <sirius-progress-bar :value="30" class="secondary striped"></sirius-progress-bar>
-                            <sirius-progress-bar :value="100" class="success striped"></sirius-progress-bar>
-                            <sirius-progress-bar :value="25" class="alert striped"></sirius-progress-bar>
-                            <sirius-progress-bar :value="10" class="error striped"></sirius-progress-bar>
-                            <sirius-progress-bar :value="80" class="light striped"></sirius-progress-bar>
-                            <sirius-progress-bar :value="50" class="dark striped"></sirius-progress-bar>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-                            <div class="highlight">
-                                <pre  class="language-css" data-src="../../resources/html/elements/indicator/progress.html"></pre>
-                                <button class="copy">copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
+
             </div>
         </div>
     </div>

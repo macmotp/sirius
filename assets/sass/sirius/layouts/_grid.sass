@@ -11,7 +11,7 @@ $sizes: ('full': 100%, '4-5': 80%, '3-4': 75%, '2-3': 66.66666667%, '3-5': 60%, 
   flex-wrap: wrap
   box-sizing: border-box
   padding: 0
-  margin-top: -$gap
+  margin-top: $gap
   margin-left: -$gap
   margin-right: -$gap
   &:last-child
@@ -30,7 +30,7 @@ $sizes: ('full': 100%, '4-5': 80%, '3-4': 75%, '2-3': 66.66666667%, '3-5': 60%, 
   &.stacked, & .grid
     flex-wrap: wrap
     &:not(:last-child)
-      margin-bottom: $gap
+      margin-bottom: $gap*2
     & > .tile
       &.vertical
         display: flex

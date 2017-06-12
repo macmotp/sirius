@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.2.0-alpha
+
+### Added
+
+* Card
+
 ## v0.1.9-alpha
 
 ### Added

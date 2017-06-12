@@ -11,25 +11,29 @@ Build your beautiful website with Sirius. Fully responsive elements and layouts.
 
 In current version:
 * SASS
-  * Variables, reset, general, helpers, animations
+  * Variables, Reset, General, Helpers, Animations
   * Elements
     * Typography
     * Button
-    * Form input: text, checkbox, radio, switch, select
-    * Notification: basic, modal, badge, tag, tooltip, ribbon
+    * Form Input: Text, Checkbox, Radio, Switch, Select
+    * Notification: Basic, Modal, Badge, Tag, Tooltip, Ribbon
     * Image
     * Table
-    * Indicator: loader, pagination, progress bar
+    * Indicator: Loader, Pagination, Progress Bar
   * Layouts
     * Grid
     * Header
     * Nav
     * Menu
     * Footer
+    * Card
 * Vue
   * Menu
   * List
   * Notification
+  * Modal
+  * Pagination
+  * Progress Bar
 
 ## [#areyousirius?](https://twitter.com/larastarsgalaxy)
 
