@@ -14,11 +14,13 @@
   margin: 0 $gap
   padding: $gap
   border-radius: $border-radius
+  overflow: hidden
   +shadow(3)
   .head,
   .foot
     flex-shrink: 0
     padding: $gap
+    min-height: 50px
     +mobile
       padding: $gap 0
   .body
@@ -37,3 +39,181 @@
     &.bg-#{$key}
       background-color: $color
       color: $inverse
+      &.gradient
+        background-image: linear-gradient(225deg, lighten($color,5%) 0%, $color 71%, darken($color,5%) 100%)
+
+  &.with-image
+    padding: 0px
+    .image
+      backface-visibility: hidden
+      overflow: hidden
+      img
+        position: relative
+        display: block
+        opacity: 0.85
+      figcaption
+        position: absolute
+        border-radius: $border-radius
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: column
+        z-index: 12
+        text-transform: uppercase
+        & > .head, & > .body, & > .foot
+          display: flex
+          justify-content: center
+          flex-direction: column
+          text-align: center
+          align-items: center
+          color: $light
+          text-transform: uppercase
+      .title
+        color: $light
+        font-weight: 300
+        font-size: $font-large
+        span
+          font-weight: bold
+      .subtitle, .link
+        color: $light
+        text-align: center
+        font-size: $font-small
+        padding: $gap 0
+        width: 100%
+      .link
+        text-decoration: underline
+
+
+  &.with-image.with-effect
+    .image
+      figcaption
+        &:before
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background: linear-gradient(rgba($dark,0) 0%, rgba($dark,0.5) 75%)
+          content: ''
+          opacity: 0
+          transform: translate3d(0,50%,0)
+          transition: opacity 0.35s, transform 0.35s
+      .title
+        color: $dark
+        transition: transform 0.35s, color 0.35s
+        transform: translate3d(0,-50%,0)
+        width: 100%
+        margin-top: 100px
+        &:after
+          position: absolute
+          bottom: -10px
+          left: 50px
+          right: 70px
+          height: $border-size + 1px
+          background: $light
+          content: ''
+          transition: transform 0.35s
+          transform: translate3d(-130%,0,0)
+      .subtitle, .link, .button
+        opacity: 0
+        transform: translate3d(0,10px,0)
+        transition: opacity 0.35s, transform 0.35s
+    &:hover figcaption:before
+      opacity: 1
+      transform: translate3d(0,0,0)
+    &:hover .title
+      color: $light
+      transform: translate3d(0,-50%,0) translate3d(0,-40px,0)
+    &:hover .title:after
+      transform: translate3d(0,0,0)
+    &:hover .subtitle, &:hover .link, &:hover .button
+      opacity: 1
+      transform: translate3d(0,0,0)
+
+
+  &.feature
+    background-color: $light
+    min-height: 100px
+    position: relative
+    overflow: hidden
+    justify-content: center
+    align-items: center
+    transition: all 0.3s ease-out
+    text-decoration: none
+    &:hover
+      .overlay
+        transform: scale(6) translateZ(0)
+      .icon
+        border-color: $light
+        background-color: $default
+        i
+          color: $default
+        &:after
+          background-color: lighten($default,40%)
+      .body, .body > h1, .body > h2, .body > h3
+        z-index: 1
+        color: $light
+    .icon
+      width: 100px
+      height: 100px
+      border-radius: 50%
+      background: $light
+      border: $border-size solid darken($default, 10%)
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      z-index: 1
+      transition: all 0.3s ease-out
+      &:after
+        content: ""
+        width: 90px
+        height: 90px
+        display: block
+        position: absolute
+        background: $default
+        border-radius: 50%
+        top: 5px
+        left: 5px
+        transition: opacity 0.3s ease-out
+      i
+        color: $light
+        z-index: 100
+        font-size: 40px
+        transform: translateZ(0)
+    .overlay
+      width: 90px
+      height: 90px
+      border-radius: 50%
+      background: $default
+      margin: 20px auto
+      z-index: 0
+      transition: transform 0.3s ease-out
+    @each $key, $values in $colors
+      $color: nth($values, 1)
+      $inverse: nth($values, 2)
+      &.bg-#{$key}
+        &:hover
+          .icon
+            border-color: $inverse
+            background-color: $color
+            i
+              color: $color
+            &:after
+              background-color: lighten($color,40%)
+          .body, .body > h1, .body > h2, .body > h3
+            color: $inverse !important
+        @if($key != 'light')
+          .body, .body > h1, .body > h2, .body > h3
+            color: $color !important
+        .icon
+          background: $inverse
+          border: $border-size solid darken($color, 10%)
+          &:after
+            background: $color
+          i
+            color: $inverse
+        .overlay
+          background: $color

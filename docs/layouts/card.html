@@ -111,11 +111,11 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
-                            <h2 class="title">Colors</h2>
-                            <p>Cards are composed by a <code>.head</code>, a <code>.body</code>, and a <code>.foot</code>. You can set your color by adding the <code>.bg-x</code> class.</p>
+                            <h2 class="title">Basic Cards</h2>
+                            <p>Cards are composed by a <code>.head</code>, a <code>.body</code>, and a <code>.foot</code>. By default, cards have a light background but you can change it by adding the <code>.bg-x</code> class and/or with a subtle <code>.gradient</code>.</p>
                             <div class="grid">
                                 <div class="tile">
-                                    <div class="card bg-default">
+                                    <div class="card bg-default gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -123,7 +123,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="card bg-primary">
+                                    <div class="card bg-primary gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="card bg-secondary">
+                                    <div class="card bg-secondary gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -139,7 +139,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="card bg-success">
+                                    <div class="card bg-success gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -149,7 +149,7 @@
                             </div>
                             <div class="grid">
                                 <div class="tile">
-                                    <div class="card bg-alert">
+                                    <div class="card bg-alert gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -157,7 +157,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="card bg-error">
+                                    <div class="card bg-error gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -165,7 +165,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="card bg-light">
+                                    <div class="card bg-light gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -173,7 +173,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="card bg-dark">
+                                    <div class="card bg-dark gradient">
                                         <div class="head">
                                             <h2 class="title">Hello!</h2>
                                         </div>
@@ -196,7 +196,130 @@
                     </div>
                 </section>
                 <hr>
-
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Image Cards</h2>
+                            <p>Images are fundamental for all websites. So why don't you use them inside a <code>.card .with-image</code>?</p>
+                            <p>You can always separate <code>.head</code>, <code>.body</code>, and <code>.foot</code>. Or you can add a nice hover effect:</p>
+                            <div class="grid">
+                                <div class="tile">
+                                    <div class="card with-image">
+                                        <figure class="image">
+                                            <img src="../../resources/images/image-03.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="body">
+                                                    <h1 class="title">I'm an <span>Image Card</span></h1>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="card with-image">
+                                        <figure class="image">
+                                            <img src="../../resources/images/image-02.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="body">
+                                                    <h1 class="title">Me <span>Too</span></h1>
+                                                </div>
+                                                <div class="foot">
+                                                    <a class="button transparent light">But I have a Button</a>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="card with-image with-effect">
+                                        <figure class="image">
+                                            <img src="../../resources/images/image-01.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="body">
+                                                    <h1 class="title"><span>Hover</span> Me</h1>
+                                                </div>
+                                                <div class="foot">
+                                                    <a class="button transparent light">I have a link too</a>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/layouts/card/images.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Feature Cards</h2>
+                            <p>You can also insert <strong>icons</strong> for a better presentation:</p>
+                            <div class="grid">
+                                <div class="tile">
+                                    <div class="feature card bg-alert">
+                                        <div class="overlay"></div>
+                                        <div class="head">
+                                            <div class="icon">
+                                                <i class="fa fa-bolt"></i>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <h2>FAST</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="feature card bg-success">
+                                        <div class="overlay"></div>
+                                        <div class="head">
+                                            <div class="icon">
+                                                <i class="fa fa-lightbulb-o"></i>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <h2>CREATIVE</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="feature card bg-secondary">
+                                        <div class="overlay"></div>
+                                        <div class="head">
+                                            <div class="icon">
+                                                <i class="fa fa-tint"></i>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <h2>EASY</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/layouts/card/features.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
             </div>
         </div>
     </div>
