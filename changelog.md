@@ -1,5 +1,12 @@
 # Sirius UI Changelog
 
+## v0.2.2-alpha
+
+### Updated
+
+* Header: Image
+* Card: Hover Effects
+
 ## v0.2.1-alpha
 
 ### Updated

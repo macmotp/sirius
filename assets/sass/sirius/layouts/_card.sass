@@ -15,6 +15,7 @@
   padding: $gap
   border-radius: $border-radius
   overflow: hidden
+  cursor: pointer
   +shadow(3)
   .head,
   .foot
@@ -85,8 +86,7 @@
       .link
         text-decoration: underline
 
-
-  &.with-image.with-effect
+  &.with-image.with-effect-one
     .image
       figcaption
         &:before
@@ -103,23 +103,25 @@
       .title
         color: $dark
         transition: transform 0.35s, color 0.35s
-        transform: translate3d(0,-50%,0)
+        //transform: translate3d(0,-50%,0)
         width: 100%
-        margin-top: 100px
+        margin-top: 25% //remove when foot is present
         &:after
           position: absolute
           bottom: -10px
-          left: 50px
+          left: 70px
           right: 70px
           height: $border-size + 1px
           background: $light
           content: ''
           transition: transform 0.35s
-          transform: translate3d(-130%,0,0)
+          transform: translate3d(-200%,0,0)
       .subtitle, .link, .button
         opacity: 0
         transform: translate3d(0,10px,0)
         transition: opacity 0.35s, transform 0.35s
+      .foot
+        padding-top: 0
     &:hover figcaption:before
       opacity: 1
       transform: translate3d(0,0,0)
@@ -132,6 +134,201 @@
       opacity: 1
       transform: translate3d(0,0,0)
 
+  &.with-image.with-effect-two
+    .image
+      img
+        transition: opacity 1s, transform 1s
+      figcaption
+        text-align: left
+      .title
+        margin-top: 0
+        color: $dark
+      .subtitle
+        display: inline-block
+        margin: 0 0 0.25em
+        padding: 0.4em 1em
+        background: rgba($light, 0.9)
+        color: $dark
+        transition: opacity 0.35s, transform 0.35s
+        transform: translate3d(-360px, 0, 0)
+        width: auto
+        &:first-child
+          transition-delay: 0.15s
+        &:nth-of-type(2)
+          transition-delay: 0.1s
+        &:nth-of-type(3)
+          transition-delay: 0.05s
+    &:hover img
+      opacity: 1
+      transform: scale3d(1.1, 1.1, 1)
+    &:hover .subtitle
+      transform: translate3d(0, 0, 0)
+
+  &.with-image.with-effect-three
+    .image
+      background-color: $dark
+      img
+        transition: transform 0.35s
+      figcaption
+        text-align: left
+      .title
+        position: absolute
+        bottom: 0
+        left: 0
+        padding: 30px
+        transition: transform 0.35s
+      .foot
+        opacity: 0
+        background-color: $dark
+        color: $light
+        transition: opacity 0.35s, transform 0.35s
+        transform: translate3d(0, 100%, 0)
+        align-items: flex-start
+      .subtitle
+        text-align: left
+        width: auto
+        margin: 0 0 0 20px
+    &:hover img
+      transform: translate3d(0, -80px, 0)
+      border-bottom-left-radius: 0px
+      border-bottom-right-radius: 0px
+    &:hover .title
+      transform: translate3d(0, -100px, 0)
+    &:hover .foot
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+
+  &.with-image.with-effect-four
+    .image
+      img
+        opacity: 0.95
+        transition: transform 0.35s
+        transform: scale3d(1.05, 1.05, 1)
+      figcaption:before
+        height: 100%
+        background: rgba($light, 0.5)
+        content: ''
+        transition: transform 0.5s
+        transform: scale3d(2.5, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0)
+      .title
+        position: absolute
+        top: 20px
+        right: 0
+        padding: 30px
+        transition: transform 0.35s
+      .foot
+        position: absolute
+        right: 0
+        bottom: 0
+        margin: 30px
+        padding: 0 10px
+        border-right: 4px solid $light
+        text-align: right
+        opacity: 0
+        transition: opacity 0.4s
+    &:hover img
+      opacity: 1
+      transform: scale3d(1, 1, 1)
+    &:hover figcaption:before
+      transform: scale3d(2.5, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0)
+    &:hover .foot
+      opacity: 1
+      transition-delay: 0.1s
+
+  &.with-image.with-effect-five
+    .image
+      img
+        opacity: 1
+      figcaption:before
+        position: absolute
+        top: 0
+        right: 20px
+        left: 20px
+        height: 80px
+        background: $light
+        content: ''
+        transition: opacity 0.35s, transform 0.35s
+        transform: translate3d(0, 70px, 0) scale3d(1, 0.05, 1)
+        transform-origin: 50% 0
+      .title
+        color: $dark
+        transition: transform 0.35s
+      .foot
+        padding: 2.25em 0.5em
+        font-weight: 600
+        font-size: 100%
+        line-height: 1.5
+        opacity: 0
+        transition: opacity 0.35s, transform 0.35s
+        transform: translate3d(0, -10px, 0)
+      .subtitle
+        margin-top: -70px
+        color: $dark
+    &:hover figcaption:before
+      opacity: 0.8
+      transform: translate3d(0, 5em, 0) scale3d(1, 1, 1)
+    &:hover .foot
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+
+  &.with-image.with-effect-six
+    .image
+      img
+        opacity: 1
+      figcaption:before
+        position: absolute
+        top: 30px
+        right: 30px
+        bottom: 30px
+        left: 30px
+        border: 2px solid $light
+        border-radius: $border-radius
+        box-shadow: 0 0 0 50px rgba($light, 0.4)
+        content: ''
+        opacity: 0
+        transition: opacity 0.35s, transform 0.35s
+        transform: scale3d(1.4, 1.4, 1)
+      .foot
+        opacity: 0
+        transition: opacity 0.35s, transform 0.35s
+        transform: scale(1.5)
+      .subtitle
+        margin-top: -50px
+    &:hover figcaption
+      background-color: rgba(58, 52, 42, 0.2)
+    &:hover figcaption:before
+      opacity: 1
+      transform: scale3d(1, 1, 1)
+    &:hover .foot
+      opacity: 1
+      transform: scale3d(1, 1, 1)
+
+
+  &.action
+    min-height: 200px
+    .image
+      backface-visibility: hidden
+      overflow: hidden
+      img
+        position: relative
+        display: block
+        opacity: 0.85
+      figcaption
+        position: absolute
+        left: 0
+        width: 100%
+        top: auto
+        bottom: 0
+        padding: 1em
+        height: 3.75em
+        background: #fff
+        color: #3c4a50
+        transition: transform 0.35s
+        transform: translate3d(0, 100%, 0)
+        text-transform: uppercase
+        font-size: 1.25em
+      &:hover figcaption
+        transform: translate3d(0,0,0)
 
   &.feature
     background-color: $light
