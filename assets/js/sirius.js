@@ -1,11 +1,13 @@
 var Vue = require('vue');
 
+Vue.component('sirius-like-button', require('./components/SiriusLikeButton.vue'));
+Vue.component('sirius-list', require('./components/SiriusList.vue'));
 Vue.component('sirius-menu', require('./components/SiriusMenu.vue'));
 Vue.component('sirius-modal', require('./components/SiriusModal.vue'));
 Vue.component('sirius-notification', require('./components/SiriusNotification.vue'));
-Vue.component('sirius-list', require('./components/SiriusList.vue'));
 Vue.component('sirius-pagination', require('./components/SiriusPagination.vue'));
 Vue.component('sirius-progress-bar', require('./components/SiriusProgressBar.vue'));
+Vue.directive('sirius-class', require('./directives/SiriusClass.vue'));
 
 new Vue({
     el: '#sirius',

@@ -14,7 +14,7 @@
   margin: 0 $gap
   padding: $gap
   border-radius: $border-radius
-  overflow: hidden
+  //overflow: hidden
   cursor: pointer
   +shadow(3)
   .head,
@@ -305,30 +305,82 @@
 
 
   &.action
-    min-height: 200px
+    transition: 0.6s
+    transform-style: preserve-3d
+    position: relative
+    background-color: transparent
+    &.flipped
+      transform: rotateY( 180deg )
+      .image.front
+        transform: rotateY( 0deg )
     .image
-      backface-visibility: hidden
-      overflow: hidden
       img
         position: relative
         display: block
         opacity: 0.85
       figcaption
+        background-color: rgba($dark,0.2)
+        backface-visibility: hidden
+        button, .button
+          background-color: transparent
+          border: none
+          margin: 0
+          color: $light
+          i
+            font-size: $font-large
+            transition: all 0.3s cubic-bezier(0.34, 1.61, 0.7, 1)
+          &:hover,&:focus
+            i
+              transform: scale(1.2)
+        .actions
+          position: absolute
+          top: 0px
+          left: 0px
+          &.bottom
+            top: auto
+            bottom: 0px
+          &.right
+            left: auto
+            right: 0px
+          &.center
+            position: relative
+            width: 100%
+            height: 100%
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+        .hover-actions
+          position: absolute
+          display: flex
+          justify-content: center
+          top: auto
+          bottom: 0
+          padding: 20px 0
+          height: 40px
+          width: 100%
+          text-align: center
+          background: rgba($light,0.5)
+          color: $dark
+          border-bottom-left-radius: $border-radius
+          border-bottom-right-radius: $border-radius
+          transition: transform 0.35s
+          transform: translate3d(0, 100%, 0)
+          button, .button
+            color: $dark
+
+      &:hover figcaption .hover-actions
+        transform: translate3d(0, 0, 0)
+      &.front, &.back
+        backface-visibility: hidden
         position: absolute
+        top: 0
         left: 0
-        width: 100%
-        top: auto
-        bottom: 0
-        padding: 1em
-        height: 3.75em
-        background: #fff
-        color: #3c4a50
-        transition: transform 0.35s
-        transform: translate3d(0, 100%, 0)
-        text-transform: uppercase
-        font-size: 1.25em
-      &:hover figcaption
-        transform: translate3d(0,0,0)
+      &.front
+        z-index: 3
+        transform: rotateY( 0deg )
+      &.back
+        transform: rotateY( 180deg )
 
   &.feature
     background-color: $light

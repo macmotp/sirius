@@ -1,0 +1,60 @@
+<div class="action card with-image">
+    <figure class="image">
+        <img src="#" alt="image">
+        <figcaption>
+            <div class="body">
+                <h2 class="title">On the Corners</h2>
+            </div>
+            <div class="top left actions">
+                <sirius-like-button type="star"></sirius-like-button>
+            </div>
+            <div class="bottom left actions">
+                <sirius-like-button type="heart" :active="true"></sirius-like-button>
+            </div>
+            <div class="top right actions">
+                <sirius-like-button type="star" :active="true"></sirius-like-button>
+            </div>
+            <div class="bottom right actions">
+                <sirius-like-button type="heart"></sirius-like-button>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<div class="action card with-image">
+    <figure class="image">
+        <img src="#" alt="image">
+        <figcaption>
+            <div class="body">
+                <h2 class="title">On Hover</h2>
+            </div>
+            <div class="hover-actions">
+                <button class="with-icon"><i class="fa fa-facebook"></i></button>
+                <button class="with-icon"><i class="fa fa-instagram"></i></button>
+                <sirius-like-button type="heart"></sirius-like-button>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<div class="action card with-image" v-sirius-class="'flipped'">
+    <figure class="image front">
+        <img src="#" alt="image">
+        <figcaption>
+            <div class="top right actions">
+                <button class="with-icon"><i class="fa fa-undo"></i></button>
+            </div>
+            <div class="body">
+                <h2 class="title">On the Backface</h2>
+            </div>
+        </figcaption>
+    </figure>
+    <figure class="image back">
+        <img src="#" alt="image">
+        <figcaption>
+            <div class="center actions">
+                <button class="with-icon"><i class="fa fa-facebook"></i></button>
+                <button class="with-icon"><i class="fa fa-instagram"></i></button>
+                <sirius-like-button type="heart"></sirius-like-button>
+            </div>
+        </figcaption>
+    </figure>
+</div>

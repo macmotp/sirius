@@ -376,6 +376,94 @@
                 <section class="section">
                     <div class="container">
                         <div class="content">
+                            <h2 class="title">Action Cards</h2>
+                            <p>Sometimes you need some <strong>buttons</strong> to interact with:</p>
+                            <div class="grid">
+                                <div class="tile">
+                                    <div class="action card with-image">
+                                        <figure class="image">
+                                            <img src="../../resources/images/image-01.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="body">
+                                                    <h2 class="title">On the Corners</h2>
+                                                </div>
+                                                <div class="top left actions">
+                                                    <sirius-like-button type="star"></sirius-like-button>
+                                                </div>
+                                                <div class="bottom left actions">
+                                                    <sirius-like-button type="heart" :active="true"></sirius-like-button>
+                                                </div>
+                                                <div class="top right actions">
+                                                    <sirius-like-button type="star" :active="true"></sirius-like-button>
+                                                </div>
+                                                <div class="bottom right actions">
+                                                    <sirius-like-button type="heart"></sirius-like-button>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="action card with-image">
+                                        <figure class="image">
+                                            <img src="../../resources/images/image-02.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="body">
+                                                    <h2 class="title">On Hover</h2>
+                                                </div>
+                                                <div class="hover-actions">
+                                                    <button class="with-icon"><i class="fa fa-facebook"></i></button>
+                                                    <button class="with-icon"><i class="fa fa-instagram"></i></button>
+                                                    <sirius-like-button type="heart"></sirius-like-button>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="action card with-image" v-sirius-class="'flipped'">
+                                        <figure class="image front">
+                                            <img src="../../resources/images/image-03.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="top right actions">
+                                                    <button class="with-icon"><i class="fa fa-undo"></i></button>
+                                                </div>
+                                                <div class="body">
+                                                    <h2 class="title">On the Backface</h2>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <figure class="image back">
+                                            <img src="../../resources/images/image-03.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="center actions">
+                                                    <button class="with-icon"><i class="fa fa-facebook"></i></button>
+                                                    <button class="with-icon"><i class="fa fa-instagram"></i></button>
+                                                    <sirius-like-button type="heart"></sirius-like-button>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>In the last card, you need to add the <code>v-sirius-class</code> <strong>directive</strong>: this allows you to toggle the specified class inside the element.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/layouts/card/actions.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
                             <h2 class="title">Feature Cards</h2>
                             <p>You can also insert <strong>icons</strong> for a better presentation:</p>
                             <div class="grid">

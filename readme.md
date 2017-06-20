@@ -28,10 +28,11 @@ In current version:
     * Footer
     * Card
 * Vue
-  * Menu
+  * Like Button
   * List
-  * Notification
+  * Menu
   * Modal
+  * Notification
   * Pagination
   * Progress Bar
 

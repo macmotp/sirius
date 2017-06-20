@@ -138,6 +138,21 @@ button, .button
     &:hover,&:focus
       i
         transform: translateX(5px)
+  &.like
+    background-color: transparent
+    border: none
+    padding: 7px
+    margin: 0
+    i
+      font-size: $font-large
+      transition: all 0.3s cubic-bezier(0.34, 1.61, 0.7, 1)
+      &.fa-heart-o, &.fa-heart
+        color: $error
+      &.fa-star-o, &.fa-star
+        color: $alert
+    &:hover,&:focus
+      i
+        transform: scale(1.2)
 
 .button-group > button:first-child, .button:first-child
   margin-left: 0
