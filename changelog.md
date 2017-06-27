@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.2.4-alpha
+
+### Updated
+
+* Card: Product, Blog
+
 ## v0.2.3-alpha
 
 ### Updated

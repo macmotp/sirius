@@ -380,7 +380,7 @@
                             <p>Sometimes you need some <strong>buttons</strong> to interact with:</p>
                             <div class="grid">
                                 <div class="tile">
-                                    <div class="action card with-image">
+                                    <div class="action card">
                                         <figure class="image">
                                             <img src="../../resources/images/image-01.jpg" alt="image">
                                             <figcaption>
@@ -404,7 +404,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="action card with-image">
+                                    <div class="action card">
                                         <figure class="image">
                                             <img src="../../resources/images/image-02.jpg" alt="image">
                                             <figcaption>
@@ -421,7 +421,7 @@
                                     </div>
                                 </div>
                                 <div class="tile">
-                                    <div class="action card with-image" v-sirius-class="'flipped'">
+                                    <div class="action card" v-sirius-class="'flipped'">
                                         <figure class="image front">
                                             <img src="../../resources/images/image-03.jpg" alt="image">
                                             <figcaption>
@@ -455,6 +455,218 @@
                         <div class="content">
                             <div class="highlight">
                                 <pre  class="language-css" data-src="../../resources/html/layouts/card/actions.html"></pre>
+                                <button class="copy">copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="title">Profile, Blog, Product</h2>
+                            <p>For <strong>contact</strong> pages, <strong>articles</strong>, and <strong>ecommerce</strong>.</p>
+                            <div class="grid">
+                                <div class="tile">
+                                    <div class="profile card" v-sirius-class="'flipped'">
+                                        <figure class="image front">
+                                            <img src="../../resources/images/image-04.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="head">
+                                                    <img src="../../resources/images/profile.jpg" class="avatar" alt="image">
+                                                </div>
+                                                <div class="body">
+                                                    <h2 class="name">John <strong>Doe</strong></h2>
+                                                    <hr>
+                                                    <h4 class="job">Web Developer</h4>
+                                                </div>
+                                                <div class="foot">
+                                                    <ul class="info">
+                                                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <figure class="image back">
+                                            <img src="../../resources/images/image-04.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="body">
+                                                    <p class="description">Hello, my name is John Doe and this is something you need to know about me: lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua...</p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="blog card">
+                                        <figure class="image">
+                                            <img src="../../resources/images/image-05.jpg" alt="image">
+                                            <figcaption>
+                                                <div class="head">
+                                                    <h2 class="title">New <strong>Article</strong></h2>
+                                                    <hr>
+                                                    <h4 class="subtitle">About something</h4>
+                                                </div>
+                                                <div class="body">
+                                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua...</p>
+                                                    <button class="transparent light small">Read More</button>
+                                                </div>
+                                                <div class="foot">
+                                                    <ul class="info">
+                                                        <li><i class="fa fa-comment-o"></i>10</li>
+                                                        <li><i class="fa fa-calendar"></i>22nd June 2017</li>
+                                                    </ul>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="product card with-ribbon primary">
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon">
+                                                NEW
+                                            </div>
+                                        </div>
+                                        <figure class="image front">
+                                            <figcaption>
+                                                <div class="head" v-sirius-trigger-class:flipped="'card'">
+                                                    <img src="../../resources/images/product-yellow.png" alt="image">
+                                                </div>
+                                                <div class="body">
+                                                    <div class="cart-actions">
+                                                        <div class="left">
+                                                            <div class="details" v-sirius-trigger-class:flipped="'card'">
+                                                                <h2 class="name">Pac Man</h2>
+                                                                <p class="price"><span class="full">€ 19.90</span> € 14.90</p>
+                                                            </div>
+                                                            <div class="buy" v-sirius-trigger-class:added="'cart-actions'"></div>
+                                                        </div>
+                                                        <div class="right">
+                                                            <div class="remove" v-sirius-trigger-class:added="'cart-actions'"></div>
+                                                            <div class="message">
+                                                                <h2 class="name">Pac Man</h2>
+                                                                <p class="text">Added to your cart</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <figure class="image back">
+                                            <figcaption>
+                                                <div class="body" v-sirius-trigger-class:flipped="'card'">
+                                                    <h2 class="name">Pac Man</h2>
+                                                    <h4 class="subtitle">A very cool eater</h4>
+                                                    <p class="price"><span class="full">€ 19.90</span> € 14.90</p>
+                                                    <table class="product-details">
+                                                        <tr>
+                                                            <td colspan="2">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua...</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Availability:</td>
+                                                            <td><div class="tag success">AVAILABLE</div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brand:</td>
+                                                            <td><a>Brand Name</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Height:</td>
+                                                            <td>13 px</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Width:</td>
+                                                            <td>14 px</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="foot">
+                                                    <a class="button primary small">Full Details</a>
+                                                </div>
+                                                <div class="top right actions">
+                                                    <sirius-like-button type="heart"></sirius-like-button>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="product card">
+                                        <figure class="image front">
+                                            <figcaption>
+                                                <div class="head" v-sirius-trigger-class:flipped="'card'">
+                                                    <img src="../../resources/images/product-orange.png" alt="image">
+                                                </div>
+                                                <div class="body">
+                                                    <div class="cart-actions">
+                                                        <div class="left">
+                                                            <div class="details" v-sirius-trigger-class:flipped="'card'">
+                                                                <h2 class="name">Ghost</h2>
+                                                                <p class="price">€ 19.90</p>
+                                                            </div>
+                                                            <div class="buy" v-sirius-trigger-class:added="'cart-actions'"></div>
+                                                        </div>
+                                                        <div class="right">
+                                                            <div class="remove" v-sirius-trigger-class:added="'cart-actions'"></div>
+                                                            <div class="message">
+                                                                <h2 class="name">Ghost</h2>
+                                                                <p class="text">Added to your cart</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                        <figure class="image back">
+                                            <figcaption>
+                                                <div class="body" v-sirius-trigger-class:flipped="'card'">
+                                                    <h2 class="name">Ghost</h2>
+                                                    <h4 class="subtitle">Trying to run away</h4>
+                                                    <p class="price">€ 19.90</p>
+                                                    <table class="product-details">
+                                                        <tr>
+                                                            <td colspan="2">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua...</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Availability:</td>
+                                                            <td><div class="tag success">AVAILABLE</div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brand:</td>
+                                                            <td><a>Brand Name</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Height:</td>
+                                                            <td>13 px</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Width:</td>
+                                                            <td>14 px</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="foot">
+                                                    <a class="button primary small">Full Details</a>
+                                                </div>
+                                                <div class="top right actions">
+                                                    <sirius-like-button type="heart"></sirius-like-button>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="content">
+                            <div class="highlight">
+                                <pre  class="language-css" data-src="../../resources/html/layouts/card/pbp.html"></pre>
                                 <button class="copy">copy</button>
                             </div>
                         </div>

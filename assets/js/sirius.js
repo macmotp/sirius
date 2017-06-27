@@ -8,6 +8,7 @@ Vue.component('sirius-notification', require('./components/SiriusNotification.vu
 Vue.component('sirius-pagination', require('./components/SiriusPagination.vue'));
 Vue.component('sirius-progress-bar', require('./components/SiriusProgressBar.vue'));
 Vue.directive('sirius-class', require('./directives/SiriusClass.vue'));
+Vue.directive('sirius-trigger-class', require('./directives/SiriusTriggerClass.vue'));
 
 new Vue({
     el: '#sirius',
