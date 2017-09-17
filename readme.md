@@ -7,7 +7,7 @@ Sirius UI - Flexible CSS Framework based on [Flexbox](https://developer.mozilla.
 
 [![Sirius UI - Flexible CSS Framework](https://raw.githubusercontent.com/macmotp/sirius/master/resources/images/sirius_cover.png)](https://larastars.com/sirius/demo)
 
-Build your beautiful website with Sirius. Fully responsive elements and layouts. Easy integration for Laravel 5.
+Build your beautiful website with Sirius. Fully responsive elements and layouts. For Laravel 5 integration check [here](https://github.com/macmotp/sirius-laravel).
 
 In current version:
 * SASS
@@ -68,7 +68,7 @@ You can copy and inject the latest release directly into your HTML:
     </body>
 </html>
 ```
-## Advanced Usage and Laravel Integration
+## Advanced Usage
 
 Sirius uses the wonderful [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) to built its assets. If you want to change SASS variables or add your own Vue components, install node dependencies:
 
@@ -115,3 +115,5 @@ Support only through Github. Please don't send emails about issues, make a Githu
 Copyright 2017 - [Larastars](https://larastars.com) owned by [Marco Gava](https://www.linkedin.com/in/gavamarco).
 Code released under [LGPL license](https://github.com/macmotp/sirius/blob/master/license.md).
 You are free to use it in personal and commercial projects. The code can be forked and modified, but the original copyright author should always be included!
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/CZCmGuCTGRSYx5MNijWrLSGs/macmotp/sirius'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/CZCmGuCTGRSYx5MNijWrLSGs/macmotp/sirius.svg' /></a>

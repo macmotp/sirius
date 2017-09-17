@@ -23,12 +23,13 @@
   },
   "license": "LGPL",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
-    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
-    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "laravel-mix": "^0.10.0",
-    "vue": "^2.2.6"
+    "laravel-mix": "^1.0.7",
+    "vue": "^2.3.4"
   }
 }
