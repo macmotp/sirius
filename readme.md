@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/dt/sirius-ui.svg?style=flat-square)](https://www.npmjs.com/package/sirius-ui)
 [![twitter](https://img.shields.io/badge/twitter-%23areyousirius%3F-blue.svg?style=flat-square)](https://twitter.com/larastarsgalaxy)
 
-[![Sirius UI - Framework based on Grid and Vue](https://raw.githubusercontent.com/macmotp/sirius/master/resources/images/sirius_cover.png)](#)
+[![Sirius UI - Framework based on Grid and Vue](https://raw.githubusercontent.com/macmotp/sirius/master/app/assets/images/sirius_cover.png)](#)
 
 Sirius is a framework based on [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) and [Vue](https://vuejs.org). Designed to aim for aesthetics and simplicity.
 
