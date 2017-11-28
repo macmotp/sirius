@@ -1,0 +1,27 @@
+/*
+ *
+ * Elements - Tag
+ *
+ */
+
+.tag:not(.token)
+  display: inline-flex
+  justify-content: center
+  align-content: center
+  align-items: center
+  vertical-align: middle
+  white-space: nowrap
+  text-align: center
+  text-transform: uppercase
+  border-radius: $border-radius
+  border-left: $border-size*2 solid $dark
+  line-height: 1
+  padding: 0.2em 0.5em
+  font-weight: 300
+  background-color: $dark
+  color: $white
+  +shadow(1)
+  @each $key, $color in $colors
+    &.#{$key}
+      background-color: base($color)
+      color: inverse($color)

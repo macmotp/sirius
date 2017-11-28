@@ -1,0 +1,75 @@
+/*
+ *
+ * Elements - Notification
+ *
+ */
+
+.notification
+  &:not(:last-child)
+    margin-bottom: 1em
+  &:after
+    display: block
+    position: absolute
+    bottom: 1.5em
+    top: 1.5em
+    left: 0
+    width: $border-size*2
+    background: $dark
+    content: ''
+    transform: translate3d(1.5em, 0, 0)
+  display: none
+  background-color: $dark
+  color: $white
+  border-radius: $border-radius
+  padding: 1em
+  position: relative
+  width: 100%
+  +shadow(1)
+  &.active
+    display: block
+  .message
+    color: $white
+    margin-left: 1.5em
+    padding: 1em
+  .close
+    border-radius: 0 $border-radius
+    float: right
+    margin: -1em -1em 0 0
+  &.success
+    &:after
+      background: base($success)
+  &.warning
+    &:after
+      background: base($warning)
+  &.error
+    &:after
+      background: base($error)
+
+
+.flash
+  position: fixed
+  right: 0
+  bottom: 0
+  z-index: 3000
+  pointer-events: none
+  width: 40vw
+  +touch
+    width: 100%
+  .notification
+    display: block
+    margin: 0
+    position: relative
+    pointer-events: auto
+    overflow: hidden
+    right: 0
+    bottom: 0
+    background: rgba($black, 0.99)
+    border-radius: 0px
+    width: 100%
+    cursor: pointer
+    +shadow(2)
+    .close
+      border-radius: 0
+      +activeBackground($dark)
+    &:hover
+      +shadow(3)

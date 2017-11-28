@@ -1,0 +1,157 @@
+/*
+ *
+ * Base - Functions
+ *
+ */
+
+// Map Theme and State Colors
+$colors: (white: $white, light: $light, dark: $dark, black: $black, gray: $gray, primary: $primary, secondary: $secondary, success: $success, warning: $warning, error: $error) !default
+
+// Map Brand Colors
+$brands: (facebook: $facebook, twitter: $twitter, pinterest: $pinterest, google: $google, linkedin: $linkedin, dribbble: $dribbble, github: $github, youtube: $youtube, instagram: $instagram, reddit: $reddit, tumblr: $tumblr, vimeo: $vimeo, snapchat: $snapchat, flickr: $flickr, skype: $skype, slack: $slack, rss: $rss)
+
+// Return a variation of a color in the palette - Usage:
+// base($primary) returns base color
+// lighter($primary) returns light version of color
+// darker($primary) returns dark version of color
+// inverse($primary) returns the inverse color
+// active($primary) returns the active color
+@function base($color: $gray)
+  @return $color
+@function lighter($color: $gray)
+  @return lighten($color, 10)
+@function darker($color: $gray)
+  @return darken($color, 10)
+@function inverse($color: $gray)
+  @if ($color == $white or $color == $light)
+    @return $black
+  @else
+    @return $white
+@function active($color: $gray)
+  @return lighten($color, 20)
+
+// Transition Effects - By default it will be applied to all
+=transition($on: 'all', $type: 'linear')
+  transition: #{$on} 0.3s #{$type} 0s
+
+// Add effect for hover and active state of a element
+=activeBackground($color: $dark, $transparent: 0)
+  +transition
+  @if($transparent == 1)
+    background-color: transparent
+    &:hover
+      background-color: base($color)
+    &.active, &:active, &:focus
+      outline: none
+      background-color: lighter($color)
+  @else
+    background-color: $color
+    &:hover
+      background-color: lighter($color)
+    &.active, &:active, &:focus
+      outline: none
+      background-color: active($color)
+
+=activeColor($color: $black)
+  +transition
+  color: $color
+  &:hover
+    color: lighter($color)
+  &.active, &:active, &:focus
+    color: active($color)
+
+// Add a border to the element - Set border radius as on/off parameter
+=border($color: $dark, $size: $border-size, $radius: 1)
+  border: $size solid $color
+  @if($radius == 1)
+    border-radius: $border-radius
+
+=underline
+  &:after
+    display: block
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: $border-size*2
+    background: $dark
+    content: ''
+    transform: translate3d(0, 10px, 0)
+    +transition
+  &.active, &:active, &:focus, &:hover
+    &:after
+      transform: translate3d(0, 0, 0)
+
+// Responsive Breakpoints
+$mobile: 576px !default
+$tablet: 767px !default
+$desktop: 992px !default
+$widescreen: 1280px !default
+=from($device)
+  @media screen and (min-width: $device)
+    @content
+=until($device)
+  @media screen and (max-width: $device - 1px)
+    @content
+=mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
+=tablet
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+    @content
+=touch
+  @media screen and (max-width: $desktop - 1px)
+    @content
+=desktop
+  @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px)
+    @content
+=widescreen
+  @media screen and (min-width: $widescreen)
+    @content
+
+// Shadow
+=shadow($level)
+  @if ($level == 0)
+    box-shadow: none
+  @else if($level == 1)
+    box-shadow: 0 1px 3px rgba($dark, 0.12), 0 1px 2px rgba($dark, 0.24)
+  @else if($level == 2)
+    box-shadow: 0 3px 6px rgba($dark, 0.16), 0 3px 6px rgba($dark, 0.23)
+  @else if($level == 3)
+    box-shadow: 0 10px 20px rgba($dark, 0.19), 0 6px 6px rgba($dark, 0.23)
+  @else if($level == 4)
+    box-shadow: 0 14px 28px rgba($dark, 0.25), 0 10px 10px rgba($dark, 0.22)
+  @else if($level == 5)
+    box-shadow: 0 19px 38px rgba($dark, 0.3), 0 15px 12px rgba($dark, 0.22)
+
+// Placeholder
+=placeholder
+  $prefixes: ':-moz' ':-webkit-input' '-moz' '-ms-input'
+  @each $prefix in $prefixes
+    &:#{$prefix}-placeholder
+      @content
+
+// No selection
+=no-selection
+  user-select: none
+
+// Scale dimension responsively
+=responsive-dim($type: 'height', $dim: 100px)
+  +mobile
+    #{$type}: $dim * 0.7
+  +tablet
+    #{$type}: $dim * 0.8
+  +desktop
+    #{$type}: $dim * 0.9
+  +widescreen
+    #{$type}: $dim * 1
+
+// Enhance - Lighten color or background of object on hover
+=enhance($type: 'color', $color: $primary)
+  #{$type}: $color
+  +transition
+  &:hover
+    #{$type}: color($color, light)
+  &.active, &:active, &:focus
+    #{$type}: color($color, lighter)

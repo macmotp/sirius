@@ -1,0 +1,68 @@
+#!/bin/bash
+
+path=${PWD##*/}
+
+if [ $path = "start" ]; then
+    cd ..
+    cd ..
+fi
+
+echo "Welcome to the Sirius UI development environment installer!"
+PS3="Please, choose your driver: "
+options=("Type 1 for NPM, or" "Type 2 for Yarn (recommended)")
+choice=""
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Type 1 for NPM, or")
+            choice="npm";
+            break
+            ;;
+        "Type 2 for Yarn (recommended)")
+            choice="yarn";
+            break
+            ;;
+        *) echo "Option not valid."
+           echo "1) Type 1 for NPM, or"
+           echo "2) Type 2 for Yarn (recommended)"
+           ;;
+    esac
+done
+
+
+if [ $choice = "npm" ]; then 
+    echo "Install dev dependencies through npm:"
+    npm install laravel-mix --save-dev
+    npm install vue --save-dev
+else
+    echo "Install dev dependencies through yarn:"
+    yarn add laravel-mix --save-dev
+    yarn add vue --save-dev
+fi
+echo "Done."
+
+echo "Publishing config files:"
+cp -r node_modules/sirius-ui/app/start/webpack.mix.js ./
+cp -r node_modules/sirius-ui/app/start/package.json ./
+cp -r node_modules/sirius-ui/app/start/index.html ./
+echo "Done."
+
+echo "Publishing assets:"
+mkdir src && cd src
+mkdir sass
+mkdir js
+cd ..
+cp -r node_modules/sirius-ui/app/start/app.js ./src/js/
+cp -r node_modules/sirius-ui/app/start/app.sass ./src/sass/
+
+echo "Done. List of available commands:"
+
+if [ $choice = "npm" ]; then 
+    echo "1) Watch:         npm run watch"
+    echo "2) Development:   npm run dev"
+    echo "3) Production:    npm run production"
+else
+    echo "1) Watch:         yarn watch"
+    echo "2) Development:   yarn dev"
+    echo "3) Production:    yarn production"
+fi

@@ -1,0 +1,71 @@
+/*
+ *
+ * Elements - Radio
+ *
+ */
+
+.label-radio
+  font-size: 1em
+  position: relative
+  display: block
+  margin-top: 0
+  margin-bottom: 0.5em
+  padding-left: 2em
+  line-height: 1.5
+  font-weight: 300
+
+.label-radio input
+  position: absolute
+  z-index: -1
+  opacity: 0
+
+.radio-indicator
+  position: absolute
+  top: 0
+  left: 0
+  width: 26px
+  height: 26px
+  background: $light
+  border: $border-size solid $light
+  border-radius: 50%
+  transition: background-color 0.3s ease 0s
+
+.label-radio:hover input ~ .radio-indicator,
+.label-radio input:focus ~ .radio-indicator
+  cursor: pointer
+  background: lighter($dark)
+
+.label-radio input:checked ~ .radio-indicator
+  cursor: pointer
+  background: $dark
+
+.label-radio:hover input:not([disabled]):checked ~ .radio-indicator,
+.label-radio input:checked:focus ~ .radio-indicator
+  cursor: pointer
+  background: $dark
+
+.label-radio input:disabled ~ .radio-indicator
+  cursor: not-allowed
+  border-color: transparent
+  pointer-events: none
+  opacity: .6
+  background: $light
+
+.radio-indicator:after
+  position: absolute
+  display: none
+  content: ''
+
+.label-radio input:checked ~ .radio-indicator:after
+  display: block
+
+.radio .radio-indicator:after
+  top: 6px - $border-size
+  left: 6px - $border-size
+  width: 14px
+  height: 14px
+  border-radius: 50%
+  background: $white
+
+.radio input:disabled ~ .radio-indicator:after
+  background: $dark

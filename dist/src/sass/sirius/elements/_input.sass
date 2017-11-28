@@ -1,0 +1,105 @@
+/*
+ *
+ * Elements - Input
+ *
+ */
+
+input[type="text"], input[type="password"], input[type="search"]
+  -webkit-appearance: none
+  display: flex
+  position: relative
+  +activeBackground($light)
+  border: none
+  border-left: $border-size*2 solid $dark
+  border-radius: $border-radius
+  color: $black
+  +responsive-font
+  height: 2em
+  padding: 0.5em
+  width: 100%
+  +placeholder
+    color: darker($dark)
+  &.small
+    height: 1.5em
+    +responsive-font(3px)
+  &.large
+    height: 2.5em
+    +responsive-font(-3px)
+
+  & + .help
+    +responsive-font(4px)
+    padding-left: 1em
+    margin-bottom: 0.5em
+    color: $dark
+
+  &.has-success
+    border-color: $success
+    & + .help
+      color: darker($success)
+  &.has-error
+    border-color: $error
+    & + .help
+      color: darker($error)
+  &.has-warning
+    border-color: $warning
+    & + .help
+      color: darker($warning)
+
+  &[disabled],
+  &.disabled
+    background-color: lighter($dark)
+    border-color: $dark
+    cursor: not-allowed
+    +placeholder
+      color: $dark
+
+textarea
+  @extend input[type="text"]
+  height: auto
+  max-width: 100%
+  resize: none
+
+form
+  width: 100%
+  display: grid
+  grid-gap: $column-gap
+  +responsive-padding
+  +from($tablet)
+    &.with-two-columns
+      grid-template-columns: repeat(2, 1fr)
+    &.with-three-columns
+      grid-template-columns: repeat(3, 1fr)
+  .column
+    position: relative
+    input + input, input + textarea
+      margin-top: 1em
+
+.input-with-addon
+  display: flex
+  height: 2em
+  .addon
+    padding: 0 0.5em 0 0.75em
+    justify-content: center
+    height: 100%
+    margin: 0
+    align-items: center
+    text-align: center
+    display: flex
+    border: none
+    &.right
+      border-radius: 0 $border-radius $border-radius 0
+      & + input, input + &
+        border-top-right-radius: 0px
+        border-bottom-right-radius: 0px
+    &.left
+      border-radius: $border-radius 0 0 $border-radius
+      & + input, input + &
+        border-top-left-radius: 0px
+        border-bottom-left-radius: 0px
+  .addon:not(button), .addon:not(.button)
+    background-color: lighter($dark)
+    color: $dark
+  &.large
+    height: 2.9em
+  &.small
+    height: 1.25em

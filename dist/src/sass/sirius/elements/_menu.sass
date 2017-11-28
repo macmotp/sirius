@@ -1,0 +1,25 @@
+/*
+ *
+ * Elements - Menu
+ *
+ */
+
+menu
+  margin: 0
+  padding: 0
+  width: 100%
+  ul
+    list-style: none
+    li.item
+      display: flex
+      margin: 0
+      margin-bottom: 0.5em
+      +activeBackground($light, 1)
+      +activeColor($black)
+      a
+        text-decoration: none
+        +activeBackground($light, 1)
+        +activeColor($black)
+        border-left: $border-size*2 solid $dark
+        padding: 0.5em
+        flex: 1

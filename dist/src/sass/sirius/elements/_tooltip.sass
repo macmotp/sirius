@@ -1,0 +1,112 @@
+/*
+ *
+ * Elements - Tooltip
+ *
+ */
+
+$tooltip-background: rgba($black, 0.99)
+
+[tooltip]
+  overflow: visible
+  position: relative
+  &:before, &:after
+    opacity: 0
+    pointer-events: none
+    +transition()
+    bottom: 100%
+    left: 50%
+    position: absolute
+    z-index: 10
+    transform: translate(-50%, 0.5em)
+    transform-origin: top
+  &:after
+    background: $tooltip-background
+    border-radius: $border-radius
+    border-top: $border-size*2 solid $light
+    color: $white
+    content: attr(tooltip)
+    +responsive-font()
+    padding: 0.2em 0.5em 0.4em
+    white-space: nowrap
+    margin-bottom: 22px
+    +shadow(2)
+  &:before
+    border-top: 11px solid $tooltip-background
+    border-left: 11px solid transparent
+    border-right: 11px solid transparent
+    border-bottom: 11px solid transparent
+    content: ""
+    margin: 0
+  &:hover
+    &:before, &:after
+      opacity: 1
+      pointer-events: auto
+      transform: translate(-50%, 0)
+
+
+[tooltip][position="bottom"]
+  &:before, &:after
+    bottom: auto
+    left: 50%
+    top: 100%
+    transform: translate(-50%, 0.5em)
+  &:after
+    border-top: 0
+    border-bottom: $border-size*2 solid $light
+    margin-bottom: 0
+    margin-top: 22px
+    padding: 0.4em 0.5em 0.2em
+  &:before
+    border-bottom: 11px solid $tooltip-background
+    border-top: 11px solid transparent
+    border-left: 11px solid transparent
+    border-right: 11px solid transparent
+  &:hover
+    &:before, &:after
+      transform: translate(-50%, 0)
+
+[tooltip][position="left"]
+  &:before, &:after
+    bottom: auto
+    left: auto
+    right: 100%
+    top: 50%
+    transform: translate(0.5em, -50%)
+  &:after
+    margin-right: 22px
+    border-top: 0
+    border-left: $border-size*2 solid $light
+    margin-bottom: 0
+    margin-top: 0
+    padding: 0.4em 0.5em
+  &:before
+    border-bottom: 11px solid transparent
+    border-top: 11px solid transparent
+    border-left: 11px solid $tooltip-background
+    border-right: 11px solid transparent
+
+  &:hover
+    &:before, &:after
+      transform: translate(0, -50%)
+
+[tooltip][position="right"]
+  &:before, &:after
+    bottom: auto
+    left: 100%
+    top: 50%
+    transform: translate(-0.5em, -50%)
+  &:after
+    margin-left: 22px
+    border-top: 0
+    border-right: $border-size*2 solid $light
+    margin-bottom: 0
+    margin-top: 0
+    padding: 0.4em 0.5em
+  &:before
+    border-bottom: 11px solid transparent
+    border-top: 11px solid transparent
+    border-left: 11px solid transparent
+    border-right: 11px solid $tooltip-background
+  &:hover
+    &:before, &:after
+      transform: translate(0, -50%)

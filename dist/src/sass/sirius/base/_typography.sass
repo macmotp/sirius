@@ -1,0 +1,247 @@
+/*
+ *
+ * Base - Typography
+ *
+ */
+
+// Import custom fonts here
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600")
+
+// Define font families
+$heading-font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif !default
+$body-font-family: Helvetica Neue, Helvetica, Arial, sans-serif !default
+$code-font-family: Menlo, monospace !default
+
+// Define font sizes for each breakpoint
+$font-size-mobile: 16px !default
+$font-size-tablet: 17px !default
+$font-size-desktop: 18px !default
+$font-size-widescreen: 19px !default
+
+=responsive-padding()
+  +mobile
+    padding-bottom: 10px
+    padding-top: 4px
+  +tablet
+    padding-bottom: 12px
+    padding-top: 6px
+  +desktop
+    padding-bottom: 14px
+    padding-top: 8px
+  +widescreen
+    padding-bottom: 16px
+    padding-top: 10px
+
+=responsive-font($diff:0px)
+  +mobile
+    font-size: $font-size-mobile - $diff
+  +tablet
+    font-size: $font-size-tablet - $diff
+  +desktop
+    font-size: $font-size-desktop - $diff
+  +widescreen
+    font-size: $font-size-widescreen - $diff
+
+html
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+  font-size: 87.5%
+  font-family: $body-font-family
+  +tablet
+    font-size: 93.75%
+  +desktop
+    font-size: 106.25%
+  +widescreen
+    font-size: 118.75%
+
+button,
+.button,
+input,
+select,
+textarea
+  font-family: $heading-font-family
+
+body
+  color: $black
+  font-weight: 300
+  line-height: 1.5
+  +responsive-font
+
+a
+  +activeColor($primary)
+  cursor: pointer
+
+p, ul, ol
+  font-size: inherit
+  line-height: 1.5
+  +responsive-padding
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+  font-family: $heading-font-family
+  font-weight: 300
+  font-style: normal
+  color: $black
+
+$headings: (h1: (1.2, 33px, 10px, 4px), h2: (1.2, 30px, 10px, 4px), h3: (1.1, 27px, 8px, 2px), h4: (1.1, 24px, 8px, 2px), h5: (1, 21px, 6px, 0px), h6: (1, 18px, 6px, 0px))
+@each $key, $map in $headings
+  $height: nth($map, 1)
+  $size: nth($map, 2)
+  $margin: nth($map, 3)
+  $padding: nth($map, 4)
+  #{$key}, .#{$key}
+    line-height: $height
+    +mobile
+      font-size: $size
+      margin-bottom: $margin
+      padding-top: $padding
+    +tablet
+      font-size: $size+1px
+      margin-bottom: $margin+2px
+      padding-top: $padding+2px
+    +desktop
+      font-size: $size+2px
+      margin-bottom: $margin+4px
+      padding-top: $padding+4px
+    +widescreen
+      font-size: $size+3px
+      margin-bottom: $margin+6px
+      padding-top: $padding+6px
+
+ul, ol
+  & li
+    +mobile
+      margin-left: 30px
+
+ol
+  list-style-type: none
+  li
+    counter-increment: top-level
+    &:before
+      content: counter(top-level) "."
+      margin-left: -33px
+      position: absolute
+      text-align: right
+      width: 30px
+
+button
+  font-weight: 300
+
+table, .table
+  font-style: normal
+  font-weight: 400
+  width: 100%
+  line-height: 1.5
+  font-size: inherit
+  +responsive-padding
+
+b, strong, .text-bold
+  font-weight: 700
+
+em, i, .text-italic
+  font-style: italic
+  min-width: 1em
+
+small, .caption
+  font-style: normal
+  font-weight: 400
+  color: $dark
+  +responsive-font(4px)
+
+small
+  line-height: 1.2
+.caption
+  line-height: 1.5
+
+h1 + .caption, .h1 + .caption, h2 + .caption, .h2 + .caption, h3 + .caption, .h3 + .caption
+  margin-top: -15px
+
+h4 + .caption, .h4 + .caption, h5 + .caption, .h5 + .caption, h6 + .caption, .h6 + .caption
+  margin-top: -10px
+
+blockquote p
+  border-left: 2px solid $dark
+  font-style: italic
+  padding-left: 20px
+  +from($tablet)
+    margin-left: -20px
+  +responsive-padding
+
+::-moz-selection, ::selection
+  background-color: $dark
+  color: $white
+  text-shadow: none
+
+.no-selection
+  user-select: none
+
+hr
+  background-image: linear-gradient(to left, rgba($dark, 0.1), rgba($dark, 0.3))
+  border: 0 none
+  height: 1px
+  margin: 40px 0
+  width: 100%
+
+code, pre
+  background-color: $white
+  font-family: $code-font-family
+
+pre
+  display: block
+  padding: 20px
+  margin: 10px 0
+  text-align: left
+  white-space: pre
+  overflow: auto
+  max-height: 200px
+
+code
+  line-height: 1.2
+  color: $black
+  +responsive-font(5px)
+
+.text-uppercase
+  text-transform: uppercase
+
+.text-center
+  text-align: center
+
+.text-left
+  text-align: left
+
+.text-right
+  text-align: right
+
+@each $key, $color in $colors
+  .text-#{$key}
+    +activeColor($color)
+
+.line-through
+  margin: 20px 0
+  display: block
+  font-size: .875em
+  font-weight: bold
+  margin-bottom: 1em
+  position: relative
+  text-align: center
+  width: 100%
+  z-index: 1
+  &:before
+    width: 80px
+    height: 10px
+    background-color: $white
+    content: ''
+    margin: -5px 0 0 -41px
+    left: 50%
+    position: absolute
+    top: 50%
+    z-index: -1
+  &:after
+    width: 100%
+    border-bottom: 1px solid $gray
+    content: ''
+    display: block
+    position: absolute
+    top: 49%
+    z-index: -2

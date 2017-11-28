@@ -1,0 +1,112 @@
+/*
+ *
+ * Elements - Drawer
+ *
+ */
+
+aside.drawer
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 30
+  display: block
+  height: 100vh
+  width: 40vw
+  +touch
+    width: 100%
+  text-align: left
+  overflow-y: scroll
+  border-right: $border-size solid $dark
+  background: rgba($black, 0.99)
+  +shadow(2)
+  transform: translate3d(-100%, 0, 0) translate3d(0, 0, 0)
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1)
+
+  .overlay
+    position: fixed
+    top: 0
+    left: 40vw
+    height: 100vh
+    width: 100vw
+    +touch
+      left: 100vw
+    pointer-events: none
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      opacity: 0
+      background-color: transparent
+      transition: transform 0.6s ease-out
+
+
+  .content
+    margin: 0
+    padding: 1em
+    position: relative
+    overflow: scroll
+    pointer-events: none
+    transform: translate3d(-100%, 0, 0) translate3d(0, 0, 0)
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1)
+    .close
+      position: absolute
+      margin: 0
+      right: 0
+      top: 0
+      border-radius: 0 0 0 $border-radius
+
+    menu
+      ul
+        padding: 0
+        margin-top: 1em
+        li.item
+          +activeColor($white)
+          a
+            +activeColor($white)
+
+
+  &.right
+    left: auto
+    right: 0
+
+    border-left: $border-size solid $dark
+    border-right: none
+    transform: translate3d(100%, 0, 0) translate3d(0, 0, 0)
+    .overlay
+      left: auto
+      right: 40vw
+      +touch
+        right: 100vw
+    .content
+      transform: translate3d(100%, 0, 0) translate3d(0, 0, 0)
+
+  &.active
+    transform: translate3d(0, 0, 0)
+    transition-delay: 0s
+
+    .overlay
+      pointer-events: auto
+      &::before
+        opacity: 1
+        transition: opacity 0.6s ease-in
+        transition-delay: 0s
+    .content
+      pointer-events: auto
+      transform: translate3d(0, 0, 0)
+      transition-delay: 0s
+
+  @each $key, $color in $colors
+    &.#{$key}
+      background: rgba($color, 0.99)
+      color: inverse($color)
+      h1, h2, h3, h4, h5, h6
+        color: inverse($color)
+      menu
+        ul
+          li.item
+            +activeColor(inverse($color))
+            a
+              +activeColor(inverse($color))

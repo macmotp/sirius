@@ -1,0 +1,96 @@
+/*
+ *
+ * Base - General
+ *
+ */
+
+html
+  background-color: $white
+  overflow-x: hidden
+  overflow-y: scroll
+
+body
+  background-color: $light
+
+.page
+  background-color: $white
+  // Setting margin and padding for the main layout page
+  margin: 0 auto
+  +mobile
+    max-width: $mobile
+    padding-left: 10px
+    padding-right: 10px
+  +tablet
+    max-width: $tablet - 40px
+    padding-left: 20px
+    padding-right: 20px
+  +desktop
+    max-width: $desktop - 60px
+    padding-left: 20px
+    padding-right: 20px
+  +widescreen
+    max-width: $widescreen - 80px
+    padding-left: 30px
+    padding-right: 30px
+
+  // Each page contents are divided in sections
+  section
+    background-color: $light
+
+    // A section is basically a grid
+    display: grid
+    grid-gap: $gap
+    grid-template-columns: repeat(12, 1fr)
+
+    // Space between sections
+    margin-top: 40px
+    &:first-of-type, &:first-child
+      margin-top: 0
+
+    &.full-height
+      height: 100vh
+      +mobile
+        height: 100%
+
+    // Each section can have articles divided in a grid
+    article
+      padding: 0
+      grid-column-end: span 12
+      max-width: 100%
+      position: relative
+      // Define article widths
+      +from($tablet)
+        &.width-3-4
+          grid-column: span 9
+          &.right
+            grid-column: 4 / span 9
+        &.width-2-3
+          grid-column: span 8
+          &.right
+            grid-column: 5 / span 8
+        &.width-1-2, &.width-half
+          grid-column: span 6
+          &.center
+            grid-column: 4 / span 6
+          &.right
+            grid-column: 7 / span 8
+        &.width-1-3
+          grid-column: span 4
+          &.center
+            grid-column: 5 / span 4
+          &.right
+            grid-column: 9 / span 4
+        &.width-1-4
+          grid-column: span 3
+          &.right
+            grid-column: 10 / span 3
+        &.height-double
+          grid-row: span 2
+        &.height-triple
+          grid-row: span 3
+
+      // For nested sections, we need to remove extra padding
+      & > section
+        padding: 0
+        & > article
+          padding: 0

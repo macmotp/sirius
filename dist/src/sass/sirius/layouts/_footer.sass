@@ -1,0 +1,37 @@
+/*
+ *
+ * Layouts - Footer
+ *
+ */
+
+footer
+  &:last-of-type
+    padding-bottom: 1em
+  .body
+    display: grid
+    grid-column: span 12
+    grid-template-columns: repeat(12, 1fr)
+    .left, .center, .right
+      grid-column: span 4
+      +mobile
+        grid-column: span 12
+        text-align: center
+    .center
+      text-align: center
+      align-items: stretch
+      justify-content: center
+    .right
+      text-align: right
+      justify-content: flex-end
+      +mobile
+        text-align: center
+  .copyright
+    padding: 0.4em 0
+    +responsive-font(5px)
+    color: base($dark)
+  a
+    text-decoration: none
+  nav
+    & > .right > *
+      +mobile
+        display: flex

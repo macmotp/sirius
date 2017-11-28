@@ -1,0 +1,67 @@
+/*
+ *
+ * Elements - Tab
+ *
+ */
+
+.tabs
+  overflow: hidden
+  white-space: nowrap
+  -webkit-overflow-scrolling: touch
+  width: 100%
+  padding: 0
+  display: block
+  height: auto
+  text-align: left
+  +responsive-font
+  ul
+    flex-flow: row wrap
+    justify-content: flex-start
+    display: flex
+    list-style: none
+    padding: 0
+    background-color: rgba($dark, 0.1)
+    li
+      position: relative
+      display: flex
+      margin: 0
+      text-align: center
+      padding: 0.5em 1em
+      overflow: hidden
+      cursor: pointer
+      +transition
+      +underline
+      a
+        color: $gray
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        text-decoration: none
+        outline: none
+        flex: 1
+        +transition
+        i
+          +responsive-font(-2px)
+          +transition
+          color: lighter()
+      &.active
+        background-color: rgba($dark, 0.1)
+      &:hover
+        background-color: rgba($dark, 0.1)
+        a
+          color: color($gray, dark)
+          i
+            color: $gray
+
+  &.width-full
+    ul li
+      flex: 1
+  &.center
+    ul
+      justify-content: center
+  &.right
+    ul
+      justify-content: flex-end
+
+  .tab
+    overflow: auto

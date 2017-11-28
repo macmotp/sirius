@@ -1,0 +1,31 @@
+/*
+ *
+ * Elements - Banner
+ *
+ */
+
+.banner
+  display: flex
+  padding: 30px
+
+  .left, .right
+    flex: 1
+    align-self: center
+  .left
+    padding-left: 1em
+    border-left: $border-size*2 solid $light
+    .title
+      margin: 0
+      padding: 1em 0
+  .right
+    justify-content: flex-end
+    text-align: right
+  +mobile
+    display: block
+    .left, .right
+      text-align: center
+    .left
+      padding-bottom: 0.5em
+    .right
+      padding-left: 1em
+      border-left: $border-size*2 solid $light

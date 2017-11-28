@@ -1,0 +1,72 @@
+/*
+ *
+ * Elements - Checkbox
+ *
+ */
+
+.label-checkbox
+  font-size: 1em
+  position: relative
+  display: block
+  margin-top: 0
+  margin-bottom: 0.5em
+  padding-left: 2em
+  line-height: 1.5
+  font-weight: 300
+
+.label-checkbox input
+  position: absolute
+  z-index: -1
+  opacity: 0
+
+.checkbox-indicator
+  position: absolute
+  top: 0
+  left: 0
+  width: 26px
+  height: 26px
+  background: $light
+  border: $border-size solid $light
+  border-radius: $border-radius
+  transition: background-color 0.3s ease 0s
+
+.label-checkbox:hover input ~ .checkbox-indicator,
+.label-checkbox input:focus ~ .checkbox-indicator
+  cursor: pointer
+  background: lighter($dark)
+
+.label-checkbox input:checked ~ .checkbox-indicator
+  cursor: pointer
+  background: $dark
+
+.label-checkbox:hover input:not([disabled]):checked ~ .checkbox-indicator,
+.label-checkbox input:checked:focus ~ .checkbox-indicator
+  cursor: pointer
+  background: $dark
+
+.label-checkbox input:disabled ~ .checkbox-indicator
+  cursor: not-allowed
+  border-color: transparent
+  pointer-events: none
+  opacity: .6
+  background: $light
+
+.checkbox-indicator:after
+  position: absolute
+  display: none
+  content: ''
+
+.label-checkbox input:checked ~ .checkbox-indicator:after
+  display: block
+
+.checkbox .checkbox-indicator:after
+  top: 3px - $border-size
+  left: 9px - $border-size
+  width: 9px
+  height: 15px
+  transform: rotate(45deg)
+  border: solid $white
+  border-width: 0 3px 3px 0
+
+.checkbox input:disabled ~ .checkbox-indicator:after
+  border-color: $dark

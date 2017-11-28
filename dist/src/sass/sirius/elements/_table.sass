@@ -1,0 +1,56 @@
+/*
+ *
+ * Elements - Table
+ *
+ */
+
+table
+  overflow-x: auto
+  min-height: .01%
+  margin-bottom: 1em
+  +responsive-font(2px)
+  border-collapse: collapse
+  border-spacing: 0
+  text-align: left
+  //display: block
+  max-width: 100%
+
+  td, th
+    padding: 0.5em
+    vertical-align: middle
+    color: $dark
+    line-height: 1.5
+
+  & > thead
+    background-color: $light
+    text-transform: uppercase
+  & > thead > tr > th
+    border-bottom-width: 0
+  & > tbody > tr
+    border-top: 1px solid $light
+  & > tbody > tr:last-child
+    border-bottom: 1px solid $light
+  & > tbody > tr:nth-of-type(2n)
+    background-color: lighter($light)
+
+  & > tfoot
+    background-color: $light
+
+  tr
+    .actions
+      opacity: 0
+      display: flex
+      justify-content: space-between
+      +transition
+      a
+        padding: 0 0.5em
+        +activeColor($dark)
+    &:hover
+      .actions
+        opacity: 1
+
+  @each $key, $color in $colors
+    & > tbody > tr.#{$key}
+      background-color: active($color)
+      td
+        color: inverse($color)

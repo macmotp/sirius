@@ -1,0 +1,50 @@
+/*
+ *
+ * Elements - Select
+ *
+ */
+
+
+.select
+  select
+    align-items: center
+    background-color: $light
+    border: $border-size solid $light
+    border-radius: $border-radius
+    color: $black
+    +responsive-font(2px)
+    height: 2.5em
+    width: 100%
+    padding: 7px 36px 7px 10px
+    justify-content: flex-start
+    position: relative
+    vertical-align: top
+    cursor: pointer
+    display: block
+    outline: none
+    text-transform: none
+    -webkit-appearance: none
+    &:active,
+    &:focus,
+    &.active
+      border-color: $light
+      outline: none
+    &[disabled],
+    &.disabled
+      background-color: $dark
+      border-color: transparent
+      color: $dark
+      cursor: not-allowed
+  &:after
+    border: 2px solid $dark
+    border-right: 0
+    border-top: 0
+    content: " "
+    display: block
+    height: 8px
+    width: 8px
+    right: 16px
+    top: 40%
+    pointer-events: none
+    position: absolute
+    transform: rotate(-45deg)

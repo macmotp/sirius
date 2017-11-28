@@ -1,0 +1,93 @@
+/*
+ *
+ * Layouts - Header
+ *
+ */
+
+header
+  align-items: stretch
+  background-color: transparent
+  display: flex
+  flex-direction: column
+  padding: 1.5em
+  position: relative
+  &:not(.hero)
+    &:after
+      display: block
+      position: absolute
+      bottom: 1.5em
+      top: 1.5em
+      left: 0
+      width: $border-size*2
+      background: $light
+      content: ''
+      transform: translate3d(1.5em, 0, 0)
+
+  .head,
+  .foot
+    flex-shrink: 0
+  .body
+    flex-grow: 1
+    flex-shrink: 0
+    justify-self: center
+    flex-direction: column
+
+  .head
+    position: relative
+    justify-self: flex-start
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    +border($light, 1px, 0)
+    padding: 0.75em 1em
+    margin-left: 1.5em
+    & > .title, & > .subtitle
+      margin: 0
+      background-color: transparent
+    & > .title
+      color: $black
+    & > .subtitle
+      color: $black
+    & strong
+      display: block
+
+
+  .foot
+    justify-self: flex-end
+
+
+  @each $key, $color in $colors
+    &.bg-#{$key}
+      background-color: base($color)
+      color: inverse($color)
+      .head > .title
+        color: inverse($color)
+        a,
+        strong
+          color: inherit
+      .head > .subtitle
+        color: lighter(inverse($color))
+        a,
+        strong
+          color: lighter(inverse($color))
+      &.gradient
+        background-image: linear-gradient(225deg, $color 0%, $color 75%, darker($color) 100%)
+
+  &.hero
+    .head
+      margin-left: 0
+      border: none
+      padding: 0.75em 0
+    .body
+      align-items: center
+      display: flex
+    +tablet
+      .body
+        padding-bottom: 3em
+        padding-top: 3em
+    &.full
+      min-height: 100vh
+      .body
+        align-items: center
+        display: flex

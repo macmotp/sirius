@@ -1,0 +1,73 @@
+/*
+ *
+ * Elements - Switch
+ *
+ */
+
+.label-switch
+  font-size: 1em
+  position: relative
+  display: block
+  margin-top: 0
+  margin-bottom: 0.5em
+  padding-left: 4em
+  line-height: 1.5
+  font-weight: 300
+  outline: none
+  user-select: none
+
+.label-switch input
+  position: absolute
+  z-index: -1
+  opacity: 0
+
+.switch-indicator
+  cursor: pointer
+  position: absolute
+  left: 0
+  padding: 0
+  width: 60px
+  height: 30px
+  background-color: $light
+  border: $border-size solid $light
+  border-radius: 30px
+  transition: background-color 0.4s ease 0s
+  &:before, &:after
+    display: block
+    position: absolute
+    content: ""
+  &:before
+    top: 2px
+    left: 2px
+    bottom: 2px
+    right: 2px
+    background-color: transparent
+    border-radius: 30px
+    transition: background 0.4s
+  &:after
+    top: 4px - $border-size
+    left: 4px - $border-size
+    bottom: 4px - $border-size
+    width: 22px
+    background-color: $white
+    border-radius: 50%
+    transition: margin 0.4s, background 0.4s
+
+.switch input:checked ~ .switch-indicator
+  cursor: pointer
+  background-color: $dark
+.switch input:checked ~ .switch-indicator:after
+  margin-left: 30px
+  background-color: $white
+
+.switch input:disabled ~ .switch-indicator
+  cursor: not-allowed
+  background-color: $light
+  border-color: transparent
+
+.switch input:disabled:not([checked]) ~ .switch-indicator:after
+  background-color: $light
+
+.switch input:disabled:checked ~ .switch-indicator:after
+  margin-left: 30px
+  background-color: $light

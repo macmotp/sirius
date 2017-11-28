@@ -1,0 +1,262 @@
+/*
+ *
+ * Elements - Button
+ *
+ */
+
+button, .button
+  display: inline-flex
+  text-decoration: none
+  white-space: nowrap
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  line-height: 1.2
+  padding: 0.375em 0.75em
+  position: relative
+  vertical-align: top
+  margin-bottom: 0.3em
+  -moz-appearance: none
+  -webkit-appearance: none
+  +activeBackground($light)
+  +activeColor(inverse($light))
+  +border(darker($light))
+  +responsive-font
+  +no-selection
+
+  &.transparent
+    background-color: transparent
+    color: base($light)
+    border-color: base($light)
+
+  &.with-icon
+    padding: 0.375em 0.625em
+    i
+      //min-width: 1em
+      text-align: center
+      line-height: 1.2
+    span
+      margin-left: 0.75em
+
+  &:hover
+    outline: none
+    &.transparent
+      color: inverse($light)
+    &:focus, &:active, &.active
+      &.transparent
+        color: inverse($light)
+
+  &:focus, &:active, &.active
+    outline: none
+
+  &[disabled], &.disabled
+    background-color: $dark
+    color: darker($dark)
+    border-color: transparent
+    cursor: not-allowed
+    opacity: 0.5
+
+  &.loading
+    color: transparent
+    background-color: color($gray, lighter)
+    border-color: color($gray, lighter)
+    pointer-events: none
+    text-align: center
+    cursor: not-allowed
+    &:after
+      animation: spinLoading 4s infinite ease-in-out
+      border-radius: 50%
+      content: ""
+      display: block
+      height: 20px
+      width: 20px
+      position: absolute
+      top: calc(50% - 10px)
+      left: calc(50% - 10px)
+      border: 2px solid $white
+      border-top-color: transparent
+      border-right-color: transparent
+
+  &.toggle, &.cart
+    padding: 0
+    margin: 0
+    border: none
+    +responsive-dim(width, $nav-height)
+    +responsive-dim(height, $nav-height)
+    +activeBackground($dark)
+    justify-content: center
+    align-items: center
+
+  &.toggle
+    border-radius: 0px
+    &:before, &:after
+      position: absolute
+      top: 50%
+      left: 50%
+      content: ' '
+      width: 40%
+      height: 2px
+      background-color: $white
+
+  &.toggle
+    display: none
+    &:before, &:after
+      transform: translate(-50%, -50%)
+    &:before
+      margin-top: -0.25em
+    &:after
+      margin-top: 0.25em
+    &.active, &:active, &:focus
+      &:before, &:after
+        margin-top: 0
+        width: 50%
+      &:before
+        transform: translate(-50%, -50%) rotate(45deg)
+      &:after
+        transform: translate(-50%, -50%) rotate(-45deg)
+    &.visible
+      display: flex !important
+    +mobile
+      display: flex !important
+
+  @each $key, $color in $colors
+    &.#{$key}
+      background-color: base($color)
+      border-color: darker($color)
+      color: inverse($color)
+      &.transparent
+        background-color: transparent
+        color: base($color)
+        border-color: base($color)
+      &:hover
+        background-color: lighter($color)
+        &.transparent
+          color: inverse($color)
+      &:focus, &:active, &.active
+        background-color: active($color)
+        &.transparent
+          color: inverse($color)
+      &.loading
+        color: transparent
+        background-color: active($color)
+        border-color: base($color)
+
+  @each $name, $color in $brands
+    &.#{$name}
+      background-color: base($color)
+      border-color: darker($color)
+      color: $white
+      &.transparent
+        background-color: transparent
+        color: base($color)
+      &:hover
+        background-color: lighter($color)
+        &.transparent
+          color: inverse($color)
+      &:focus, &:active, &.active
+        background-color: active($color)
+        &.transparent
+          color: inverse($color)
+      &.loading
+        color: transparent
+        background-color: active($color)
+        border-color: base($color)
+  &.instagram
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%)
+    &.transparent
+      background: transparent
+    &:hover,
+    &:active,
+    &:focus,
+    &.active
+      background: radial-gradient(circle farthest-corner at 32% 106%, lighten(rgb(255, 225, 125), 10%) 0%, lighten(rgb(255, 205, 105), 10%) 10%, lighten(rgb(250, 145, 55), 10%) 28%, lighten(rgb(235, 65, 65), 10%) 42%, transparent 82%), linear-gradient(135deg, lighten(rgb(35, 75, 215), 10%) 12%, lighten(rgb(195, 60, 190), 10%) 58%)
+
+  &.small
+    +responsive-font(2px)
+    padding: 0.275em 0.5em
+    &.with-icon
+      padding: 0.275em 0.375em
+  &.large
+    +responsive-font(-2px)
+    padding: 0.5em 1em
+    &.with-icon
+      padding: 0.5em 0.775em
+  &.block
+    width: 100%
+    display: block
+
+  &.rotate, &.magnify, &.move-left, &.move-right
+    i
+      transition: all 0.5s cubic-bezier(0.34, 1.61, 0.7, 1)
+
+  &.rotate
+    &:hover,&:focus
+      i
+        transform: rotate(53deg)
+  &.magnify
+    &:hover,&:focus
+      i
+        transform: scale(1.2)
+  &.move-left
+    &:hover,&:focus
+      i
+        transform: translateX(-0.25em)
+  &.move-right
+    span
+      margin-left: 0
+      margin-right: 0.75em
+    &:hover,&:focus
+      i
+        transform: translateX(0.25em)
+
+.button-group > button:first-child, .button-group > .button:first-child
+  margin-left: 0
+.button-group > button:first-child:not(:last-child), .button-group > .button:first-child:not(:last-child)
+  border-bottom-right-radius: 0
+  border-top-right-radius: 0
+.button-group > button:not(:first-child):not(:last-child), .button-group > .button:not(:first-child):not(:last-child)
+  border-radius: 0px
+.button-group > button:last-child:not(:first-child), .button-group > .button:last-child:not(:first-child)
+  border-bottom-left-radius: 0
+  border-top-left-radius: 0
+.button-group button + button,
+.button-group button + .button-group,
+.button-group .button-group + button,
+.button-group .button-group + .button-group
+  margin-left: -7px - $border-size
+.button-group a.button + a.button,
+.button-group a.button + .button-group,
+.button-group .button-group + a.button,
+.button-group .button-group + .button-group
+  margin-left: -5px - $border-size
+
+.close
+  user-select: none
+  -moz-appearance: none
+  -webkit-appearance: none
+  border: none
+  cursor: pointer
+  display: inline-block
+  height: 2em
+  width: 2em
+  padding: 0
+  outline: none
+  position: relative
+  vertical-align: top
+  +activeBackground($dark, 1)
+  &:before,
+  &:after
+    background-color: $white
+    content: ""
+    display: block
+    height: 2px
+    left: 50%
+    margin-left: -25%
+    margin-top: -1px
+    position: absolute
+    top: 50%
+    width: 50%
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)

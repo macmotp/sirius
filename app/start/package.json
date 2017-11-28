@@ -1,28 +1,4 @@
 {
-  "name": "sirius-ui",
-  "version": "v0.0.1-beta",
-  "homepage": "https://larastars.com/ui/sirius",
-  "author": "Marco Gava <info@larastars.com> (https://www.linkedin.com/in/gavamarco)",
-  "description": "Flexible CSS Framework based on Grid and Vue",
-  "main": "dist/src/js/sirius.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/macmotp/sirius.git"
-  },
-  "keywords": [
-    "css",
-    "sass",
-    "grid css",
-    "flexbox",
-    "responsive design",
-    "framework",
-    "vue",
-    "laravel"
-  ],
-  "bugs": {
-    "url": "https://github.com/macmotp/sirius/issues"
-  },
-  "license": "LGPL-2.1",
   "scripts": {
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -31,6 +7,7 @@
   },
   "devDependencies": {
     "laravel-mix": "^1.6.1",
+    "sirius-ui": "^0.0.1-beta",
     "vue": "^2.5.6",
     "prismjs": "^1.8"
   },

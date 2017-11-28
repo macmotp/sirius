@@ -1,0 +1,59 @@
+/*
+ *
+ * Layout - Helpers
+ *
+ */
+
+// Hidden classes for each viewport
+.hidden
+  display: none
+.hidden-mobile
+  +mobile
+    display: none
+.hidden-tablet
+  +tablet
+    display: none
+.hidden-touch
+  +touch
+    display: none
+.hidden-desktop
+  +desktop
+    display: none
+.hidden-widescreen
+  +widescreen
+    display: none
+
+// Forcing rendering
+.disabled
+  pointer-events: none
+.no-margin
+  margin: 0 !important
+.no-padding
+  padding: 0 !important
+.no-radius
+  border-radius: 0px !important
+.no-border
+  border: none !important
+
+// Backgrounds for each color
+.bg-transparent
+  background: transparent !important
+@each $key, $color in $colors
+  .bg-#{$key}
+    background-color: base($color) !important
+    color: inverse($color) !important
+    h1, h2, h3, h4, h5, h6
+      color: inverse($color) !important
+    &.gradient
+      background-image: linear-gradient(225deg, base($color) 0%, base($color) 75%, darker($color) 100%)
+    // This part is for rendering nicer inputs over different backgrounds
+    @if($color != $light != $color != $white)
+      input[type="text"], input[type="search"]
+        border-left: $border-size*2 solid $light
+        color: $white
+        +placeholder
+          color: active($light)
+      .input-with-left-addon
+        .addon
+          background-color: active($light)
+          color: active($light)

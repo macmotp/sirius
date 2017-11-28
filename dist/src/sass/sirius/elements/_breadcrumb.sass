@@ -1,0 +1,52 @@
+/*
+ *
+ * Elements - Breadcrumb
+ *
+ */
+
+$breadcrumb-size: 14px // define font-size and border-size
+
+ul.breadcrumb
+  display: flex
+  list-style-type: none
+  padding: 0
+  li
+    margin: 0 1em 0 0
+    position: relative
+    a
+      font-size: $breadcrumb-size
+      line-height: $breadcrumb-size
+      color: $dark
+      text-decoration: none
+      text-transform: uppercase
+      background-color: $light
+      display: flex
+      align-items: center
+      padding: ($breadcrumb-size/2) 8px
+      &:after
+        +transition
+        position: absolute
+        top: 0
+        right: -$breadcrumb-size
+        border-color: transparent transparent transparent $light
+        border-style: solid
+        border-width: $breadcrumb-size 0 $breadcrumb-size $breadcrumb-size
+        content: ""
+    &:not(:first-child)
+      a:before
+        +transition
+        position: absolute
+        top: 0
+        left: -$breadcrumb-size
+        border-color: $light $light $light transparent
+        border-style: solid
+        border-width: $breadcrumb-size 0 $breadcrumb-size $breadcrumb-size
+        content: ""
+    &.active, &:hover
+      a
+        background-color: lighter($dark)
+        color: inverse($dark)
+        &:before
+          border-color: lighter($dark) lighter($dark) lighter($dark) transparent
+        &:after
+          border-left: $breadcrumb-size solid lighter($dark)

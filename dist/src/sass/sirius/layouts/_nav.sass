@@ -1,0 +1,137 @@
+/*
+ *
+ * Layouts - Nav
+ *
+ */
+
+nav
+  align-items: stretch
+  background-color: transparent
+  display: flex
+  width: 100%
+  grid-column: span 12
+  position: relative
+  text-align: center
+  padding: 0
+  overflow: hidden
+  z-index: 10
+  font-family: $heading-font-family
+  +responsive-dim(height, $nav-height)
+
+  &.sticky
+    position: sticky
+    top: 0
+
+  ul
+    align-items: stretch
+    display: flex
+    justify-content: center
+    padding: 0
+    list-style: none
+    flex: 1
+
+    li.item
+      display: flex
+      flex-direction: row
+      padding: 0
+      margin: 0
+      position: relative
+      overflow: hidden
+
+      a:not(.button)
+        color: $black
+        text-decoration: none
+        padding: 0.8em
+        text-align: center
+        flex-direction: column
+        display: flex
+        justify-content: center
+        +activeBackground($dark, 1)
+        +underline
+      button, .button
+        align-self: center
+        margin: 0.5em
+
+  form
+    align-self: center
+
+  & > .left
+    align-items: stretch
+    display: flex
+    flex-basis: 0
+    flex-grow: 1
+    flex-shrink: 0
+    justify-content: flex-start
+    overflow: hidden
+    overflow-x: auto
+    white-space: nowrap
+    ul
+      justify-content: flex-start
+
+  & > .center
+    +mobile
+      &:not(.visible)
+        display: none
+    +mobile
+      &.visible
+        text-align: center
+        width: 100%
+    +from($tablet)
+      align-items: stretch
+      display: flex
+      flex: 1
+      justify-content: center
+      justify-items: stretch
+      margin-left: auto
+      margin-right: auto
+
+  & > .right
+    display: flex
+    & > *
+      +mobile
+        display: none
+    +from($tablet)
+      align-items: stretch
+      display: flex
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 0
+      justify-content: flex-end
+      justify-items: stretch
+      ul
+        justify-content: flex-end
+        li.item:last-child
+          a:not(.button)
+            padding-right: 1em
+
+
+  .brand
+    display: flex
+    text-decoration: none
+    +responsive-dim(height, $nav-height)
+    .logo
+      +responsive-dim(height, $nav-height)
+      +responsive-dim(width, $nav-height)
+      +activeBackground($dark)
+      img
+        max-height: 100%
+        padding: 0.5em
+    .name
+      +responsive-font(-6px)
+      +activeColor($black)
+      align-self: center
+      padding: 0 0.5em
+      margin: 0
+
+  @each $key, $color in $colors
+    &.bg-#{$key}
+      background-color: $color
+      ul
+        li.item
+          a:not(.button)
+            color: inverse($color)
+      .name
+        +activeColor(inverse($color))
+    &.particular-#{$key}
+      .brand .logo, .toggle, .cart
+        +activeBackground($color)

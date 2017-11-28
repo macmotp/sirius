@@ -1,4 +1,6 @@
 {
-  "/dist/js/sirius.js": "/dist/js/sirius.js",
-  "/dist/css/sirius.css": "/dist/css/sirius.css"
+    "/dist/min/sirius.min.js": "/dist/min/sirius.min.js",
+    "/dist/min/sirius.min.css": "/dist/min/sirius.min.css",
+    "/app/min/app.min.css": "/app/min/app.min.css",
+    "/app/min/app.min.js": "/app/min/app.min.js"
 }

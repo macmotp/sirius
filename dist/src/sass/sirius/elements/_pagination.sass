@@ -1,0 +1,31 @@
+/*
+ *
+ * Elements - Pagination
+ *
+ */
+
+.pagination
+  display: inline-flex
+  margin: 10px auto
+  width: 100%
+  & > li
+    list-style: none
+    & > button, & > .button
+      border-radius: 0
+      margin: 0 $border-size - 1
+      &:hover, &:focus, &.active
+        background-color: base($dark)
+        color: $black
+        border-color: $dark
+      i
+        color: $dark
+      &.disabled
+        background-color: transparent
+    &:first-child
+      & > button, & > .button
+        border-bottom-left-radius: $border-radius
+        border-top-left-radius: $border-radius
+    &:last-child
+      & > button, & > .button
+        border-bottom-right-radius: $border-radius
+        border-top-right-radius: $border-radius

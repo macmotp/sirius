@@ -1,0 +1,35 @@
+/*
+ *
+ * Elements - Ribbon
+ *
+ */
+
+.ribbon
+  position: absolute
+  overflow: hidden
+  width: 85px
+  height: 88px
+  top: -1px
+  right: -1px
+  z-index: 4000
+
+  &:before
+    display: block
+    text-align: center
+    +responsive-font(5px)
+    color: $white
+    content: attr(text)
+    transform: rotate(45deg)
+    text-transform: uppercase
+    padding: 0.5em 0 0.3em
+    width: 120px
+    margin-top: 0.5em
+    background-color: $gray
+    border-top: $border-size*2 solid $dark
+    +shadow(1)
+
+  @each $key, $color in $colors
+    &.#{$key}
+      &:before
+        background-color: base($color)
+        color: inverse($color)

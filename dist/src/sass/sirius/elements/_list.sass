@@ -1,0 +1,47 @@
+/*
+ *
+ * Elements - List
+ *
+ */
+
+ul.list
+  list-style-type: none
+  width: 100%
+  display: none
+  &.active
+    display: block
+  li
+    border-left: $border-size*2 solid $light
+    padding-left: 1em
+    margin-bottom: 0.5em
+    cursor: pointer
+    position: relative
+    +transition
+    a
+      text-decoration: none
+      +activeColor($black)
+    & > ul
+      list-style-type: none
+      display: none
+      +transition
+    &.active, &:hover
+      background-color: $light
+      border-color:  $dark
+    &.parent
+      &:after
+        +transition
+        position: absolute
+        top: 50%
+        right: -0.8em
+        margin-top: -0.8em
+        border-bottom: 0.8em solid transparent
+        border-left: 0.8em solid $dark
+        border-top: 0.8em solid transparent
+        content: ""
+        opacity: 0
+      &:hover
+        &:after
+          opacity: 1
+    &.active
+      & > ul
+        display: block
