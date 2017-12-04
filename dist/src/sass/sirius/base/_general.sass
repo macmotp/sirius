@@ -36,11 +36,11 @@ body
   // Each page contents are divided in sections
   section
     background-color: $light
-
-    // A section is basically a grid
-    display: grid
-    grid-gap: $gap
-    grid-template-columns: repeat(12, 1fr)
+    padding: 0
+    display: flex
+    flex-direction: column
+    .head, .foot, header, nav
+      flex-shrink: 0
 
     // Space between sections
     margin-top: 40px
@@ -51,46 +51,80 @@ body
       height: 100vh
       +mobile
         height: 100%
+      article
+        align-items: center
 
-    // Each section can have articles divided in a grid
+    // Each section can have articles divided in a grid by tiles
     article
-      padding: 0
+      padding: $gap
       grid-column-end: span 12
       max-width: 100%
       position: relative
-      // Define article widths
-      +from($tablet)
-        &.width-3-4
-          grid-column: span 9
-          &.right
-            grid-column: 4 / span 9
-        &.width-2-3
-          grid-column: span 8
-          &.right
-            grid-column: 5 / span 8
-        &.width-1-2, &.width-half
-          grid-column: span 6
-          &.center
-            grid-column: 4 / span 6
-          &.right
-            grid-column: 7 / span 8
-        &.width-1-3
-          grid-column: span 4
-          &.center
-            grid-column: 5 / span 4
-          &.right
-            grid-column: 9 / span 4
-        &.width-1-4
-          grid-column: span 3
-          &.right
-            grid-column: 10 / span 3
-        &.height-double
-          grid-row: span 2
-        &.height-triple
-          grid-row: span 3
-
-      // For nested sections, we need to remove extra padding
-      & > section
+      flex: 1
+      &.grid
         padding: 0
-        & > article
-          padding: 0
+        display: grid
+        grid-gap: $gap
+        grid-template-columns: repeat(12, 1fr)
+        +mobile
+          display: block
+        // Define article tiles
+        .tile
+          padding: $gap
+          grid-column: span 1
+          +from($tablet)
+            &.width-3-4, &.width-2-3 ,&.width-1-2, &.width-half, &.width-1-3, &.width-1-4
+              grid-column: span 6
+              &.center
+                grid-column: 4 / span 6
+              &.right
+                grid-column: 7 / span 6
+            &.height-double
+              grid-row: span 2
+            &.height-triple
+              grid-row: span 3
+          +from($desktop)
+            &.width-3-4
+              grid-column: span 9
+              &.right
+                grid-column: 4 / span 9
+            &.width-2-3
+              grid-column: span 8
+              &.right
+                grid-column: 5 / span 8
+            &.width-1-2, &.width-half
+              grid-column: span 6
+              &.center
+                grid-column: 4 / span 6
+              &.right
+                grid-column: 7 / span 6
+            &.width-1-3
+              grid-column: span 4
+              &.center
+                grid-column: 5 / span 4
+              &.right
+                grid-column: 9 / span 4
+            &.width-1-4
+              grid-column: span 3
+              &.right
+                grid-column: 10 / span 3
+                article
+
+      +widescreen
+        &.with-two-tiles
+          grid-template-columns: repeat(2, 1fr)
+        &.with-three-tiles
+          grid-template-columns: repeat(3, 1fr)
+        &.with-four-tiles
+          grid-template-columns: repeat(4, 1fr)
+        &.with-five-tiles
+          grid-template-columns: repeat(5, 1fr)
+      +desktop
+        &.with-two-tiles, &.with-three-tiles, &.with-four-tiles, &.with-five-tiles
+          grid-template-columns: repeat(2, 1fr)
+      +tablet
+        &.with-two-tiles, &.with-three-tiles, &.with-four-tiles, &.with-five-tiles
+          grid-template-columns: repeat(2, 1fr)
+      +mobile
+        &.with-two-tiles,&.with-three-tiles, &.with-four-tiles, &.with-five-tiles
+          display: block

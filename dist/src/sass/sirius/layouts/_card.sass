@@ -4,18 +4,32 @@
  *
  */
 
+// Set heights of cards
+$card-ratio: 1.25
+$card-desktop-width: 300px
+$card-tablet-width: 260px
+$card-mobile-width: 260px
+
 .card
-  grid-column: span 1
+  margin: 0 auto
   position: relative
   display: flex
   flex: 1
   align-items: stretch
   background-color: $dark
   color: $black
-  margin: 0 $gap
   padding: 1em
   font-family: $heading-font-family
   border-radius: $border-radius
   cursor: pointer
   width: 100%
   +shadow(2)
+  +from($desktop)
+    width: $card-desktop-width
+    height: $card-desktop-width*$card-ratio
+  +tablet
+    width: $card-tablet-width
+    height: $card-tablet-width*$card-ratio
+  +mobile
+    width: $card-mobile-width
+    height: $card-mobile-width*$card-ratio

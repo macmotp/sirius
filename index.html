@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
-    <title>Sirius UI - Framework based on Grid and Vue - powered by Larastars</title>
+    <title>Sirius UI</title>
     <meta name="description" content="Sirius UI - Framework based on Grid CSS and Vue Js - powered by Larastars.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="revisit-after" content="30 days">
@@ -27,7 +27,6 @@
     <div class="page" id="sirius">
 
         <section class="full-height bg-secondary gradient">
-
             <nav class="bg-secondary">
                 <div class="center visible">
                     <ul>
@@ -44,8 +43,8 @@
                 </div>
             </nav>
 
-            <article class="width-half">
-                <div class="column">
+            <article class="grid with-two-tiles">
+                <div class="tile">
                     <h1 class="title">
                         <figure class="image dim-100x100">
                             <img src="app/assets/images/larastars.png" alt="Sirius UI">
@@ -56,19 +55,16 @@
                         Framework based on Grid and Vue
                     </h5>
                 </div>
-            </article>
-
-            <article class="width-half">
-                <div class="column">
+                <div class="tile">
                     <pre><code>npm install sirius-ui</code></pre>
                     <pre><code>yarn add sirius-ui</code></pre>
                     <pre><code>git clone git@github.com:macmotp/sirius.git</code></pre>
                 </div>
             </article>
 
-            <article class="version">
-                <a href="https://github.com/macmotp/sirius" target="_blank" class="text-white">v0.0.2-beta</a>
-            </article>
+            <div class="foot">
+                <a href="https://github.com/macmotp/sirius" target="_blank" class="text-white">v0.0.3-beta</a>
+            </div>
 
         </section>
 
@@ -81,9 +77,9 @@
             </div>
         </footer>
 
-        <script src="./app/min/app.min.js"></script>
-
     </div>
+
+    <script src="./app/min/app.min.js"></script>
 
 </body>
 

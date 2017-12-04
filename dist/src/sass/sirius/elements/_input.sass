@@ -62,14 +62,14 @@ textarea
 form
   width: 100%
   display: grid
-  grid-gap: $column-gap
+  grid-gap: 30px
   +responsive-padding
   +from($tablet)
-    &.with-two-columns
+    &.with-two-tiles
       grid-template-columns: repeat(2, 1fr)
-    &.with-three-columns
+    &.with-three-tiles
       grid-template-columns: repeat(3, 1fr)
-  .column
+  .tile
     position: relative
     input + input, input + textarea
       margin-top: 1em

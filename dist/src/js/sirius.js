@@ -1,3 +1,14 @@
+/*! Sirius UI v0.0.3-beta - https://github.com/macmotp/sirius */
+
+/*
+ *
+ * Built with love by Marco Gava - https://www.linkedin.com/in/gavamarco
+ * powered by Larastars - https://larastars.com
+ * email: info@larastars.com
+ * github: https://github.com/macmotp/sirius
+ *
+ */
+
 import FlashInterface from './mixins/FlashInterface.vue'
 import ToggleInterface from './mixins/ToggleInterface.vue'
 import Drawer from './components/Drawer.vue'

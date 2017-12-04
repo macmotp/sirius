@@ -194,7 +194,7 @@ Remember to tell the Vue instance to use Sirius, and now you can use all the com
 
 <head>
     <meta charset="utf-8">
-    <title>Sirius UI - Framework based on Grid and Vuejs - powered by Larastars</title>
+    <title>Sirius UI</title>
     <link href="./dist/min/app.min.css" type="text/css" rel="stylesheet">
 </head>
 

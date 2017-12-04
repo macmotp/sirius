@@ -34,10 +34,12 @@ if [ $choice = "npm" ]; then
     echo "Install dev dependencies through npm:"
     npm install laravel-mix --save-dev
     npm install vue --save-dev
+    npm install prismjs --save-dev
 else
     echo "Install dev dependencies through yarn:"
     yarn add laravel-mix --save-dev
     yarn add vue --save-dev
+    yarn add prismjs --save-dev
 fi
 echo "Done."
 
@@ -54,6 +56,15 @@ mkdir js
 cd ..
 cp -r node_modules/sirius-ui/app/start/app.js ./src/js/
 cp -r node_modules/sirius-ui/app/start/app.sass ./src/sass/
+
+echo "Done."
+echo "Run production compilation:"
+
+if [ $choice = "npm" ]; then
+    npm run production
+else
+    yarn production
+fi
 
 echo "Done. List of available commands:"
 
