@@ -1,5 +1,9 @@
 # Sirius UI Changelog
 
+## v0.0.4-beta
+### Updated
+* Cards
+
 ## v0.0.3-beta
 ### Updated
 * Grid Layout

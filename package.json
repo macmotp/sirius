@@ -1,6 +1,6 @@
 {
   "name": "sirius-ui",
-  "version": "v0.0.3-beta",
+  "version": "v0.0.4-beta",
   "homepage": "https://larastars.com/ui/sirius",
   "author": "Marco Gava <info@larastars.com> (https://www.linkedin.com/in/gavamarco)",
   "description": "Flexible CSS Framework based on Grid and Vue",

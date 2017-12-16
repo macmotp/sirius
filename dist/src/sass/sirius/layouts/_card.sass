@@ -11,19 +11,21 @@ $card-tablet-width: 260px
 $card-mobile-width: 260px
 
 .card
-  margin: 0 auto
+  margin: 1.5em auto
   position: relative
   display: flex
   flex: 1
+  flex-direction: column
   align-items: stretch
   background-color: $dark
   color: $black
-  padding: 1em
+  padding: 0
   font-family: $heading-font-family
   border-radius: $border-radius
   cursor: pointer
   width: 100%
-  +shadow(2)
+
+  +shadow(1)
   +from($desktop)
     width: $card-desktop-width
     height: $card-desktop-width*$card-ratio
@@ -33,3 +35,198 @@ $card-mobile-width: 260px
   +mobile
     width: $card-mobile-width
     height: $card-mobile-width*$card-ratio
+
+  .front, .back
+    display: flex
+    flex-direction: column
+    flex: 1
+    a
+      text-decoration: none
+    .head,.foot
+      flex-shrink: 0
+    .body
+      flex-grow: 1
+      flex-shrink: 0
+      justify-self: center
+      text-align: center
+    .head
+      position: relative
+      justify-self: flex-start
+      flex: 1
+      width: 100%
+  hr
+    width: 5em
+    height: 3px
+    margin: 10px auto
+    border: 0
+    background: $dark
+    transition: all 0.6s cubic-bezier(0.34, 1.61, 0.7, 1)
+
+  &:hover
+    hr
+      width: 7em
+
+  &.product
+    background-color: $white
+    .body
+      .avatar
+        height: 200px
+        width: auto
+        margin: 0 auto
+      .name
+        text-align: center
+    .foot
+      justify-self: flex-end
+      min-height: 89px
+      display: block
+      padding: 0
+      border-top: 1px solid rgba($light, 0.5)
+      background-color: transparent
+      overflow: hidden
+      .cart-actions
+        width: 200%
+        display: inline-flex
+        transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1)
+        .left
+          height: 100%
+          width: 50%
+          display: flex
+          flex: 1
+          .details
+            width: calc(100% - 90px)
+            text-align: left
+            padding: 0 15px
+            align-content: center
+            justify-content: center
+            flex-direction: column
+            display: flex
+            flex: 1
+            .name
+              text-transform: none
+              font-style: italic
+              font-weight: bold
+              font-size: 16px
+              line-height: 16px
+              margin: 0
+              color: $black
+            .price
+              margin-top: 5px
+              margin-bottom: 0
+              color: $primary
+              font-weight: bold
+              .full
+                text-decoration: line-through
+                color: $dark
+                font-size: 14px
+                font-weight: 300
+          .buy
+            border-left: thin solid rgba($light, 0.5)
+            width: 89px
+            height: 92px
+            position: relative
+            +transition(background-color)
+            &:before, &:after
+              position: absolute
+              bottom: 30px
+              right: 44px
+              content: ' '
+              height: 30px
+              width: 2px
+              background-color: rgba($light, 0.5)
+            &:before
+              transform: rotate(0deg)
+            &:after
+              transform: rotate(90deg)
+            &:hover
+              background-color: rgba($light,0.3)
+        .right
+          width: 50%
+          float: right
+          height: 200%
+          display: flex
+          flex: 1
+          overflow: hidden
+          .message
+            background-color: $primary
+            width: calc(100% - 90px)
+            text-align: left
+            padding: 0 15px
+            align-content: center
+            justify-content: center
+            flex-direction: column
+            display: flex
+            flex: 1
+            .name
+              text-transform: none
+              font-weight: bold
+              font-size: 20px
+              line-height: 20px
+              margin: 0
+              color: $white
+            .text
+              text-transform: none
+              font-size: 14px
+              line-height: 14px
+              margin-top: 5px
+              margin-bottom: 0
+              color: $white
+          .remove
+            position: relative
+            border-right: thin solid $light
+            width: 89px
+            height: 92px
+            background-color: $primary
+            +transition(background-color)
+            &:before, &:after
+              position: absolute
+              content: ' '
+              width: 2px
+              background-color: $white
+            &:before
+              bottom: 34px
+              right: 37px
+              height: 26px
+              transform: rotate(45deg)
+            &:after
+              bottom: 35px
+              right: 50px
+              height: 14px
+              transform: rotate(135deg)
+            &:hover
+              background-color: $primary
+              &:before, &:after
+                bottom: 30px
+                right: 44px
+                height: 30px
+
+        &.added
+          transform: translateX(-50%)
+
+  &.profile
+    .image.background
+      position: absolute
+      height: 100%
+      img
+        height: 100%
+    .head, .body, .foot
+      background-color: rgba($white, 0.7)
+      z-index: 300
+    .head
+      .image.avatar img
+        width: 6em
+        height: 6em
+        margin: 2em auto
+        border-radius: 50%
+        border: 2*$border-size solid $dark
+    .foot
+      .info
+        display: flex
+        width: 100%
+        justify-content: center
+        list-style-type: none
+        & > li
+          color: $dark
+          text-transform: none
+          i
+            color: $dark
+            margin: 0.5em
