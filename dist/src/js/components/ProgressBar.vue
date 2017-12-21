@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'progress',
+        name: 'progress-bar',
 
         props: {
 

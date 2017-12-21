@@ -1,5 +1,9 @@
 # Sirius UI Changelog
 
+## v0.0.6-beta
+### Updated
+* Naming Components
+
 ## v0.0.5-beta
 ### Updated
 * Input

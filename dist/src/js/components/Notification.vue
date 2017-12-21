@@ -10,6 +10,8 @@
 <script>
     export default {
 
+        name: 'notification',
+
         data() {
             return {
                 show: true

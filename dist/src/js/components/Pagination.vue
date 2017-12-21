@@ -19,6 +19,8 @@
 </template>
 <script>
     export default{
+        name: 'pagination',
+
         props: {
             dataSet: {
                 type: Object,

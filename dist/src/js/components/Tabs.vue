@@ -20,6 +20,8 @@
 
     export default {
 
+        name: 'tabs',
+
         data: () => ({
             tabs: [],
             activeTabHash: '',

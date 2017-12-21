@@ -4,6 +4,9 @@
 
 <script>
     export default {
+
+        name: 'menu-button',
+
         data() {
             return {
                 active: false

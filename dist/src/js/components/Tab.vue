@@ -9,6 +9,8 @@
 
 <script>
     export default {
+        name: 'tab',
+
         props: {
             title: { required: true },
             icon: { type: String },

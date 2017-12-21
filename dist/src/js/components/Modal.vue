@@ -11,6 +11,8 @@
 <script>
     export default {
 
+        name: 'modal',
+
         data() {
             return {
                 visible: false

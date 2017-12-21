@@ -1,4 +1,4 @@
-/*! Sirius UI v0.0.5-beta - https://github.com/macmotp/sirius */
+/*! Sirius UI v0.0.6-beta - https://github.com/macmotp/sirius */
 
 /*
  *

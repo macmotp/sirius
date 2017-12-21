@@ -11,6 +11,8 @@
 <script>
     export default {
 
+        name: 'drawer',
+
         data() {
             return {
                 active: false

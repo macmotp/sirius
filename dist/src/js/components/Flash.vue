@@ -20,6 +20,8 @@
 </template>
 <script>
     export default {
+        name: 'flash',
+
         data () {
             return {
                 messages: []
