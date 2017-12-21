@@ -1,4 +1,4 @@
-/*! Sirius UI v0.0.3-beta - https://github.com/macmotp/sirius */
+/*! Sirius UI v0.0.5-beta - https://github.com/macmotp/sirius */
 
 /*
  *
@@ -13,7 +13,6 @@ import FlashInterface from './mixins/FlashInterface.vue'
 import ToggleInterface from './mixins/ToggleInterface.vue'
 import Drawer from './components/Drawer.vue'
 import Flash from './components/Flash.vue'
-import Highlight from './components/Highlight.vue'
 import MenuButton from './components/MenuButton.vue'
 import Modal from './components/Modal.vue'
 import Notification from './components/Notification.vue'
@@ -27,7 +26,6 @@ export default function (Vue){
     Vue.mixin(ToggleInterface);
     Vue.component('drawer', Drawer);
     Vue.component('flash', Flash);
-    Vue.component('highlight', Highlight);
     Vue.component('menu-button', MenuButton);
     Vue.component('modal', Modal);
     Vue.component('notification', Notification);

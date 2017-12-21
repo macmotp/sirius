@@ -77,7 +77,8 @@ form
 .input-with-addon
   display: flex
   height: 2em
-  margin-bottom: 1em
+  &:not(:first-of-type)
+    margin-top: 1em
   .addon
     padding: 0 0.5em 0 0.75em
     justify-content: center

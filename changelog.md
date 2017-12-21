@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.0.5-beta
+### Updated
+* Input
+### Removed
+* Highlight and Prism dependency
+
 ## v0.0.4-beta
 ### Updated
 * Cards

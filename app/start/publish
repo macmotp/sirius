@@ -34,12 +34,10 @@ if [ $choice = "npm" ]; then
     echo "Install dev dependencies through npm:"
     npm install laravel-mix --save-dev
     npm install vue --save-dev
-    npm install prismjs --save-dev
 else
     echo "Install dev dependencies through yarn:"
     yarn add laravel-mix --save-dev
     yarn add vue --save-dev
-    yarn add prismjs --save-dev
 fi
 echo "Done."
 
