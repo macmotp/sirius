@@ -62,7 +62,9 @@ textarea
 form
   width: 100%
   display: grid
-  grid-gap: 30px
+  grid-gap: 1em
+  +widescreen
+    grid-gap: 1em $gap
   +responsive-padding
   +from($tablet)
     &.with-two-tiles
@@ -78,7 +80,10 @@ form
   display: flex
   height: 2em
   &:not(:first-of-type)
-    margin-top: 1em
+    margin-top: 0
+  input
+    border-top-right-radius: 0px
+    border-bottom-right-radius: 0px
   .addon
     padding: 0 0.5em 0 0.75em
     justify-content: center
@@ -90,17 +95,12 @@ form
     border: none
     &.right
       border-radius: 0 $border-radius $border-radius 0
-      & + input, input + &
-        border-top-right-radius: 0px
-        border-bottom-right-radius: 0px
     &.left
       border-radius: $border-radius 0 0 $border-radius
-      & + input, input + &
-        border-top-left-radius: 0px
-        border-bottom-left-radius: 0px
-  .addon:not(button), .addon:not(.button)
-    background-color: lighter($dark)
-    color: $dark
+      & + input
+        border-radius: 0 $border-radius $border-radius 0
+  .button.addon, button.addon
+    color: $white
   &.large
     height: 2.9em
   &.small

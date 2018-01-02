@@ -9,20 +9,25 @@ header
   background-color: transparent
   display: flex
   flex-direction: column
-  padding: 1.5em
+  padding: 1em
   position: relative
+  +widescreen
+    padding: 30px
   &:not(.hero)
     &:after
       display: block
       position: absolute
-      bottom: 1.5em
-      top: 1.5em
+      bottom: 1em
+      top: 1em
       left: 0
       width: $border-size*2
       background: $light
       content: ''
-      transform: translate3d(1.5em, 0, 0)
-
+      transform: translate3d(1em, 0, 0)
+      +widescreen
+        bottom: 30px
+        top: 30px
+        transform: translate3d(30px, 0, 0)
   .head,
   .foot
     flex-shrink: 0
@@ -41,7 +46,9 @@ header
     justify-content: center
     +border($light, 1px, 0)
     padding: 0.75em 1em
-    margin-left: 1.5em
+    margin-left: 1em
+    +widescreen
+      margin-left: 30px
     & > .title, & > .subtitle
       margin: 0
       background-color: transparent

@@ -8,7 +8,15 @@
 // Import Sirius SASS
 @import ../../dist/src/sass/sirius
 
-.home
+.home.page
+
+  section
+    padding: 2em 1.5em
+
+    article
+      padding: 1em
+      +widescreen
+        padding: 2em
 
   article > .tile
     text-align: center
@@ -16,8 +24,6 @@
   .title > .image
     margin: 0 auto .5em
 
-  section
-    padding: 0 1.5em
 
   .foot
     text-align: center

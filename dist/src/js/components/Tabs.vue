@@ -2,13 +2,14 @@
     <nav class="tabs">
         <ul role="tablist">
             <li v-for="tab in tabs"
+                :key="tab.hash"
                 :class="{ 'active': tab.active }"
-                role="presentation">
+                role="presentation"
+                @click="select(tab.hash)">
                 <a :href="tab.hash"
                    v-html="tab.getTitle()"
                    :aria-selected="tab.active"
-                   role="tab"
-                   @click="select(tab.hash)">
+                   role="tab">
                 </a>
             </li>
         </ul>

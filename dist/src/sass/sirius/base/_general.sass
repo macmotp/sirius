@@ -56,7 +56,7 @@ body
 
     // Each section can have articles divided in a grid by tiles
     article
-      padding: $gap
+      padding: 0
       grid-column-end: span 12
       max-width: 100%
       position: relative
@@ -73,11 +73,7 @@ body
           grid-column: span 1
           +from($tablet)
             &.width-3-4, &.width-2-3 ,&.width-1-2, &.width-half, &.width-1-3, &.width-1-4
-              grid-column: span 6
-              &.center
-                grid-column: 4 / span 6
-              &.right
-                grid-column: 7 / span 6
+              grid-column: span 12
             &.height-double
               grid-row: span 2
             &.height-triple
@@ -107,7 +103,6 @@ body
               grid-column: span 3
               &.right
                 grid-column: 10 / span 3
-                article
 
       +widescreen
         &.with-two-tiles
@@ -127,3 +122,7 @@ body
       +mobile
         &.with-two-tiles,&.with-three-tiles, &.with-four-tiles, &.with-five-tiles
           display: block
+      .content
+        padding: 0 1em 1em 1em
+        +widescreen
+          padding: 0 30px 30px 30px

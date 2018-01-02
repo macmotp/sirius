@@ -1,12 +1,14 @@
-# [Sirius UI](#)
+# [Sirius UI](https://larastars.com/ui/sirius)
 
 [![npm](https://img.shields.io/npm/v/sirius-ui.svg?style=flat-square)](https://www.npmjs.com/package/sirius-ui)
 [![npm](https://img.shields.io/npm/dt/sirius-ui.svg?style=flat-square)](https://www.npmjs.com/package/sirius-ui)
 [![twitter](https://img.shields.io/badge/twitter-%23areyousirius%3F-blue.svg?style=flat-square)](https://twitter.com/larastarsgalaxy)
 
-[![Sirius UI - Framework based on Grid and Vue](https://raw.githubusercontent.com/macmotp/sirius/master/app/assets/images/sirius_cover.png)](#)
+[![Sirius UI - Framework based on Grid and Vue](https://raw.githubusercontent.com/macmotp/sirius/master/app/assets/images/sirius_cover.png)](https://larastars.com/ui/sirius)
 
 Sirius is a framework based on [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) and [Vue](https://vuejs.org). Designed to aim for aesthetics and simplicity.
+
+[Documentation](https://larastars.com/ui/sirius)
 
 Features:
 
@@ -55,7 +57,6 @@ Features:
 │   ├── components
 │   │   ├── Drawer
 │   │   ├── Flash
-│   │   ├── Highlight
 │   │   ├── Menu Button
 │   │   ├── Modal
 │   │   ├── Notification
@@ -234,14 +235,14 @@ Sirius is compatible with:
 * Internet Explorer (10+) may experience some issues with grid design
 
 ## Documentation
-Browse the application for documentation. Support online available soon.
+Browse the documentation online [here](https://larastars.com/ui/sirius).
 
-## Support
+## Issues
 Support only through Github. Please don't send emails about issues, make a Github issue instead.
 
 ## Copyright and License
-Copyright 2017 - [Larastars](https://larastars.com) -  created by and maintained by [Marco Gava](https://www.linkedin.com/in/gavamarco).
+Copyright 2018 - [Larastars](https://larastars.com) -  created by and maintained by [Marco Gava](https://www.linkedin.com/in/gavamarco).
 Code released under [LGPL-2.1 license](https://github.com/macmotp/sirius/blob/master/license.md).
 You are free to use it in personal and commercial projects. The code can be forked and modified, but the original copyright author should always be included.
 
-#### powered by [Larastars](https://larastars.com) | [Official Documentation - Available Soon](#) | [#areyousirius?](https://twitter.com/larastarsgalaxy)
+#### powered by [Larastars](https://larastars.com) | [Official Documentation](https://larastars.com/ui/sirius) | [#areyousirius?](https://twitter.com/larastarsgalaxy)

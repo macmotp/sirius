@@ -1,5 +1,11 @@
 # Sirius UI Changelog
 
+## v0.0.7-beta
+### Updated
+* Base: Article and Typography
+* Elements: Banner, Button, Checkbox, Drawer, Input, Notification, Radio, Select, Switch, Tab
+* Layouts: Header
+
 ## v0.0.6-beta
 ### Updated
 * Naming Components

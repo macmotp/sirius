@@ -84,7 +84,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
   font-style: normal
   color: $black
 
-$headings: (h1: (1.2, 30px, 10px, 4px), h2: (1.2, 27px, 10px, 4px), h3: (1.1, 24px, 8px, 2px), h4: (1.1, 21px, 8px, 2px), h5: (1, 18px, 6px, 0px), h6: (1, 15px, 6px, 0px))
+$headings: (h1: (1.2, 24px, 10px, 4px), h2: (1.2, 21px, 10px, 4px), h3: (1.1, 18px, 8px, 2px), h4: (1.1, 16px, 8px, 2px), h5: (1, 13px, 6px, 0px), h6: (1, 10px, 6px, 0px))
 @each $key, $map in $headings
   $height: nth($map, 1)
   $size: nth($map, 2)
@@ -97,15 +97,15 @@ $headings: (h1: (1.2, 30px, 10px, 4px), h2: (1.2, 27px, 10px, 4px), h3: (1.1, 24
       margin-bottom: $margin
       padding-top: $padding
     +tablet
-      font-size: $size+1px
+      font-size: $size+2px
       margin-bottom: $margin+2px
       padding-top: $padding+2px
     +desktop
-      font-size: $size+2px
+      font-size: $size+4px
       margin-bottom: $margin+4px
       padding-top: $padding+4px
     +widescreen
-      font-size: $size+3px
+      font-size: $size+8px
       margin-bottom: $margin+6px
       padding-top: $padding+6px
 
@@ -194,7 +194,7 @@ pre
   text-align: left
   white-space: pre
   overflow: auto
-  max-height: 200px
+  max-height: 250px
 
 code
   line-height: 1.2
