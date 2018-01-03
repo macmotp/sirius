@@ -1,5 +1,9 @@
 # Sirius UI Changelog
 
+## v0.0.8-beta
+### Fixed
+* Elements: Button, Input
+
 ## v0.0.7-beta
 ### Updated
 * Base: Article and Typography
