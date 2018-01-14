@@ -6,7 +6,7 @@
                 <span v-show="showIndicatorsText" v-text="previousText"></span>
             </a>
         </li>
-        <li v-for="page in pagesNumber" v-show="!simple">
+        <li v-for="(index, page) in pagesNumber" v-show="!simple" :key="index">
             <a :href="dataSet.prev_page_url" class="button small" v-bind:class="{active: page == dataSet.current_page, disabled: page == '...'}" @click.prevent="goToPage(page)" v-text="page"></a>
         </li>
         <li v-show="showIndicators">

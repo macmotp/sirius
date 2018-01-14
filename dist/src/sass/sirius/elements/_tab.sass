@@ -15,14 +15,13 @@
   text-align: left
   z-index: 9
   +responsive-font
-  ul
+  & > ul
     flex-flow: row wrap
     justify-content: flex-start
     display: flex
     list-style: none
     padding: 0
     background-color: rgba($dark, 0.1)
-    margin-bottom: 1em
     li
       position: relative
       display: flex
@@ -56,15 +55,16 @@
             color: $gray
 
   &.width-full
-    ul li
+    & > ul li
       flex: 1
   &.center
-    ul
+    & > ul
       justify-content: center
   &.right
-    ul
+    & > ul
       justify-content: flex-end
 
   .tab
     overflow: auto
     white-space: normal
+    margin: 1em 0

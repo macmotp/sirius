@@ -22,38 +22,39 @@ nav
     position: sticky
     top: 0
 
-  ul
-    align-items: stretch
-    display: flex
-    justify-content: center
-    padding: 0
-    list-style: none
-    flex: 1
-
-    li.item
+  & > .left, & > .center, & > .right
+    ul
+      align-items: stretch
       display: flex
-      flex-direction: row
+      justify-content: center
       padding: 0
-      margin: 0
-      position: relative
-      overflow: hidden
+      list-style: none
+      flex: 1
 
-      a:not(.button)
-        color: $black
-        text-decoration: none
-        padding: 0.8em
-        text-align: center
-        flex-direction: column
+      li.item
         display: flex
-        justify-content: center
-        +activeBackground($dark, 1)
-        +underline
-      button, .button
-        align-self: center
-        margin: 0.5em
+        flex-direction: row
+        padding: 0
+        margin: 0
+        position: relative
+        overflow: hidden
 
-  form
-    align-self: center
+        a:not(.button)
+          color: $black
+          text-decoration: none
+          padding: 0.8em
+          text-align: center
+          flex-direction: column
+          display: flex
+          justify-content: center
+          +activeBackground($dark, 1)
+          +underline
+        button, .button
+          align-self: center
+          margin: 0.5em
+
+    form
+      align-self: center
 
   & > .left
     align-items: stretch

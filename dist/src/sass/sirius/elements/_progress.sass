@@ -8,7 +8,7 @@
   background-color: $light
   border-radius: 255px
   +shadow(1)
-  height: 4px
+  height: 0.4em
   margin: 1em 0
   position: relative
   span, i
@@ -21,6 +21,8 @@
     height: 100%
     background-color: $dark
     transition: width 0.8s cubic-bezier(0.61, 0.01, 0.44, 0.99)
+    @if($border-radius > 0px)
+      border-radius: 255px
   @each $key, $color in $colors
     &.#{$key}
       span, i

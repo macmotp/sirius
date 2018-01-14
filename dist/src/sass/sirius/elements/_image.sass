@@ -9,6 +9,7 @@ $dimensions: 16 24 32 48 50 60 64 70 80 96 100 128 200 250 300 400
 .image
   display: block
   position: relative
+  margin: 0 auto 1em
   img
     display: block
     height: auto
@@ -21,7 +22,7 @@ $dimensions: 16 24 32 48 50 60 64 70 80 96 100 128 200 250 300 400
     img
       border-radius: 50%
   &.with-frame
-    padding: 10px
+    padding: 1em
     background-color: $white
     +shadow(1)
     border-radius: $border-radius
@@ -66,3 +67,6 @@ $dimensions: 16 24 32 48 50 60 64 70 80 96 100 128 200 250 300 400
     &.dim-#{$dimension}x#{$dimension}
       height: $dimension * 1px
       width: $dimension * 1px
+      +mobile
+        width: 100%
+        height: auto

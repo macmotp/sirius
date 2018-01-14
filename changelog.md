@@ -1,5 +1,10 @@
 # Sirius UI Changelog
 
+## v0.0.9-beta
+### Fixed
+* Elements: Banner, Breadcrumb, Drawer, Image, Pagination, Progress, Tab
+* Layouts: Header, Nav
+
 ## v0.0.8-beta
 ### Fixed
 * Elements: Button, Input

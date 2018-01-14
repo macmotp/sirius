@@ -102,8 +102,10 @@ aside.drawer
     &.#{$key}
       background: rgba($color, 0.99)
       color: inverse($color)
-      h1, h2, h3, h4, h5, h6, .close:before, .close:after
+      h1, h2, h3, h4, h5, h6
         color: inverse($color)
+      .close:before, .close:after
+        background-color: inverse($color)
       menu
         ul
           li.item
