@@ -109,10 +109,10 @@ $headings: (h1: (1.2, 24px, 10px, 4px), h2: (1.2, 21px, 10px, 4px), h3: (1.1, 18
       margin-bottom: $margin+6px
       padding-top: $padding+6px
 
-ul, ol
-  & li
-    +mobile
-      margin-left: 30px
+ol, ul
+  padding-left: 1em
+  +widescreen
+    padding-left: 30px
 
 ol
   list-style-type: none
@@ -120,10 +120,14 @@ ol
     counter-increment: top-level
     &:before
       content: counter(top-level) "."
-      margin-left: -33px
+      margin-left: -1em
       position: absolute
-      text-align: right
-      width: 30px
+      +widescreen
+        margin-left: -30px
+
+ul li
+  padding-left: 10px
+  margin-left: -10px
 
 button
   font-weight: 300
@@ -163,9 +167,9 @@ h4 + .caption, .h4 + .caption, h5 + .caption, .h5 + .caption, h6 + .caption, .h6
 blockquote p
   border-left: 2px solid $dark
   font-style: italic
-  padding-left: 20px
-  +from($tablet)
-    margin-left: -20px
+  padding-left: 1em
+  +widescreen
+    padding-left: 30px
   +responsive-padding
 
 ::-moz-selection, ::selection
