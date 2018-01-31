@@ -133,6 +133,12 @@ nav
             color: inverse($color)
       .name
         +activeColor(inverse($color))
+      .toggle
+        &:after, &:before
+          background-color: inverse($color)
     &.particular-#{$key}
       .brand .logo, .toggle, .cart
         +activeBackground($color)
+      .toggle
+        &:after, &:before
+          background-color: inverse($color)

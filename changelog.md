@@ -1,5 +1,10 @@
 # Sirius UI Changelog
 
+## v0.1.1-beta
+### Fixed
+* Elements: Breadcrumb, Pagination, MenuButton
+* Layouts: Header, Nav
+
 ## v0.1.0-beta
 ### Fixed
 * Elements: Menu, Pagination, Tab, Typography

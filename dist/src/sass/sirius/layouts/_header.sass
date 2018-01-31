@@ -80,13 +80,18 @@ header
         background-image: linear-gradient(225deg, $color 0%, $color 75%, darker($color) 100%)
 
   &.hero
+    text-align: center
+    display: flex
+    flex-direction: column
+    .head, .foot
+      flex: 0
     .head
       margin-left: 0
       border: none
       padding: 0.75em 0
     .body
       align-items: center
-      display: flex
+      justify-content: center
     +tablet
       .body
         padding-bottom: 3em
@@ -96,3 +101,22 @@ header
       .body
         align-items: center
         display: flex
+
+  &.with-image
+    .image
+      position: absolute
+      height: 100%
+      margin: -1em 0 -1em -1em
+      +widescreen
+        margin: -30px 0px -30px -30px
+      img
+        height: 100%
+        border-radius: 0
+
+    .filter
+      position: absolute
+      height: 100%
+      width: 100%
+      @each $key, $color in $colors
+        &.#{$key}
+          background-color: rgba($color, 0.2)

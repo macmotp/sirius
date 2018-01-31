@@ -39,7 +39,21 @@
                 this.triggerEndpoint();
             },
             triggerEndpoint() {
-                this.$parent.$refs[this.endpoint].toggle();
+                this.findEndpoint().toggle();
+            },
+            findEndpoint() {
+                if(!(this.isEmpty(this.$refs))) {
+                    return this.$refs[this.endpoint];
+                } else if(!(this.isEmpty(this.$parent.$refs))) {
+                    return this.$parent.$refs[this.endpoint];
+                } else if(!(this.isEmpty(this.$parent.$parent.$refs))) {
+                    return this.$parent.$parent.$refs[this.endpoint];
+                } else if(!(this.isEmpty(this.$parent.$parent.$parent.$refs))) {
+                    return this.$parent.$parent.$parent.$refs[this.endpoint];
+                }
+            },
+            isEmpty(object) {
+                return (Object.keys(object).length === 0 && object.constructor === Object)
             }
         }
     };
