@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "laravel-mix": "^1.6.1",
-    "sirius-ui": "^0.1.1-beta",
+    "sirius-ui": "^0.1.2-beta",
     "vue": "^2.5.6"
   },
   "engines": {

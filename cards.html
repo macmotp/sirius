@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <title>Sirius UI</title>
+    <meta name="description" content="Sirius UI - Framework based on Grid CSS and Vue Js - powered by Larastars.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="revisit-after" content="30 days">
+    <meta name="author" content="Larastars">
+    <meta name="robots" content="index, follow">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./app/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./app/assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./app/assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./app/assets/favicon/manifest.json">
+    <link rel="mask-icon" href="./app/assets/favicon/safari-pinned-tab.svg" color="#3a98a1">
+    <link rel="shortcut icon" href="./app/assets/favicon/favicon.ico">
+    <meta name="msapplication-config" content="./app/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#fcfcfc">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" type="text/css" rel="stylesheet">
+    <link href="app/min/app.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="page" id="sirius">
+
+    <header class="bg-secondary">
+        <div class="head">
+            <h1 class="title">
+                <strong>Ready to go</strong> examples of real life applications.
+            </h1>
+        </div>
+    </header>
+
+    <section>
+
+        <nav class="bg-secondary">
+            <div class="center visible">
+                <ul>
+                    <li class="item">
+                        <a class="text-white" href="https://www.facebook.com/larastarsgalaxy" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="item">
+                        <a href="https://twitter.com/larastarsgalaxy" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="item">
+                        <a href="https://github.com/macmotp/sirius" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section>
+        <article class="grid">
+            <header class="bg-secondary tile width-1-3">
+                <div class="head">
+                    <h1 class="title">
+                        <strong>Ready to go</strong> examples of real life applications.
+                    </h1>
+                </div>
+            </header>
+        </article>
+    </section>
+    <section>
+        <article class="grid with-three-tiles">
+            <header class="bg-secondary">
+                <div class="head">
+                    <h1 class="title">Header</h1>
+                    <h3 class="subtitle">Yes we can</h3>
+                </div>
+            </header>
+
+            <div class="tile">
+                <div class="card product">
+                    <div class="ribbon warning" text="ON SALE"></div>
+                    <div class="front">
+                        <div class="body">
+                            <a href="#">
+                                <figure class="image">
+                                    <img src="app/assets/images/sirius.png" class="avatar" alt="Sirius">
+                                </figure>
+                                <h3 class="name"><strong>Sirius UI</strong></h3>
+                                <hr>
+                            </a>
+                        </div>
+                        <div class="foot">
+                            <div class="cart-actions">
+                                <div class="left">
+                                    <div class="details">
+                                        <p class="price"><span class="full">€ 19.90</span> € 14.90</p>
+                                    </div>
+                                    <div class="buy"></div>
+                                </div>
+                                <div class="right">
+                                    <div class="remove"></div>
+                                    <div class="message">
+                                        <h2 class="name">Sirius UI</h2>
+                                        <p class="text">Added to your cart</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="card profile">
+                    <div class="front">
+                        <figure class="image background">
+                            <img src="app/assets/images/image-04.jpg" alt="Name">
+                        </figure>
+                        <div class="head">
+                            <figure class="image avatar">
+                                <img src="app/assets/images/profile.jpg"  alt="Name">
+                            </figure>
+                        </div>
+                        <div class="body">
+                            <a href="#">
+                                <h3 class="name">John <strong>Doe</strong></h3>
+                                <hr>
+                                <h5 class="job">Web Developer</h5>
+                            </a>
+                        </div>
+                        <div class="foot">
+                            <ul class="info">
+                                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tile">
+                <div class="card"></div>
+            </div>
+            <div class="tile">
+                <div class="card"></div>
+            </div>
+        </article>
+
+        <article>
+            <h2 class="title">Tiles</h2>
+            <p>Many times you want to <strong>inline</strong> your form inputs. You can achieve that by adding as many <code>.tile</code> wrappers as you want. Inputs will stretch automatically.</p>
+            <form>
+                <input type="search" placeholder="One Tile">
+            </form>
+            <form class="with-two-tiles">
+                <div class="tile">
+                    <input type="text" placeholder="Two Tiles">
+                </div>
+                <div class="tile">
+                    <input type="text" placeholder="Two Tiles">
+                </div>
+            </form>
+            <form class="with-three-tiles">
+                <div class="tile">
+                    <input type="text" placeholder="1 Tiles">
+                    <input type="text" placeholder="2 Tiles">
+                </div>
+                <div class="tile">
+                    <input type="text" placeholder="3 Tiles">
+                    <input type="text" placeholder="4 Tiles">
+                </div>
+                <div class="tile">
+                    <input type="text" placeholder="5 Tiles">
+                    <input type="text" placeholder="6 Tiles">
+                </div>
+            </form>
+            <p><strong>Important</strong>: remember to use the <code>.input-group</code> tag to wrap your input!</p>
+        </article>
+
+    </section>
+
+
+
+
+</div>
+
+<script src="./app/min/app.min.js"></script>
+
+</body>
+
+</html>

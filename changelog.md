@@ -1,5 +1,9 @@
 # Sirius UI Changelog
 
+## v0.1.2-beta
+### Fixed
+* Layouts: Card
+
 ## v0.1.1-beta
 ### Fixed
 * Elements: Breadcrumb, Pagination, MenuButton
