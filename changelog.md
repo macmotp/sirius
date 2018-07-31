@@ -1,5 +1,10 @@
 # Sirius UI Changelog
 
+## v0.1.3-beta
+### Fixed
+* Elements: Drawer
+* Layouts: Grid
+
 ## v0.1.2-beta
 ### Fixed
 * Layouts: Card
